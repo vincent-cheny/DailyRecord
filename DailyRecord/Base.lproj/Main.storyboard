@@ -21,21 +21,141 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Fk9-5p-eyR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryd-Fg-Sj9">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.1843137255" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="QkL-vx-ioJ"/>
+                                    <constraint firstAttribute="height" constant="114" id="eUY-bU-MX6"/>
+                                </constraints>
+                                <inset key="titleEdgeInsets" minX="-120" minY="80" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="20" minY="10" maxX="20" maxY="30"/>
+                                <state key="normal" title="模板" image="template.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QkL-vx-ioJ"/>
+                                        <exclude reference="eUY-bU-MX6"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
+                                    <mask key="constraints">
+                                        <include reference="QkL-vx-ioJ"/>
+                                        <include reference="eUY-bU-MX6"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXR-zZ-20h">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.1843137255" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="Qae-s7-lM0"/>
+                                    <constraint firstAttribute="width" constant="133" id="c1e-94-Ei8"/>
+                                </constraints>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="30"/>
+                                <inset key="imageEdgeInsets" minX="20" minY="10" maxX="20" maxY="30"/>
+                                <state key="normal" title="图表" image="chart.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Qae-s7-lM0"/>
+                                        <exclude reference="c1e-94-Ei8"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Qae-s7-lM0"/>
+                                        <include reference="c1e-94-Ei8"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ube-om-jX2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.1843137255" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="设置" image="setting.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="91" y="486" width="183" height="128"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukj-bO-7Oz">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.1843137255" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="20" minY="10" maxX="20" maxY="30"/>
+                                <state key="normal" title="日历" image="calendar.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="133" y="686" width="108" height="114"/>
+                                </variation>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fk9-5p-eyR" secondAttribute="bottom" id="4GI-II-NGr"/>
+                            <constraint firstAttribute="trailing" secondItem="AXR-zZ-20h" secondAttribute="trailing" id="EkN-H8-9DE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ryd-Fg-Sj9" secondAttribute="bottom" id="Jk9-vm-Tor"/>
+                            <constraint firstItem="ukj-bO-7Oz" firstAttribute="leading" secondItem="Ryd-Fg-Sj9" secondAttribute="trailing" id="N3C-N2-bsf"/>
                             <constraint firstItem="Fk9-5p-eyR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZsC-2q-DVv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AXR-zZ-20h" secondAttribute="bottom" id="djq-y6-Zyf"/>
                             <constraint firstAttribute="trailing" secondItem="Fk9-5p-eyR" secondAttribute="trailing" id="faO-zP-mo5"/>
+                            <constraint firstItem="Ryd-Fg-Sj9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jFY-cP-GS9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ukj-bO-7Oz" secondAttribute="bottom" id="mh4-7i-PhZ"/>
                             <constraint firstItem="Fk9-5p-eyR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="vkt-HP-4S0"/>
+                            <constraint firstItem="AXR-zZ-20h" firstAttribute="leading" secondItem="ukj-bO-7Oz" secondAttribute="trailing" id="wI8-2M-nC7"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Ryd-Fg-Sj9"/>
+                                <exclude reference="AXR-zZ-20h"/>
+                                <exclude reference="ube-om-jX2"/>
+                                <exclude reference="ukj-bO-7Oz"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="jFY-cP-GS9"/>
+                                <exclude reference="N3C-N2-bsf"/>
+                                <exclude reference="EkN-H8-9DE"/>
+                                <exclude reference="wI8-2M-nC7"/>
+                                <exclude reference="Jk9-vm-Tor"/>
+                                <exclude reference="djq-y6-Zyf"/>
+                                <exclude reference="mh4-7i-PhZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Ryd-Fg-Sj9"/>
+                                <include reference="AXR-zZ-20h"/>
+                                <include reference="ube-om-jX2"/>
+                                <include reference="ukj-bO-7Oz"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="jFY-cP-GS9"/>
+                                <include reference="N3C-N2-bsf"/>
+                                <include reference="EkN-H8-9DE"/>
+                                <include reference="wI8-2M-nC7"/>
+                                <include reference="Jk9-vm-Tor"/>
+                                <include reference="djq-y6-Zyf"/>
+                                <include reference="mh4-7i-PhZ"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502" y="267"/>
+            <point key="canvasLocation" x="501" y="267"/>
         </scene>
     </scenes>
     <resources>
+        <image name="calendar.png" width="114" height="128"/>
+        <image name="chart.png" width="137" height="128"/>
         <image name="main_bg.jpg" width="640" height="960"/>
+        <image name="setting.png" width="128" height="128"/>
+        <image name="template.png" width="128" height="128"/>
     </resources>
 </document>
