@@ -369,6 +369,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5NK-Ku-IyN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="I8G-aA-AHw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fad-tg-Bos">
@@ -419,6 +420,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lIF-SI-GxQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UhN-uj-e3U">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mvW-UT-xOp">
@@ -516,7 +518,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2Gg-SU-Slc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kxc-LL-lvS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" shadowImage="title_bar.png" id="kxc-LL-lvS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -540,6 +542,7 @@
         <image name="main_bg.jpg" width="640" height="960"/>
         <image name="setting.png" width="128" height="128"/>
         <image name="template.png" width="128" height="128"/>
+        <image name="title_bar.png" width="240" height="41"/>
     </resources>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>
