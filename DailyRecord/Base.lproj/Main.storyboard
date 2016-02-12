@@ -518,7 +518,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2Gg-SU-Slc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" shadowImage="title_bar.png" id="kxc-LL-lvS">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="kxc-LL-lvS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -542,7 +542,6 @@
         <image name="main_bg.jpg" width="640" height="960"/>
         <image name="setting.png" width="128" height="128"/>
         <image name="template.png" width="128" height="128"/>
-        <image name="title_bar.png" width="240" height="41"/>
     </resources>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>

@@ -15,8 +15,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let backItem = UIBarButtonItem()
         backItem.title = ""
-        navigationItem.backBarButtonItem = backItem
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "title_bar")!.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .Stretch), forBarMetrics: .Default)
+        self.navigationItem.backBarButtonItem = backItem
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "title_bar"), forBarMetrics: .Default)
     }
 
     override func didReceiveMemoryWarning() {
