@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2Gg-SU-Slc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -44,6 +43,9 @@
                                         <include reference="AXh-GQ-oqQ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="uR2-J2-q0W" kind="show" id="Wrx-nQ-kBe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXR-zZ-20h">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -117,6 +119,9 @@
                                         <include reference="kp8-bK-dZU"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="v05-90-WFN" kind="show" id="75b-cH-s4Q"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="template.png" translatesAutoresizingMaskIntoConstraints="NO" id="iUe-NC-e3B">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -302,12 +307,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="501" y="267"/>
+            <point key="canvasLocation" x="1419" y="267"/>
         </scene>
-        <!--Setting-->
+        <!--设置-->
         <scene sceneID="J6Y-hI-WC0">
             <objects>
-                <viewController title="Setting" id="ttt-1h-p5T" customClass="SettingViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="设置" id="ttt-1h-p5T" customClass="SettingViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7JU-wG-6YV"/>
                         <viewControllerLayoutGuide type="bottom" id="GW7-Uz-jk3"/>
@@ -319,76 +324,146 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Kch-Ze-yL6">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WiC-Lg-e2k">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="9h9-c0-kka"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="设置" id="UyV-sz-6oV"/>
-                                </items>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="9h9-c0-kka"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="9h9-c0-kka"/>
-                                    </mask>
-                                </variation>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Kch-Ze-yL6" firstAttribute="centerX" secondItem="mPQ-OG-jyh" secondAttribute="centerX" id="CYb-kr-XUm"/>
-                            <constraint firstItem="WiC-Lg-e2k" firstAttribute="width" secondItem="mPQ-OG-jyh" secondAttribute="width" id="F2a-4d-nem"/>
                             <constraint firstItem="Kch-Ze-yL6" firstAttribute="width" secondItem="mPQ-OG-jyh" secondAttribute="width" id="jXg-Xl-ZDA"/>
-                            <constraint firstItem="WiC-Lg-e2k" firstAttribute="top" secondItem="7JU-wG-6YV" secondAttribute="bottom" constant="-20" id="kss-9v-561"/>
                             <constraint firstItem="Kch-Ze-yL6" firstAttribute="height" secondItem="mPQ-OG-jyh" secondAttribute="height" id="mnn-cs-PJX"/>
                             <constraint firstItem="Kch-Ze-yL6" firstAttribute="centerY" secondItem="mPQ-OG-jyh" secondAttribute="centerY" id="pfN-of-7Fq"/>
-                            <constraint firstItem="WiC-Lg-e2k" firstAttribute="leading" secondItem="mPQ-OG-jyh" secondAttribute="leadingMargin" constant="-20" id="rva-Za-CEJ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Kch-Ze-yL6"/>
-                                <exclude reference="WiC-Lg-e2k"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="CYb-kr-XUm"/>
                                 <exclude reference="jXg-Xl-ZDA"/>
                                 <exclude reference="mnn-cs-PJX"/>
                                 <exclude reference="pfN-of-7Fq"/>
-                                <exclude reference="F2a-4d-nem"/>
-                                <exclude reference="kss-9v-561"/>
-                                <exclude reference="rva-Za-CEJ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Kch-Ze-yL6"/>
-                                <include reference="WiC-Lg-e2k"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="CYb-kr-XUm"/>
                                 <include reference="jXg-Xl-ZDA"/>
                                 <include reference="mnn-cs-PJX"/>
                                 <include reference="pfN-of-7Fq"/>
-                                <include reference="F2a-4d-nem"/>
-                                <include reference="kss-9v-561"/>
-                                <include reference="rva-Za-CEJ"/>
                             </mask>
                         </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FVj-Dh-MbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1515" y="1060.5"/>
+            <point key="canvasLocation" x="3763.5" y="673.5"/>
         </scene>
-        <!--Chart-->
+        <!--模板-->
+        <scene sceneID="N6Y-OX-JEJ">
+            <objects>
+                <viewController title="模板" id="v05-90-WFN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n3X-w7-b4D"/>
+                        <viewControllerLayoutGuide type="bottom" id="5NK-Ku-IyN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I8G-aA-AHw">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fad-tg-Bos">
+                                <rect key="frame" x="0.0" y="-960" width="640" height="960"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fad-tg-Bos" firstAttribute="centerY" secondItem="I8G-aA-AHw" secondAttribute="centerY" id="535-jQ-2B5"/>
+                            <constraint firstItem="fad-tg-Bos" firstAttribute="width" secondItem="I8G-aA-AHw" secondAttribute="width" id="6yv-Da-4PL"/>
+                            <constraint firstItem="fad-tg-Bos" firstAttribute="centerX" secondItem="I8G-aA-AHw" secondAttribute="centerX" id="Gzl-pI-a5V"/>
+                            <constraint firstItem="fad-tg-Bos" firstAttribute="height" secondItem="I8G-aA-AHw" secondAttribute="height" id="zOK-pb-gT7"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fad-tg-Bos"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="535-jQ-2B5"/>
+                                <exclude reference="6yv-Da-4PL"/>
+                                <exclude reference="Gzl-pI-a5V"/>
+                                <exclude reference="zOK-pb-gT7"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fad-tg-Bos"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="535-jQ-2B5"/>
+                                <include reference="6yv-Da-4PL"/>
+                                <include reference="Gzl-pI-a5V"/>
+                                <include reference="zOK-pb-gT7"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZz-BJ-46Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2587.5" y="-139.5"/>
+        </scene>
+        <!--日历-->
+        <scene sceneID="gcj-pk-mvP">
+            <objects>
+                <viewController title="日历" id="uR2-J2-q0W" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jBg-Ze-Q3v"/>
+                        <viewControllerLayoutGuide type="bottom" id="lIF-SI-GxQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UhN-uj-e3U">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mvW-UT-xOp">
+                                <rect key="frame" x="0.0" y="-960" width="640" height="960"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mvW-UT-xOp" firstAttribute="centerX" secondItem="UhN-uj-e3U" secondAttribute="centerX" id="CMO-Pl-zFA"/>
+                            <constraint firstItem="mvW-UT-xOp" firstAttribute="centerY" secondItem="UhN-uj-e3U" secondAttribute="centerY" id="h9i-MC-B0E"/>
+                            <constraint firstItem="mvW-UT-xOp" firstAttribute="width" secondItem="UhN-uj-e3U" secondAttribute="width" id="rKI-WT-bZw"/>
+                            <constraint firstItem="mvW-UT-xOp" firstAttribute="height" secondItem="UhN-uj-e3U" secondAttribute="height" id="vVg-6Y-Yps"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="mvW-UT-xOp"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="CMO-Pl-zFA"/>
+                                <exclude reference="h9i-MC-B0E"/>
+                                <exclude reference="rKI-WT-bZw"/>
+                                <exclude reference="vVg-6Y-Yps"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="mvW-UT-xOp"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="CMO-Pl-zFA"/>
+                                <include reference="h9i-MC-B0E"/>
+                                <include reference="rKI-WT-bZw"/>
+                                <include reference="vVg-6Y-Yps"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FjD-7i-VvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3763.5" y="-139.5"/>
+        </scene>
+        <!--图表-->
         <scene sceneID="RQy-db-fot">
             <objects>
-                <viewController title="Chart" id="82v-Ft-dNW" sceneMemberID="viewController">
+                <viewController title="图表" id="82v-Ft-dNW" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0JI-h2-Wmd"/>
                         <viewControllerLayoutGuide type="bottom" id="sgR-k0-JL3"/>
@@ -396,12 +471,67 @@
                     <view key="view" contentMode="scaleToFill" id="EHL-Dx-4bw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OZ9-eC-Bxi">
+                                <rect key="frame" x="0.0" y="-960" width="640" height="960"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OZ9-eC-Bxi" firstAttribute="width" secondItem="EHL-Dx-4bw" secondAttribute="width" id="RUW-HJ-vEr"/>
+                            <constraint firstItem="OZ9-eC-Bxi" firstAttribute="centerX" secondItem="EHL-Dx-4bw" secondAttribute="centerX" id="ZJY-l3-1BS"/>
+                            <constraint firstItem="OZ9-eC-Bxi" firstAttribute="centerY" secondItem="EHL-Dx-4bw" secondAttribute="centerY" id="bfh-pu-mB0"/>
+                            <constraint firstItem="OZ9-eC-Bxi" firstAttribute="height" secondItem="EHL-Dx-4bw" secondAttribute="height" id="qhT-f5-e4x"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="OZ9-eC-Bxi"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="RUW-HJ-vEr"/>
+                                <exclude reference="ZJY-l3-1BS"/>
+                                <exclude reference="bfh-pu-mB0"/>
+                                <exclude reference="qhT-f5-e4x"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="OZ9-eC-Bxi"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="RUW-HJ-vEr"/>
+                                <include reference="ZJY-l3-1BS"/>
+                                <include reference="bfh-pu-mB0"/>
+                                <include reference="qhT-f5-e4x"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIb-SA-dc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1324.5" y="-136.5"/>
+            <point key="canvasLocation" x="2587.5" y="661.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Au-eK-HwO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2Gg-SU-Slc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kxc-LL-lvS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Jxa-WU-gtG">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="RpG-8D-5yr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AdC-XH-pTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="501" y="267"/>
         </scene>
     </scenes>
     <resources>
@@ -411,4 +541,5 @@
         <image name="setting.png" width="128" height="128"/>
         <image name="template.png" width="128" height="128"/>
     </resources>
+    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>
