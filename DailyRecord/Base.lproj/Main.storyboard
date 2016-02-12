@@ -363,7 +363,7 @@
         <!--模板-->
         <scene sceneID="N6Y-OX-JEJ">
             <objects>
-                <viewController title="模板" id="v05-90-WFN" sceneMemberID="viewController">
+                <viewController title="模板" id="v05-90-WFN" customClass="TemplateViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n3X-w7-b4D"/>
                         <viewControllerLayoutGuide type="bottom" id="5NK-Ku-IyN"/>
@@ -413,7 +413,7 @@
         <!--日历-->
         <scene sceneID="gcj-pk-mvP">
             <objects>
-                <viewController title="日历" id="uR2-J2-q0W" sceneMemberID="viewController">
+                <viewController title="日历" id="uR2-J2-q0W" customClass="CalendarViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jBg-Ze-Q3v"/>
                         <viewControllerLayoutGuide type="bottom" id="lIF-SI-GxQ"/>
@@ -463,7 +463,7 @@
         <!--图表-->
         <scene sceneID="RQy-db-fot">
             <objects>
-                <viewController title="图表" id="82v-Ft-dNW" sceneMemberID="viewController">
+                <viewController title="图表" id="82v-Ft-dNW" customClass="CalendarViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0JI-h2-Wmd"/>
                         <viewControllerLayoutGuide type="bottom" id="sgR-k0-JL3"/>
