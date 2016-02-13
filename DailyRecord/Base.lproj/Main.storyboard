@@ -7,6 +7,7 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Main-->
@@ -330,7 +331,8 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="  初始化">
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="初始化">
                                     <color key="titleColor" red="0.094720877707004547" green="0.042921967804431915" blue="0.15955206751823425" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -344,7 +346,8 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="  关于">
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="关于">
                                     <color key="titleColor" red="0.094720877707004547" green="0.042921967804431915" blue="0.15955206751823425" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -679,6 +682,16 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="模板" id="R5N-Ea-BPD">
+                        <barButtonItem key="rightBarButtonItem" title="全部" id="PtL-jy-6jx">
+                            <connections>
+                                <action selector="templateFilter:" destination="v05-90-WFN" id="KG1-UB-5w7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="templateFilterBtn" destination="PtL-jy-6jx" id="tyo-Fd-1ub"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZz-BJ-46Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -730,6 +743,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="日历" id="ubp-7w-9Al">
+                        <barButtonItem key="rightBarButtonItem" title="今日" id="gxW-3S-4sc"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FjD-7i-VvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -781,6 +798,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="图表" id="x85-UJ-ths">
+                        <rightBarButtonItems>
+                            <barButtonItem title="本周" id="hUy-wX-0rh"/>
+                            <barButtonItem title="饼状图" id="MyZ-Jw-rQH"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIb-SA-dc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -789,7 +813,7 @@
         <!--Navigation Controller-->
         <scene sceneID="7Au-eK-HwO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Gg-SU-Slc" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2Gg-SU-Slc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="kxc-LL-lvS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
