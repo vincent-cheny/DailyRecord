@@ -23,6 +23,7 @@
 		9AC8B19D1C6D931C0064B5CC /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1951C6D931C0064B5CC /* setting.png */; };
 		9AC8B19E1C6D931C0064B5CC /* template.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1961C6D931C0064B5CC /* template.png */; };
 		9AC8B19F1C6D931C0064B5CC /* title_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1971C6D931C0064B5CC /* title_bar.png */; };
+		9ACCA6251C6EC2CD00AF7D55 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCA6241C6EC2CD00AF7D55 /* AboutViewController.swift */; };
 		9AD94BBA1C6D6426006216BB /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BB91C6D6426006216BB /* ChartViewController.swift */; };
 		9AD94BBC1C6D644D006216BB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */; };
 		9AD94BBE1C6D6460006216BB /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */; };
@@ -59,6 +60,7 @@
 		9AC8B1951C6D931C0064B5CC /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = setting.png; path = Resources/setting.png; sourceTree = "<group>"; };
 		9AC8B1961C6D931C0064B5CC /* template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = template.png; path = Resources/template.png; sourceTree = "<group>"; };
 		9AC8B1971C6D931C0064B5CC /* title_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = title_bar.png; path = Resources/title_bar.png; sourceTree = "<group>"; };
+		9ACCA6241C6EC2CD00AF7D55 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		9AD94BB91C6D6426006216BB /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */,
 				9AD94BB91C6D6426006216BB /* ChartViewController.swift */,
 				9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */,
+				9ACCA6241C6EC2CD00AF7D55 /* AboutViewController.swift */,
 				0DFFB2821B896E80001E1EA4 /* Main.storyboard */,
 				0DFFB2851B896E81001E1EA4 /* Images.xcassets */,
 				0DFFB2871B896E81001E1EA4 /* LaunchScreen.xib */,
@@ -275,6 +278,7 @@
 				0DFFB27C1B896E80001E1EA4 /* AppDelegate.swift in Sources */,
 				9A5F605B1C6C9A3F0097F6F6 /* SettingViewController.swift in Sources */,
 				9AD94BBA1C6D6426006216BB /* ChartViewController.swift in Sources */,
+				9ACCA6251C6EC2CD00AF7D55 /* AboutViewController.swift in Sources */,
 				9AD94BBE1C6D6460006216BB /* TemplateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
