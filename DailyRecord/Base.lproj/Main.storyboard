@@ -489,8 +489,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                    <rect key="frame" x="10" y="339" width="380" height="17.5"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://blog.fo.ifeng.com/article/31746253.html" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ar-Uw-dDj" userLabel="Link4" customClass="TTTAttributedLabel">
@@ -498,8 +499,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                    <rect key="frame" x="10" y="366.5" width="380" height="17.5"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -651,13 +653,13 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fad-tg-Bos">
                                 <rect key="frame" x="0.0" y="-960" width="640" height="960"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Rp-CB-DMp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Rp-CB-DMp">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="templateCell" id="9kX-nf-Qrv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="templateCell" focusStyle="custom" id="9kX-nf-Qrv">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9kX-nf-Qrv" id="7Vl-mK-xJq">
@@ -676,8 +678,8 @@
                             <constraint firstItem="7Rp-CB-DMp" firstAttribute="width" secondItem="I8G-aA-AHw" secondAttribute="width" id="8Ko-HH-OlA"/>
                             <constraint firstItem="7Rp-CB-DMp" firstAttribute="top" secondItem="n3X-w7-b4D" secondAttribute="bottom" id="C2x-T8-OTC"/>
                             <constraint firstItem="fad-tg-Bos" firstAttribute="centerX" secondItem="I8G-aA-AHw" secondAttribute="centerX" id="Gzl-pI-a5V"/>
-                            <constraint firstItem="7Rp-CB-DMp" firstAttribute="height" secondItem="I8G-aA-AHw" secondAttribute="height" id="Mxk-RX-LXc"/>
                             <constraint firstItem="7Rp-CB-DMp" firstAttribute="centerX" secondItem="I8G-aA-AHw" secondAttribute="centerX" id="iRx-Vv-qUC"/>
+                            <constraint firstItem="5NK-Ku-IyN" firstAttribute="top" secondItem="7Rp-CB-DMp" secondAttribute="bottom" id="mgQ-yM-aVU"/>
                             <constraint firstItem="fad-tg-Bos" firstAttribute="height" secondItem="I8G-aA-AHw" secondAttribute="height" id="zOK-pb-gT7"/>
                         </constraints>
                         <variation key="default">
@@ -692,8 +694,8 @@
                                 <exclude reference="zOK-pb-gT7"/>
                                 <exclude reference="8Ko-HH-OlA"/>
                                 <exclude reference="C2x-T8-OTC"/>
-                                <exclude reference="Mxk-RX-LXc"/>
                                 <exclude reference="iRx-Vv-qUC"/>
+                                <exclude reference="mgQ-yM-aVU"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -708,8 +710,8 @@
                                 <include reference="zOK-pb-gT7"/>
                                 <include reference="8Ko-HH-OlA"/>
                                 <include reference="C2x-T8-OTC"/>
-                                <include reference="Mxk-RX-LXc"/>
                                 <include reference="iRx-Vv-qUC"/>
+                                <include reference="mgQ-yM-aVU"/>
                             </mask>
                         </variation>
                     </view>
