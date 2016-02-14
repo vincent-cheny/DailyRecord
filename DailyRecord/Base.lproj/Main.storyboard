@@ -651,34 +651,64 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fad-tg-Bos">
                                 <rect key="frame" x="0.0" y="-960" width="640" height="960"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Rp-CB-DMp">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9kX-nf-Qrv">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9kX-nf-Qrv" id="7Vl-mK-xJq">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fad-tg-Bos" firstAttribute="centerY" secondItem="I8G-aA-AHw" secondAttribute="centerY" id="535-jQ-2B5"/>
                             <constraint firstItem="fad-tg-Bos" firstAttribute="width" secondItem="I8G-aA-AHw" secondAttribute="width" id="6yv-Da-4PL"/>
+                            <constraint firstItem="7Rp-CB-DMp" firstAttribute="width" secondItem="I8G-aA-AHw" secondAttribute="width" id="8Ko-HH-OlA"/>
+                            <constraint firstItem="7Rp-CB-DMp" firstAttribute="top" secondItem="n3X-w7-b4D" secondAttribute="bottom" id="C2x-T8-OTC"/>
                             <constraint firstItem="fad-tg-Bos" firstAttribute="centerX" secondItem="I8G-aA-AHw" secondAttribute="centerX" id="Gzl-pI-a5V"/>
+                            <constraint firstItem="7Rp-CB-DMp" firstAttribute="height" secondItem="I8G-aA-AHw" secondAttribute="height" id="Mxk-RX-LXc"/>
+                            <constraint firstItem="7Rp-CB-DMp" firstAttribute="centerX" secondItem="I8G-aA-AHw" secondAttribute="centerX" id="iRx-Vv-qUC"/>
                             <constraint firstItem="fad-tg-Bos" firstAttribute="height" secondItem="I8G-aA-AHw" secondAttribute="height" id="zOK-pb-gT7"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="fad-tg-Bos"/>
+                                <exclude reference="7Rp-CB-DMp"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="535-jQ-2B5"/>
                                 <exclude reference="6yv-Da-4PL"/>
                                 <exclude reference="Gzl-pI-a5V"/>
                                 <exclude reference="zOK-pb-gT7"/>
+                                <exclude reference="8Ko-HH-OlA"/>
+                                <exclude reference="C2x-T8-OTC"/>
+                                <exclude reference="Mxk-RX-LXc"/>
+                                <exclude reference="iRx-Vv-qUC"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="fad-tg-Bos"/>
+                                <include reference="7Rp-CB-DMp"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="535-jQ-2B5"/>
                                 <include reference="6yv-Da-4PL"/>
                                 <include reference="Gzl-pI-a5V"/>
                                 <include reference="zOK-pb-gT7"/>
+                                <include reference="8Ko-HH-OlA"/>
+                                <include reference="C2x-T8-OTC"/>
+                                <include reference="Mxk-RX-LXc"/>
+                                <include reference="iRx-Vv-qUC"/>
                             </mask>
                         </variation>
                     </view>

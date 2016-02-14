@@ -8,15 +8,20 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let realm = try! Realm()
+        let recordTemplates = realm.objects(RecordTemplate)
+        if recordTemplates.count == 0 {
+            RecordTemplate().resetTemplate()
+        }
         return true
     }
 

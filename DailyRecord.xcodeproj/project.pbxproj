@@ -15,6 +15,7 @@
 		0DFFB2891B896E81001E1EA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DFFB2871B896E81001E1EA4 /* LaunchScreen.xib */; };
 		0DFFB2951B896E81001E1EA4 /* DailyRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFB2941B896E81001E1EA4 /* DailyRecordTests.swift */; };
 		9A5F605B1C6C9A3F0097F6F6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */; };
+		9A6E08EA1C7011EC00C0358A /* RecordTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E08E91C7011EC00C0358A /* RecordTemplate.swift */; };
 		9AC8B1981C6D931C0064B5CC /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1901C6D931C0064B5CC /* calendar.png */; };
 		9AC8B1991C6D931C0064B5CC /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1911C6D931C0064B5CC /* chart.png */; };
 		9AC8B19A1C6D931C0064B5CC /* ic_launcher@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1921C6D931C0064B5CC /* ic_launcher@2x.png */; };
@@ -55,6 +56,7 @@
 		4EA1AF2C8749DECAC11958F5 /* Pods_DailyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E38E826916FBF9FEC6FC938 /* Pods-DailyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyRecord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyRecord/Pods-DailyRecord.debug.xcconfig"; sourceTree = "<group>"; };
 		9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		9A6E08E91C7011EC00C0358A /* RecordTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTemplate.swift; sourceTree = "<group>"; };
 		9AC8B1901C6D931C0064B5CC /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = Resources/calendar.png; sourceTree = "<group>"; };
 		9AC8B1911C6D931C0064B5CC /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chart.png; path = Resources/chart.png; sourceTree = "<group>"; };
 		9AC8B1921C6D931C0064B5CC /* ic_launcher@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_launcher@2x.png"; path = "Resources/ic_launcher@2x.png"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		0DFFB2781B896E80001E1EA4 /* DailyRecord */ = {
 			isa = PBXGroup;
 			children = (
+				9A6E08E91C7011EC00C0358A /* RecordTemplate.swift */,
 				0DFFB27B1B896E80001E1EA4 /* AppDelegate.swift */,
 				0DFFB2801B896E80001E1EA4 /* ViewController.swift */,
 				9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */,
@@ -350,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AD94BBC1C6D644D006216BB /* CalendarViewController.swift in Sources */,
+				9A6E08EA1C7011EC00C0358A /* RecordTemplate.swift in Sources */,
 				0DFFB2811B896E80001E1EA4 /* ViewController.swift in Sources */,
 				0DFFB27F1B896E80001E1EA4 /* DailyRecord.xcdatamodeld in Sources */,
 				0DFFB27C1B896E80001E1EA4 /* AppDelegate.swift in Sources */,
