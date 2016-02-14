@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import RealmSwift
 
-class TemplateViewController: UIViewController {
+class TemplateViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     @IBOutlet weak var templateFilterBtn: UIBarButtonItem!
+    @IBOutlet weak var templateTableView: UITableView!
+    
+    let realm = try! Realm()
+    let recordTemplates = try! Realm().objects(RecordTemplate)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        templateTableView.delegate = self
+        templateTableView.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,6 +32,23 @@ class TemplateViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false;
     }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let templateCell = tableView.dequeueReusableCellWithIdentifier("templateCell", forIndexPath: indexPath)
+        let template = recordTemplates[indexPath.row]
+        templateCell.textLabel?.text = template.title
+        return templateCell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recordTemplates.count
+    }
+    
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let object = recordTemplates[indexPath.row]
+//        cell.textLabel?.text = object.title
+//        return cell
+//    }
     
     @IBAction func templateFilter(sender: AnyObject) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
