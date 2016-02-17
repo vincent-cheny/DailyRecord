@@ -8,18 +8,18 @@
 
 import UIKit
 import CoreData
-import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let IsInitialized: String = "isInitialized"
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let realm = try! Realm()
-        let recordTemplates = realm.objects(RecordTemplate)
-        if recordTemplates.count == 0 {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if defaults.objectForKey(IsInitialized) == nil {
+            defaults.setBool(true, forKey: IsInitialized)
             RecordTemplate().resetTemplate()
         }
         return true

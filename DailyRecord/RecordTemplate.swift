@@ -24,7 +24,6 @@ class RecordTemplate: Object {
         let realm = try! Realm()
         try! realm.write {
             realm.delete(realm.objects(RecordTemplate))
-            realm.add(RecordTemplate())
             realm.add(RecordTemplate(value: ["杀生", "黑业", "杀生"]))
             realm.add(RecordTemplate(value: ["偷盗", "黑业", "偷盗"]))
             realm.add(RecordTemplate(value: ["邪淫", "黑业", "邪淫"]))
@@ -45,7 +44,6 @@ class RecordTemplate: Object {
             realm.add(RecordTemplate(value: ["无贪", "白业", "无贪"]))
             realm.add(RecordTemplate(value: ["无嗔", "白业", "无嗔"]))
             realm.add(RecordTemplate(value: ["无痴", "白业", "无痴"]))
-            NSLog(realm.path)
         }
     }
 }

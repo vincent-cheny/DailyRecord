@@ -16,6 +16,10 @@
 		0DFFB2951B896E81001E1EA4 /* DailyRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFB2941B896E81001E1EA4 /* DailyRecordTests.swift */; };
 		9A5F605B1C6C9A3F0097F6F6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */; };
 		9A6E08EA1C7011EC00C0358A /* RecordTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E08E91C7011EC00C0358A /* RecordTemplate.swift */; };
+		9A76AB841C74CD2B000E8B53 /* blackdot.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A76AB801C74CD2B000E8B53 /* blackdot.png */; };
+		9A76AB851C74CD2B000E8B53 /* greendot.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A76AB811C74CD2B000E8B53 /* greendot.png */; };
+		9A76AB861C74CD2B000E8B53 /* reddot.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A76AB821C74CD2B000E8B53 /* reddot.png */; };
+		9A76AB871C74CD2B000E8B53 /* whitedot.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A76AB831C74CD2B000E8B53 /* whitedot.png */; };
 		9AC8B1981C6D931C0064B5CC /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1901C6D931C0064B5CC /* calendar.png */; };
 		9AC8B1991C6D931C0064B5CC /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1911C6D931C0064B5CC /* chart.png */; };
 		9AC8B19A1C6D931C0064B5CC /* ic_launcher@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1921C6D931C0064B5CC /* ic_launcher@2x.png */; };
@@ -57,6 +61,10 @@
 		6E38E826916FBF9FEC6FC938 /* Pods-DailyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyRecord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyRecord/Pods-DailyRecord.debug.xcconfig"; sourceTree = "<group>"; };
 		9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		9A6E08E91C7011EC00C0358A /* RecordTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTemplate.swift; sourceTree = "<group>"; };
+		9A76AB801C74CD2B000E8B53 /* blackdot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackdot.png; path = Resources/blackdot.png; sourceTree = "<group>"; };
+		9A76AB811C74CD2B000E8B53 /* greendot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greendot.png; path = Resources/greendot.png; sourceTree = "<group>"; };
+		9A76AB821C74CD2B000E8B53 /* reddot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reddot.png; path = Resources/reddot.png; sourceTree = "<group>"; };
+		9A76AB831C74CD2B000E8B53 /* whitedot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whitedot.png; path = Resources/whitedot.png; sourceTree = "<group>"; };
 		9AC8B1901C6D931C0064B5CC /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = Resources/calendar.png; sourceTree = "<group>"; };
 		9AC8B1911C6D931C0064B5CC /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chart.png; path = Resources/chart.png; sourceTree = "<group>"; };
 		9AC8B1921C6D931C0064B5CC /* ic_launcher@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_launcher@2x.png"; path = "Resources/ic_launcher@2x.png"; sourceTree = "<group>"; };
@@ -95,6 +103,10 @@
 		0D6743451B898C5B00F6F22C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9A76AB801C74CD2B000E8B53 /* blackdot.png */,
+				9A76AB811C74CD2B000E8B53 /* greendot.png */,
+				9A76AB821C74CD2B000E8B53 /* reddot.png */,
+				9A76AB831C74CD2B000E8B53 /* whitedot.png */,
 				9AC8B1901C6D931C0064B5CC /* calendar.png */,
 				9AC8B1911C6D931C0064B5CC /* chart.png */,
 				9AC8B1921C6D931C0064B5CC /* ic_launcher@2x.png */,
@@ -277,12 +289,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AC8B19F1C6D931C0064B5CC /* title_bar.png in Resources */,
+				9A76AB851C74CD2B000E8B53 /* greendot.png in Resources */,
+				9A76AB871C74CD2B000E8B53 /* whitedot.png in Resources */,
 				9AC8B19B1C6D931C0064B5CC /* ic_launcher@3x.png in Resources */,
 				0DFFB2841B896E80001E1EA4 /* Main.storyboard in Resources */,
 				9AC8B1981C6D931C0064B5CC /* calendar.png in Resources */,
+				9A76AB861C74CD2B000E8B53 /* reddot.png in Resources */,
 				0DFFB2891B896E81001E1EA4 /* LaunchScreen.xib in Resources */,
 				9AC8B1991C6D931C0064B5CC /* chart.png in Resources */,
 				9AC8B19D1C6D931C0064B5CC /* setting.png in Resources */,
+				9A76AB841C74CD2B000E8B53 /* blackdot.png in Resources */,
 				9AC8B19A1C6D931C0064B5CC /* ic_launcher@2x.png in Resources */,
 				0DFFB2861B896E81001E1EA4 /* Images.xcassets in Resources */,
 				9AC8B19C1C6D931C0064B5CC /* main_bg.jpg in Resources */,

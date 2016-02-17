@@ -501,7 +501,7 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                    <rect key="frame" x="10" y="366.5" width="380" height="17.5"/>
+                                    <rect key="frame" x="10" y="366" width="380" height="17.5"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -665,6 +665,49 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9kX-nf-Qrv" id="7Vl-mK-xJq">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P5L-Ky-VYB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="P5L-Ky-VYB" secondAttribute="height" multiplier="1:1" id="20A-BX-dCf"/>
+                                                        <constraint firstAttribute="width" constant="20" id="Jv0-RZ-lBl"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="20A-BX-dCf"/>
+                                                            <exclude reference="Jv0-RZ-lBl"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="20A-BX-dCf"/>
+                                                            <include reference="Jv0-RZ-lBl"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="P5L-Ky-VYB" firstAttribute="centerY" secondItem="7Vl-mK-xJq" secondAttribute="centerY" id="djo-KZ-WSm"/>
+                                                <constraint firstItem="P5L-Ky-VYB" firstAttribute="leading" secondItem="7Vl-mK-xJq" secondAttribute="leadingMargin" constant="-5" id="kpk-j8-Gf3"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="P5L-Ky-VYB"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="djo-KZ-WSm"/>
+                                                    <exclude reference="kpk-j8-Gf3"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="P5L-Ky-VYB"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="djo-KZ-WSm"/>
+                                                    <include reference="kpk-j8-Gf3"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -688,6 +731,7 @@
                                 <exclude reference="7Rp-CB-DMp"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="mgQ-yM-aVU"/>
                                 <exclude reference="535-jQ-2B5"/>
                                 <exclude reference="6yv-Da-4PL"/>
                                 <exclude reference="Gzl-pI-a5V"/>
@@ -695,7 +739,6 @@
                                 <exclude reference="8Ko-HH-OlA"/>
                                 <exclude reference="C2x-T8-OTC"/>
                                 <exclude reference="iRx-Vv-qUC"/>
-                                <exclude reference="mgQ-yM-aVU"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -704,6 +747,7 @@
                                 <include reference="7Rp-CB-DMp"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="mgQ-yM-aVU"/>
                                 <include reference="535-jQ-2B5"/>
                                 <include reference="6yv-Da-4PL"/>
                                 <include reference="Gzl-pI-a5V"/>
@@ -711,7 +755,6 @@
                                 <include reference="8Ko-HH-OlA"/>
                                 <include reference="C2x-T8-OTC"/>
                                 <include reference="iRx-Vv-qUC"/>
-                                <include reference="mgQ-yM-aVU"/>
                             </mask>
                         </variation>
                     </view>
