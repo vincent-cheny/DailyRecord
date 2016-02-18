@@ -685,27 +685,69 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNq-FT-7xw" userLabel="Title">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bil-b6-RfT" userLabel="Type">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z03-v2-Gg2" userLabel="Content">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="z03-v2-Gg2" secondAttribute="bottom" constant="-5" id="0Ly-1N-xSQ"/>
+                                                <constraint firstItem="bil-b6-RfT" firstAttribute="leading" secondItem="qNq-FT-7xw" secondAttribute="trailing" constant="2" id="1LU-EH-8up"/>
                                                 <constraint firstItem="P5L-Ky-VYB" firstAttribute="centerY" secondItem="7Vl-mK-xJq" secondAttribute="centerY" id="djo-KZ-WSm"/>
+                                                <constraint firstItem="z03-v2-Gg2" firstAttribute="leading" secondItem="qNq-FT-7xw" secondAttribute="leading" id="hhG-q2-bFq"/>
+                                                <constraint firstItem="bil-b6-RfT" firstAttribute="bottom" secondItem="qNq-FT-7xw" secondAttribute="bottom" id="iOh-NP-rdE"/>
                                                 <constraint firstItem="P5L-Ky-VYB" firstAttribute="leading" secondItem="7Vl-mK-xJq" secondAttribute="leadingMargin" constant="-5" id="kpk-j8-Gf3"/>
+                                                <constraint firstItem="qNq-FT-7xw" firstAttribute="leading" secondItem="P5L-Ky-VYB" secondAttribute="trailing" constant="10" id="wOo-jJ-nM9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="qNq-FT-7xw" secondAttribute="bottom" constant="12" id="wos-vH-2aK"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="P5L-Ky-VYB"/>
+                                                    <exclude reference="qNq-FT-7xw"/>
+                                                    <exclude reference="bil-b6-RfT"/>
+                                                    <exclude reference="z03-v2-Gg2"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="djo-KZ-WSm"/>
                                                     <exclude reference="kpk-j8-Gf3"/>
+                                                    <exclude reference="wOo-jJ-nM9"/>
+                                                    <exclude reference="wos-vH-2aK"/>
+                                                    <exclude reference="0Ly-1N-xSQ"/>
+                                                    <exclude reference="hhG-q2-bFq"/>
+                                                    <exclude reference="1LU-EH-8up"/>
+                                                    <exclude reference="iOh-NP-rdE"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="P5L-Ky-VYB"/>
+                                                    <include reference="qNq-FT-7xw"/>
+                                                    <include reference="bil-b6-RfT"/>
+                                                    <include reference="z03-v2-Gg2"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="djo-KZ-WSm"/>
                                                     <include reference="kpk-j8-Gf3"/>
+                                                    <include reference="wOo-jJ-nM9"/>
+                                                    <include reference="wos-vH-2aK"/>
+                                                    <include reference="0Ly-1N-xSQ"/>
+                                                    <include reference="hhG-q2-bFq"/>
+                                                    <include reference="1LU-EH-8up"/>
+                                                    <include reference="iOh-NP-rdE"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

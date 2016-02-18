@@ -40,19 +40,32 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
         let templateCell = tableView.dequeueReusableCellWithIdentifier("templateCell", forIndexPath: indexPath)
         let template = recordTemplates[indexPath.row]
         let imageView = templateCell.viewWithTag(1) as! UIImageView
+        let title = templateCell.viewWithTag(2) as! UILabel
+        let type = templateCell.viewWithTag(3) as! UILabel
+        let content = templateCell.viewWithTag(4) as! UILabel
+        title.text = template.title
+        type.text = template.type
+        content.text = template.content
         switch template.type {
         case "黑业":
             imageView.image = UIImage(named: "blackdot")
+            title.textColor = UIColor.blackColor()
+            type.textColor = UIColor.blackColor()
         case "白业":
             imageView.image = UIImage(named: "whitedot")
+            title.textColor = UIColor.whiteColor()
+            type.textColor = UIColor.whiteColor()
         case "黑业对治":
             imageView.image = UIImage(named: "greendot")
+            title.textColor = UIColor.greenColor()
+            type.textColor = UIColor.greenColor()
         case "白业对治":
             imageView.image = UIImage(named: "reddot")
+            title.textColor = UIColor.redColor()
+            type.textColor = UIColor.redColor()
         default:
             break
         }
-        templateCell.textLabel?.text = template.title
         // 解决左对齐问题
         templateCell.layoutMargins = UIEdgeInsetsZero
         return templateCell
