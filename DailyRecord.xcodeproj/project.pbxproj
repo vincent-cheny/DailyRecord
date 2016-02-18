@@ -32,6 +32,7 @@
 		9AD94BBA1C6D6426006216BB /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BB91C6D6426006216BB /* ChartViewController.swift */; };
 		9AD94BBC1C6D644D006216BB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */; };
 		9AD94BBE1C6D6460006216BB /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */; };
+		9AE8F6221C7611C500471786 /* AddTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8F6211C7611C500471786 /* AddTemplateViewController.swift */; };
 		C3621BAFCFDE62D953A160E3 /* Pods_DailyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA1AF2C8749DECAC11958F5 /* Pods_DailyRecord.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		9AD94BB91C6D6426006216BB /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
+		9AE8F6211C7611C500471786 /* AddTemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTemplateViewController.swift; sourceTree = "<group>"; };
 		9AFADE7A1C6F221900A1A79B /* DailyRecord-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DailyRecord-Bridging-Header.h"; sourceTree = "<group>"; };
 		AFA611A8A05B817B925294BC /* Pods-DailyRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyRecord.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyRecord/Pods-DailyRecord.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +156,7 @@
 				0DFFB27B1B896E80001E1EA4 /* AppDelegate.swift */,
 				0DFFB2801B896E80001E1EA4 /* ViewController.swift */,
 				9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */,
+				9AE8F6211C7611C500471786 /* AddTemplateViewController.swift */,
 				9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */,
 				9AD94BB91C6D6426006216BB /* ChartViewController.swift */,
 				9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */,
@@ -374,6 +377,7 @@
 				0DFFB27F1B896E80001E1EA4 /* DailyRecord.xcdatamodeld in Sources */,
 				0DFFB27C1B896E80001E1EA4 /* AppDelegate.swift in Sources */,
 				9A5F605B1C6C9A3F0097F6F6 /* SettingViewController.swift in Sources */,
+				9AE8F6221C7611C500471786 /* AddTemplateViewController.swift in Sources */,
 				9AD94BBA1C6D6426006216BB /* ChartViewController.swift in Sources */,
 				9ACCA6251C6EC2CD00AF7D55 /* AboutViewController.swift in Sources */,
 				9AD94BBE1C6D6460006216BB /* TemplateViewController.swift in Sources */,

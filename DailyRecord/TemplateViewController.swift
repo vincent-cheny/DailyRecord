@@ -21,6 +21,9 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        self.navigationItem.backBarButtonItem = backItem
         templateTableView.delegate = self
         templateTableView.dataSource = self
         // 解决底部多余行问题
