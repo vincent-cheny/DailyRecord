@@ -81,6 +81,9 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // 模拟闪动效果
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let addTemplateViewController = storyboard?.instantiateViewControllerWithIdentifier("AddTemplateViewController") as! AddTemplateViewController
+        addTemplateViewController.templateId = recordTemplates[indexPath.row].id
+        navigationController?.pushViewController(addTemplateViewController, animated: true)
     }
     
     @IBAction func templateFilter(sender: AnyObject) {
