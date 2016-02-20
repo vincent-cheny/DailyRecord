@@ -16,7 +16,7 @@ class AddTemplateViewController: UIViewController, UITextViewDelegate {
     var curTemplate: RecordTemplate!
     
     @IBOutlet weak var templateTitle: UITextView!
-    @IBOutlet weak var templateType: UILabel!
+    @IBOutlet weak var templateType: UIButton!
     @IBOutlet weak var templateContent: UITextView!
     
     override func viewDidLoad() {
@@ -25,11 +25,15 @@ class AddTemplateViewController: UIViewController, UITextViewDelegate {
         if templateId != 0 {
             curTemplate = realm.objects(RecordTemplate).filter("id = %d", templateId).first
             templateTitle.text = curTemplate.title
-            templateType.text = curTemplate.type
+            templateType.setTitle(curTemplate.type, forState: .Normal)
             templateContent.text = curTemplate.content
+        } else {
+            templateType.setTitle("黑业", forState: .Normal)
         }
         templateTitle.delegate = self;
         templateContent.delegate = self;
+        textViewDidEndEditing(templateTitle);
+        textViewDidEndEditing(templateContent);
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -47,7 +51,6 @@ class AddTemplateViewController: UIViewController, UITextViewDelegate {
             textView.text = ""
             textView.textColor = UIColor.blackColor()
         }
-        textView.becomeFirstResponder()
     }
     
     func textViewDidEndEditing(textView: UITextView) {
@@ -59,7 +62,6 @@ class AddTemplateViewController: UIViewController, UITextViewDelegate {
             }
             textView.textColor = UIColor.lightGrayColor()
         }
-        textView.resignFirstResponder()
     }
     
     /// Force the text in a UITextView to always center itself.
@@ -75,12 +77,41 @@ class AddTemplateViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func swithType(sender: AnyObject) {
+        let alert = UIAlertController(title: "选择业习", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        addType(alert, type: "黑业")
+        addType(alert, type: "黑业对治")
+        addType(alert, type: "白业")
+        addType(alert, type: "白业对治")
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func addType(alert: UIAlertController, type: String) {
+        alert.addAction(UIAlertAction(title: type, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+            self.templateType.setTitle(type, forState: .Normal)
+        }))
+    }
+    
     @IBAction func confirm(sender: AnyObject) {
-        if curTemplate == nil {
-            
-        } else {
-            
+        if templateTitle.textColor == UIColor.lightGrayColor() || templateTitle.text == "" {
+            let alert = UIAlertController(title: "名称不能为空", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
         }
+        if curTemplate == nil {
+            try! realm.write {
+                let template = RecordTemplate(value: [RecordTemplate().incrementaId(), templateTitle.text, templateType.titleForState(.Normal)!, templateContent.text]);
+                realm.add(template)
+            }
+        } else {
+            try! realm.write {
+                curTemplate.title = templateTitle.text
+                curTemplate.type = templateType.titleForState(.Normal)!
+                curTemplate.content = templateContent.text
+            }
+        }
+        navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func cancel(sender: AnyObject) {
