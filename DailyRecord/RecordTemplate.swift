@@ -25,6 +25,19 @@ class RecordTemplate: Object {
         return "id"
     }
     
+    //Incrementa ID
+    func incrementaId() -> Int{
+        let realm = try! Realm()
+        let retNext: NSArray = Array(realm.objects(RecordTemplate).sorted("id"))
+        let last = retNext.lastObject
+        if retNext.count > 0 {
+            let valor = last?.valueForKey("id") as? Int
+            return valor! + 1
+        } else {
+            return 1
+        }
+    }
+    
     func resetTemplate() {
         let realm = try! Realm()
         try! realm.write {

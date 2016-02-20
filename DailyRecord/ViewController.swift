@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true;
     }
 }

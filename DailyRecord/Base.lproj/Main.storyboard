@@ -908,13 +908,13 @@
                                     <action selector="cancel:" destination="ixp-Ms-rCi" eventType="touchUpInside" id="VfK-vh-Vgc"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="805-b0-Hmb" userLabel="title">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="TemplateTitle" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="805-b0-Hmb" userLabel="title">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="9F5-QP-lul"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -934,7 +934,7 @@
                                     <constraint firstAttribute="height" constant="60" id="zgd-ut-Ki5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -947,10 +947,10 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wpL-Fx-HPd" userLabel="content">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="TemplateContent" translatesAutoresizingMaskIntoConstraints="NO" id="wpL-Fx-HPd" userLabel="content">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -991,22 +991,22 @@
                                 <exclude reference="4ll-a6-Uvg"/>
                                 <exclude reference="9ae-wL-oLt"/>
                                 <exclude reference="DAg-De-j54"/>
-                                <exclude reference="7gf-ds-TXo"/>
-                                <exclude reference="Bye-gg-3bx"/>
-                                <exclude reference="bG8-Qv-5ll"/>
-                                <exclude reference="QtQ-Zz-eY7"/>
-                                <exclude reference="TRG-X3-fp7"/>
-                                <exclude reference="U3c-Ee-t5y"/>
-                                <exclude reference="0GO-Nx-rtb"/>
-                                <exclude reference="NHG-S8-IjK"/>
-                                <exclude reference="NpA-DG-8jz"/>
+                                <exclude reference="QlZ-Qu-4RA"/>
+                                <exclude reference="TJE-BT-6GR"/>
+                                <exclude reference="z3a-ck-PsA"/>
                                 <exclude reference="gyr-Zv-L4y"/>
                                 <exclude reference="wZr-LF-Zbf"/>
                                 <exclude reference="WPE-Xb-uqN"/>
                                 <exclude reference="fEA-nW-1cp"/>
-                                <exclude reference="QlZ-Qu-4RA"/>
-                                <exclude reference="TJE-BT-6GR"/>
-                                <exclude reference="z3a-ck-PsA"/>
+                                <exclude reference="QtQ-Zz-eY7"/>
+                                <exclude reference="TRG-X3-fp7"/>
+                                <exclude reference="U3c-Ee-t5y"/>
+                                <exclude reference="7gf-ds-TXo"/>
+                                <exclude reference="Bye-gg-3bx"/>
+                                <exclude reference="bG8-Qv-5ll"/>
+                                <exclude reference="0GO-Nx-rtb"/>
+                                <exclude reference="NHG-S8-IjK"/>
+                                <exclude reference="NpA-DG-8jz"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1023,25 +1023,30 @@
                                 <include reference="4ll-a6-Uvg"/>
                                 <include reference="9ae-wL-oLt"/>
                                 <include reference="DAg-De-j54"/>
-                                <include reference="7gf-ds-TXo"/>
-                                <include reference="Bye-gg-3bx"/>
-                                <include reference="bG8-Qv-5ll"/>
-                                <include reference="QtQ-Zz-eY7"/>
-                                <include reference="TRG-X3-fp7"/>
-                                <include reference="U3c-Ee-t5y"/>
-                                <include reference="0GO-Nx-rtb"/>
-                                <include reference="NHG-S8-IjK"/>
-                                <include reference="NpA-DG-8jz"/>
+                                <include reference="QlZ-Qu-4RA"/>
+                                <include reference="TJE-BT-6GR"/>
+                                <include reference="z3a-ck-PsA"/>
                                 <include reference="gyr-Zv-L4y"/>
                                 <include reference="wZr-LF-Zbf"/>
                                 <include reference="WPE-Xb-uqN"/>
                                 <include reference="fEA-nW-1cp"/>
-                                <include reference="QlZ-Qu-4RA"/>
-                                <include reference="TJE-BT-6GR"/>
-                                <include reference="z3a-ck-PsA"/>
+                                <include reference="QtQ-Zz-eY7"/>
+                                <include reference="TRG-X3-fp7"/>
+                                <include reference="U3c-Ee-t5y"/>
+                                <include reference="7gf-ds-TXo"/>
+                                <include reference="Bye-gg-3bx"/>
+                                <include reference="bG8-Qv-5ll"/>
+                                <include reference="0GO-Nx-rtb"/>
+                                <include reference="NHG-S8-IjK"/>
+                                <include reference="NpA-DG-8jz"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="templateContent" destination="wpL-Fx-HPd" id="LFc-Oh-nEW"/>
+                        <outlet property="templateTitle" destination="805-b0-Hmb" id="Kk2-XW-wL9"/>
+                        <outlet property="templateType" destination="FUB-o2-dzb" id="O5v-bM-dfD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bn-cf-fZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -36,6 +36,7 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = false;
     }
     
