@@ -51,6 +51,7 @@ class AddTemplateViewController: UIViewController, UITextViewDelegate {
             textView.text = ""
             textView.textColor = UIColor.blackColor()
         }
+        textView.becomeFirstResponder()
     }
     
     func textViewDidEndEditing(textView: UITextView) {
@@ -62,6 +63,7 @@ class AddTemplateViewController: UIViewController, UITextViewDelegate {
             }
             textView.textColor = UIColor.lightGrayColor()
         }
+        textView.resignFirstResponder()
     }
     
     /// Force the text in a UITextView to always center itself.
@@ -75,6 +77,11 @@ class AddTemplateViewController: UIViewController, UITextViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
     }
     
     @IBAction func swithType(sender: AnyObject) {
