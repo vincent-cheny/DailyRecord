@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var todayTime: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,6 +29,9 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true;
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy.M.dd"
+        todayTime.text = dateFormatter.stringFromDate(NSDate())
     }
 }
 
