@@ -15,7 +15,7 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var templateTableView: UITableView!
     
     let realm = try! Realm()
-    var recordTemplates = try! Realm().objects(RecordTemplate)
+    var recordTemplates = try! Realm().objects(RecordTemplate).sorted("id")
     let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
     
     override func viewDidLoad() {
@@ -73,7 +73,28 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
         }
         // 解决左对齐问题
         templateCell.layoutMargins = UIEdgeInsetsZero
+        templateCell.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: "longPressCell:"))
         return templateCell
+    }
+    
+    func longPressCell(recognizer: UIGestureRecognizer) {
+        if recognizer.state == .Began {
+            let indexPath = templateTableView.indexPathForRowAtPoint(recognizer.locationInView(templateTableView))
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "编辑", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+                let addTemplateViewController = self.storyboard?.instantiateViewControllerWithIdentifier("AddTemplateViewController") as! AddTemplateViewController
+                addTemplateViewController.templateId = self.recordTemplates[indexPath!.row].id
+                self.navigationController?.pushViewController(addTemplateViewController, animated: true)
+            }))
+            alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Default, handler: nil))
+            alert.addAction(UIAlertAction(title: "删除", style: UIAlertActionStyle.Destructive, handler: { (UIAlertAction) -> Void in
+                try! self.realm.write {
+                    self.realm.delete(self.recordTemplates[indexPath!.row])
+                }
+                self.templateTableView.reloadData()
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
