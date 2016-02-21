@@ -14,6 +14,10 @@
 		0DFFB2861B896E81001E1EA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DFFB2851B896E81001E1EA4 /* Images.xcassets */; };
 		0DFFB2891B896E81001E1EA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DFFB2871B896E81001E1EA4 /* LaunchScreen.xib */; };
 		0DFFB2951B896E81001E1EA4 /* DailyRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFB2941B896E81001E1EA4 /* DailyRecordTests.swift */; };
+		9A46CF6B1C7954DC00964A71 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A46CF671C7954DC00964A71 /* forward.png */; };
+		9A46CF6C1C7954DC00964A71 /* thisday.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A46CF681C7954DC00964A71 /* thisday.png */; };
+		9A46CF6D1C7954DC00964A71 /* thismonth.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A46CF691C7954DC00964A71 /* thismonth.png */; };
+		9A46CF6E1C7954DC00964A71 /* thisweek.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A46CF6A1C7954DC00964A71 /* thisweek.png */; };
 		9A5F605B1C6C9A3F0097F6F6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */; };
 		9A6E08EA1C7011EC00C0358A /* RecordTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E08E91C7011EC00C0358A /* RecordTemplate.swift */; };
 		9A76AB841C74CD2B000E8B53 /* blackdot.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A76AB801C74CD2B000E8B53 /* blackdot.png */; };
@@ -60,6 +64,10 @@
 		0DFFB2941B896E81001E1EA4 /* DailyRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordTests.swift; sourceTree = "<group>"; };
 		4EA1AF2C8749DECAC11958F5 /* Pods_DailyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E38E826916FBF9FEC6FC938 /* Pods-DailyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyRecord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyRecord/Pods-DailyRecord.debug.xcconfig"; sourceTree = "<group>"; };
+		9A46CF671C7954DC00964A71 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forward.png; path = Resources/forward.png; sourceTree = "<group>"; };
+		9A46CF681C7954DC00964A71 /* thisday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thisday.png; path = Resources/thisday.png; sourceTree = "<group>"; };
+		9A46CF691C7954DC00964A71 /* thismonth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thismonth.png; path = Resources/thismonth.png; sourceTree = "<group>"; };
+		9A46CF6A1C7954DC00964A71 /* thisweek.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thisweek.png; path = Resources/thisweek.png; sourceTree = "<group>"; };
 		9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		9A6E08E91C7011EC00C0358A /* RecordTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTemplate.swift; sourceTree = "<group>"; };
 		9A76AB801C74CD2B000E8B53 /* blackdot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackdot.png; path = Resources/blackdot.png; sourceTree = "<group>"; };
@@ -105,6 +113,10 @@
 		0D6743451B898C5B00F6F22C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9A46CF671C7954DC00964A71 /* forward.png */,
+				9A46CF681C7954DC00964A71 /* thisday.png */,
+				9A46CF691C7954DC00964A71 /* thismonth.png */,
+				9A46CF6A1C7954DC00964A71 /* thisweek.png */,
 				9A76AB801C74CD2B000E8B53 /* blackdot.png */,
 				9A76AB811C74CD2B000E8B53 /* greendot.png */,
 				9A76AB821C74CD2B000E8B53 /* reddot.png */,
@@ -294,6 +306,9 @@
 				9AC8B19F1C6D931C0064B5CC /* title_bar.png in Resources */,
 				9A76AB851C74CD2B000E8B53 /* greendot.png in Resources */,
 				9A76AB871C74CD2B000E8B53 /* whitedot.png in Resources */,
+				9A46CF6C1C7954DC00964A71 /* thisday.png in Resources */,
+				9A46CF6D1C7954DC00964A71 /* thismonth.png in Resources */,
+				9A46CF6B1C7954DC00964A71 /* forward.png in Resources */,
 				9AC8B19B1C6D931C0064B5CC /* ic_launcher@3x.png in Resources */,
 				0DFFB2841B896E80001E1EA4 /* Main.storyboard in Resources */,
 				9AC8B1981C6D931C0064B5CC /* calendar.png in Resources */,
@@ -305,6 +320,7 @@
 				9AC8B19A1C6D931C0064B5CC /* ic_launcher@2x.png in Resources */,
 				0DFFB2861B896E81001E1EA4 /* Images.xcassets in Resources */,
 				9AC8B19C1C6D931C0064B5CC /* main_bg.jpg in Resources */,
+				9A46CF6E1C7954DC00964A71 /* thisweek.png in Resources */,
 				9AC8B19E1C6D931C0064B5CC /* template.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
