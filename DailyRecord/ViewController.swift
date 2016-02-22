@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var todayTime: UILabel!
+    @IBOutlet weak var dayTime: UILabel!
+    @IBOutlet weak var weekTime: UILabel!
+    @IBOutlet weak var monthTime: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +33,30 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true;
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy.M.dd"
-        todayTime.text = dateFormatter.stringFromDate(NSDate())
+        dateFormatter.dateFormat = "yyyy.M.d"
+        var today = NSDate()
+        let interval = NSTimeZone.systemTimeZone().secondsFromGMTForDate(today);
+        today = today.dateByAddingTimeInterval(NSTimeInterval(interval))
+        
+        let todayDate = dateFormatter.stringFromDate(today)
+        todayTime.text = todayDate
+        dayTime.text = todayDate
+        let calendar = NSCalendar.currentCalendar()
+        calendar.firstWeekday = 2
+        
+        var startOfWeek : NSDate?;
+        calendar.rangeOfUnit(.WeekOfYear, startDate: &startOfWeek, interval: nil, forDate: today)
+        let weekComponet = NSDateComponents()
+        weekComponet.day = 6
+        let endOfWeek = calendar.dateByAddingComponents(weekComponet, toDate: startOfWeek!, options: NSCalendarOptions())
+        weekTime.text = dateFormatter.stringFromDate(startOfWeek!) + "-" + dateFormatter.stringFromDate(endOfWeek!)
+        
+        var startOfMonth : NSDate?
+        calendar.rangeOfUnit(.Month, startDate: &startOfMonth, interval: nil, forDate: today)
+        let monthComponent = NSDateComponents()
+        monthComponent.month = 1;
+        let endOfMonth = calendar.dateByAddingComponents(monthComponent, toDate: startOfMonth!, options: NSCalendarOptions())?.dateByAddingTimeInterval(-1)
+        monthTime.text = dateFormatter.stringFromDate(startOfMonth!) + "-" + dateFormatter.stringFromDate(endOfMonth!)
     }
 }
 
