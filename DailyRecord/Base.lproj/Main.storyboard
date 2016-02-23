@@ -314,7 +314,7 @@
                                                     <constraint firstItem="DB5-hh-3IX" firstAttribute="leading" secondItem="tNT-qp-hGp" secondAttribute="leading" constant="2" id="fcD-jy-p06"/>
                                                     <constraint firstItem="bRA-zy-4S4" firstAttribute="leading" secondItem="7bX-Gc-fum" secondAttribute="trailing" constant="2" id="fzO-33-Qxt"/>
                                                     <constraint firstItem="MCq-Yh-loX" firstAttribute="centerY" secondItem="tNT-qp-hGp" secondAttribute="centerY" id="jc7-ch-i8s"/>
-                                                    <constraint firstItem="bRA-zy-4S4" firstAttribute="centerX" secondItem="tNT-qp-hGp" secondAttribute="centerX" id="kQP-Ew-awx"/>
+                                                    <constraint firstItem="bRA-zy-4S4" firstAttribute="centerX" secondItem="tNT-qp-hGp" secondAttribute="centerX" constant="20" id="kQP-Ew-awx"/>
                                                     <constraint firstItem="bRA-zy-4S4" firstAttribute="centerY" secondItem="tNT-qp-hGp" secondAttribute="centerY" id="pbl-Op-diC"/>
                                                 </constraints>
                                                 <variation key="default">
@@ -423,7 +423,7 @@
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="E4F-j5-SN6" firstAttribute="centerY" secondItem="bH3-Z1-t3e" secondAttribute="centerY" id="Cvv-Ht-8UB"/>
-                                                    <constraint firstItem="KvL-AJ-m7w" firstAttribute="centerX" secondItem="bH3-Z1-t3e" secondAttribute="centerX" id="GId-nH-Qra"/>
+                                                    <constraint firstItem="KvL-AJ-m7w" firstAttribute="centerX" secondItem="bH3-Z1-t3e" secondAttribute="centerX" constant="20" id="GId-nH-Qra"/>
                                                     <constraint firstAttribute="trailing" secondItem="0AK-nC-oqF" secondAttribute="trailing" constant="2" id="ISw-DD-RYT"/>
                                                     <constraint firstItem="0AK-nC-oqF" firstAttribute="leading" secondItem="wNj-9u-qik" secondAttribute="trailing" constant="2" id="QND-64-QRu"/>
                                                     <constraint firstItem="wNj-9u-qik" firstAttribute="centerY" secondItem="bH3-Z1-t3e" secondAttribute="centerY" id="WJ3-au-tov"/>
@@ -609,21 +609,33 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="黑业"/>
+                                        <connections>
+                                            <action selector="navigateBlack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oJG-Tz-Wto"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5L-oC-YAO" userLabel="黑业对治">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="黑业对治"/>
+                                        <connections>
+                                            <action selector="navigateBlackCheck:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bsa-dU-OJL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJH-F9-sba" userLabel="白业">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="白业"/>
+                                        <connections>
+                                            <action selector="navigateWhite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k8b-02-dFu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OqM-cb-kMz" userLabel="白业对治">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="白业对治"/>
+                                        <connections>
+                                            <action selector="navigateWhiteCheck:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DFq-zr-xff"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1498,9 +1510,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                    <rect key="frame" x="10" y="312" width="380" height="17"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://blog.fo.ifeng.com/article/31735316.html" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3M-pS-KzM" userLabel="Link3" customClass="TTTAttributedLabel">
@@ -1510,7 +1521,7 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                    <rect key="frame" x="10" y="339" width="380" height="18"/>
+                                    <rect key="frame" x="10" y="339" width="380" height="17.5"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://blog.fo.ifeng.com/article/31746253.html" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ar-Uw-dDj" userLabel="Link4" customClass="TTTAttributedLabel">
@@ -1520,7 +1531,7 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                    <rect key="frame" x="10" y="366" width="380" height="18"/>
+                                    <rect key="frame" x="10" y="366" width="380" height="17.5"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -2183,6 +2194,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIb-SA-dc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2587.5" y="661.5"/>
+        </scene>
+        <!--业习-->
+        <scene sceneID="9lc-D9-Xdu">
+            <objects>
+                <viewController storyboardIdentifier="IndustryViewController" title="业习" id="Sqm-2i-oAK" customClass="IndustryViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wwE-q8-uAH"/>
+                        <viewControllerLayoutGuide type="bottom" id="XiW-hs-tJt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NfV-FY-XIo">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2xl-G2-Nlt">
+                                <rect key="frame" x="0.0" y="-960" width="640" height="960"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2xl-G2-Nlt" firstAttribute="centerX" secondItem="NfV-FY-XIo" secondAttribute="centerX" id="4pq-Lw-aRU"/>
+                            <constraint firstItem="2xl-G2-Nlt" firstAttribute="width" secondItem="NfV-FY-XIo" secondAttribute="width" id="5l1-3Z-xbU"/>
+                            <constraint firstItem="2xl-G2-Nlt" firstAttribute="centerY" secondItem="NfV-FY-XIo" secondAttribute="centerY" id="dc6-YT-HhJ"/>
+                            <constraint firstItem="2xl-G2-Nlt" firstAttribute="height" secondItem="NfV-FY-XIo" secondAttribute="height" id="msE-Bl-g9h"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="2xl-G2-Nlt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4pq-Lw-aRU"/>
+                                <exclude reference="5l1-3Z-xbU"/>
+                                <exclude reference="dc6-YT-HhJ"/>
+                                <exclude reference="msE-Bl-g9h"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="2xl-G2-Nlt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4pq-Lw-aRU"/>
+                                <include reference="5l1-3Z-xbU"/>
+                                <include reference="dc6-YT-HhJ"/>
+                                <include reference="msE-Bl-g9h"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qQx-7p-Mj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="501" y="-440.25"/>
+        </scene>
+        <!--对治-->
+        <scene sceneID="lqD-2s-XEf">
+            <objects>
+                <viewController storyboardIdentifier="CheckViewController" title="对治" id="x1z-sD-H0h" customClass="CheckViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0iL-EZ-HY4"/>
+                        <viewControllerLayoutGuide type="bottom" id="x5V-T1-Zfn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PR8-df-QLD">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2rU-Zb-geh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1419" y="-441"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Au-eK-HwO">

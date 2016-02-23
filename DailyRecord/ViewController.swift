@@ -58,5 +58,25 @@ class ViewController: UIViewController {
         let endOfMonth = calendar.dateByAddingComponents(monthComponent, toDate: startOfMonth!, options: NSCalendarOptions())?.dateByAddingTimeInterval(-1)
         monthTime.text = dateFormatter.stringFromDate(startOfMonth!) + "-" + dateFormatter.stringFromDate(endOfMonth!)
     }
+    
+    @IBAction func navigateBlack(sender: AnyObject) {
+        let industryViewController = storyboard?.instantiateViewControllerWithIdentifier("IndustryViewController") as! IndustryViewController
+        navigationController?.pushViewController(industryViewController, animated: true)
+    }
+    
+    @IBAction func navigateWhite(sender: AnyObject) {
+        let industryViewController = storyboard?.instantiateViewControllerWithIdentifier("IndustryViewController") as! IndustryViewController
+        navigationController?.pushViewController(industryViewController, animated: true)
+    }
+    
+    @IBAction func navigateBlackCheck(sender: AnyObject) {
+        let checkViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
+        navigationController?.pushViewController(checkViewController, animated: true)
+    }
+    
+    @IBAction func navigateWhiteCheck(sender: AnyObject) {
+        let checkViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
+        navigationController?.pushViewController(checkViewController, animated: true)
+    }
 }
 
