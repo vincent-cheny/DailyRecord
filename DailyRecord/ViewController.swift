@@ -61,11 +61,13 @@ class ViewController: UIViewController {
     
     @IBAction func navigateBlack(sender: AnyObject) {
         let industryViewController = storyboard?.instantiateViewControllerWithIdentifier("IndustryViewController") as! IndustryViewController
+        industryViewController.industry = "黑业"
         navigationController?.pushViewController(industryViewController, animated: true)
     }
     
     @IBAction func navigateWhite(sender: AnyObject) {
         let industryViewController = storyboard?.instantiateViewControllerWithIdentifier("IndustryViewController") as! IndustryViewController
+        industryViewController.industry = "白业"
         navigationController?.pushViewController(industryViewController, animated: true)
     }
     

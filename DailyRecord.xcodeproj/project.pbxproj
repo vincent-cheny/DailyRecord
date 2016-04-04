@@ -14,6 +14,8 @@
 		0DFFB2861B896E81001E1EA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DFFB2851B896E81001E1EA4 /* Images.xcassets */; };
 		0DFFB2891B896E81001E1EA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DFFB2871B896E81001E1EA4 /* LaunchScreen.xib */; };
 		0DFFB2951B896E81001E1EA4 /* DailyRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFB2941B896E81001E1EA4 /* DailyRecordTests.swift */; };
+		9A1C3F441CB2B26600F134F0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C3F431CB2B26600F134F0 /* Utils.swift */; };
+		9A1C3F461CB2BA8800F134F0 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C3F451CB2BA8800F134F0 /* DatePickerDialog.swift */; };
 		9A46CF6B1C7954DC00964A71 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A46CF671C7954DC00964A71 /* forward.png */; };
 		9A46CF6C1C7954DC00964A71 /* thisday.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A46CF681C7954DC00964A71 /* thisday.png */; };
 		9A46CF6D1C7954DC00964A71 /* thismonth.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A46CF691C7954DC00964A71 /* thismonth.png */; };
@@ -66,6 +68,8 @@
 		0DFFB2941B896E81001E1EA4 /* DailyRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordTests.swift; sourceTree = "<group>"; };
 		4EA1AF2C8749DECAC11958F5 /* Pods_DailyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E38E826916FBF9FEC6FC938 /* Pods-DailyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyRecord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyRecord/Pods-DailyRecord.debug.xcconfig"; sourceTree = "<group>"; };
+		9A1C3F431CB2B26600F134F0 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		9A1C3F451CB2BA8800F134F0 /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
 		9A46CF671C7954DC00964A71 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forward.png; path = Resources/forward.png; sourceTree = "<group>"; };
 		9A46CF681C7954DC00964A71 /* thisday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thisday.png; path = Resources/thisday.png; sourceTree = "<group>"; };
 		9A46CF691C7954DC00964A71 /* thismonth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thismonth.png; path = Resources/thismonth.png; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 		0DFFB2781B896E80001E1EA4 /* DailyRecord */ = {
 			isa = PBXGroup;
 			children = (
+				9A1C3F451CB2BA8800F134F0 /* DatePickerDialog.swift */,
 				9A6E08E91C7011EC00C0358A /* RecordTemplate.swift */,
 				0DFFB27B1B896E80001E1EA4 /* AppDelegate.swift */,
 				0DFFB2801B896E80001E1EA4 /* ViewController.swift */,
@@ -179,6 +184,7 @@
 				9ACCA6241C6EC2CD00AF7D55 /* AboutViewController.swift */,
 				9A7908181C7BED14008CE40F /* IndustryViewController.swift */,
 				9A79081A1C7BED2A008CE40F /* CheckViewController.swift */,
+				9A1C3F431CB2B26600F134F0 /* Utils.swift */,
 				0DFFB2821B896E80001E1EA4 /* Main.storyboard */,
 				0DFFB2851B896E81001E1EA4 /* Images.xcassets */,
 				0DFFB2871B896E81001E1EA4 /* LaunchScreen.xib */,
@@ -398,6 +404,8 @@
 				0DFFB2811B896E80001E1EA4 /* ViewController.swift in Sources */,
 				0DFFB27F1B896E80001E1EA4 /* DailyRecord.xcdatamodeld in Sources */,
 				0DFFB27C1B896E80001E1EA4 /* AppDelegate.swift in Sources */,
+				9A1C3F461CB2BA8800F134F0 /* DatePickerDialog.swift in Sources */,
+				9A1C3F441CB2B26600F134F0 /* Utils.swift in Sources */,
 				9A5F605B1C6C9A3F0097F6F6 /* SettingViewController.swift in Sources */,
 				9AE8F6221C7611C500471786 /* AddTemplateViewController.swift in Sources */,
 				9A7908191C7BED14008CE40F /* IndustryViewController.swift in Sources */,

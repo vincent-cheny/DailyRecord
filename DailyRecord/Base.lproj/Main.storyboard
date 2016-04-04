@@ -2216,6 +2216,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="qz1-iX-mnV"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="qz1-iX-mnV"/>
@@ -2226,6 +2227,9 @@
                                         <include reference="qz1-iX-mnV"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="swithType:" destination="Sqm-2i-oAK" eventType="touchUpInside" id="yZV-Oc-6Nz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VR-l0-IG8" userLabel="time">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -2243,11 +2247,14 @@
                                         <include reference="738-sQ-FqB"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="changeTime:" destination="Sqm-2i-oAK" eventType="touchUpInside" id="kfd-yO-7Os"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K91-A8-qHz" userLabel="content">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4Q-eW-wnq" userLabel="确认">
@@ -2375,6 +2382,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="K91-A8-qHz" id="M6h-Cb-2O2"/>
+                        <outlet property="timeButton" destination="5VR-l0-IG8" id="Nuy-nx-mLU"/>
+                        <outlet property="titleButton" destination="wop-n0-WqN" id="xGM-Gb-mtg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQx-7p-Mj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

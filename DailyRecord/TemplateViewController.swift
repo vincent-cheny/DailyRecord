@@ -73,7 +73,7 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
         }
         // 解决左对齐问题
         templateCell.layoutMargins = UIEdgeInsetsZero
-        templateCell.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: "longPressCell:"))
+        templateCell.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(TemplateViewController.longPressCell(_:))))
         return templateCell
     }
     
