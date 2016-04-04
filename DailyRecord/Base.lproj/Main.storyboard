@@ -2382,6 +2382,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="业习" id="pGl-eY-mUb">
+                        <barButtonItem key="rightBarButtonItem" title="模板" id="vHE-kP-5Mx" userLabel="模板"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentTextView" destination="K91-A8-qHz" id="M6h-Cb-2O2"/>
                         <outlet property="timeButton" destination="5VR-l0-IG8" id="Nuy-nx-mLU"/>

@@ -35,6 +35,11 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
         self.navigationController?.navigationBarHidden = false;
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+    
     func textViewDidBeginEditing(textView: UITextView) {
         if textView.textColor == UIColor.lightGrayColor() {
             textView.text = ""
