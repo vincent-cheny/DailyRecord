@@ -37,10 +37,29 @@ class ChartViewController: UIViewController {
     }
     
     @IBAction func switchChartType(sender: AnyObject) {
-        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        addChartType(alert, type: "饼状图")
+        addChartType(alert, type: "折线图")
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     @IBAction func switchDateType(sender: AnyObject) {
-        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        addDateType(alert, type: "本周")
+        addDateType(alert, type: "本月")
+        addDateType(alert, type: "本年")
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func addChartType(alert: UIAlertController, type: String) {
+        alert.addAction(UIAlertAction(title: type, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+            self.chartType.title = type
+        }))
+    }
+    
+    func addDateType(alert: UIAlertController, type: String) {
+        alert.addAction(UIAlertAction(title: type, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+            self.dateType.title = type
+        }))
     }
 }

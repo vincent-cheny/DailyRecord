@@ -2295,14 +2295,14 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="图表" id="x85-UJ-ths">
                         <rightBarButtonItems>
-                            <barButtonItem title="饼状图" id="MyZ-Jw-rQH">
-                                <connections>
-                                    <action selector="switchChartType:" destination="82v-Ft-dNW" id="iHB-gt-AB7"/>
-                                </connections>
-                            </barButtonItem>
                             <barButtonItem title="本周" id="hUy-wX-0rh">
                                 <connections>
                                     <action selector="switchDateType:" destination="82v-Ft-dNW" id="Hdx-s1-xsC"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="饼状图" id="MyZ-Jw-rQH">
+                                <connections>
+                                    <action selector="switchChartType:" destination="82v-Ft-dNW" id="iHB-gt-AB7"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
