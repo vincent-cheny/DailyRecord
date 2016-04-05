@@ -10,6 +10,9 @@ import UIKit
 
 class ChartViewController: UIViewController {
     
+    @IBOutlet weak var dateType: UIBarButtonItem!
+    @IBOutlet weak var chartType: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,4 +28,19 @@ class ChartViewController: UIViewController {
         self.navigationController?.navigationBarHidden = false;
     }
     
+    @IBAction func plusDate(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func minusDate(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func switchChartType(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func switchDateType(sender: AnyObject) {
+        
+    }
 }

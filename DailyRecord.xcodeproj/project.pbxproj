@@ -16,6 +16,8 @@
 		0DFFB2951B896E81001E1EA4 /* DailyRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFB2941B896E81001E1EA4 /* DailyRecordTests.swift */; };
 		9A1C3F441CB2B26600F134F0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C3F431CB2B26600F134F0 /* Utils.swift */; };
 		9A1C3F461CB2BA8800F134F0 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C3F451CB2BA8800F134F0 /* DatePickerDialog.swift */; };
+		9A35D4181CB33FE4008B26F3 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A35D4161CB33FE4008B26F3 /* minus.png */; };
+		9A35D4191CB33FE4008B26F3 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A35D4171CB33FE4008B26F3 /* plus.png */; };
 		9A46CF6B1C7954DC00964A71 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A46CF671C7954DC00964A71 /* forward.png */; };
 		9A46CF6C1C7954DC00964A71 /* thisday.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A46CF681C7954DC00964A71 /* thisday.png */; };
 		9A46CF6D1C7954DC00964A71 /* thismonth.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A46CF691C7954DC00964A71 /* thismonth.png */; };
@@ -70,6 +72,8 @@
 		6E38E826916FBF9FEC6FC938 /* Pods-DailyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyRecord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyRecord/Pods-DailyRecord.debug.xcconfig"; sourceTree = "<group>"; };
 		9A1C3F431CB2B26600F134F0 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9A1C3F451CB2BA8800F134F0 /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
+		9A35D4161CB33FE4008B26F3 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minus.png; path = Resources/minus.png; sourceTree = "<group>"; };
+		9A35D4171CB33FE4008B26F3 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plus.png; path = Resources/plus.png; sourceTree = "<group>"; };
 		9A46CF671C7954DC00964A71 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forward.png; path = Resources/forward.png; sourceTree = "<group>"; };
 		9A46CF681C7954DC00964A71 /* thisday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thisday.png; path = Resources/thisday.png; sourceTree = "<group>"; };
 		9A46CF691C7954DC00964A71 /* thismonth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thismonth.png; path = Resources/thismonth.png; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 		0D6743451B898C5B00F6F22C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9A35D4161CB33FE4008B26F3 /* minus.png */,
+				9A35D4171CB33FE4008B26F3 /* plus.png */,
 				9A46CF671C7954DC00964A71 /* forward.png */,
 				9A46CF681C7954DC00964A71 /* thisday.png */,
 				9A46CF691C7954DC00964A71 /* thismonth.png */,
@@ -320,9 +326,11 @@
 				9A76AB871C74CD2B000E8B53 /* whitedot.png in Resources */,
 				9A46CF6C1C7954DC00964A71 /* thisday.png in Resources */,
 				9A46CF6D1C7954DC00964A71 /* thismonth.png in Resources */,
+				9A35D4191CB33FE4008B26F3 /* plus.png in Resources */,
 				9A46CF6B1C7954DC00964A71 /* forward.png in Resources */,
 				9AC8B19B1C6D931C0064B5CC /* ic_launcher@3x.png in Resources */,
 				0DFFB2841B896E80001E1EA4 /* Main.storyboard in Resources */,
+				9A35D4181CB33FE4008B26F3 /* minus.png in Resources */,
 				9AC8B1981C6D931C0064B5CC /* calendar.png in Resources */,
 				9A76AB861C74CD2B000E8B53 /* reddot.png in Resources */,
 				0DFFB2891B896E81001E1EA4 /* LaunchScreen.xib in Resources */,
