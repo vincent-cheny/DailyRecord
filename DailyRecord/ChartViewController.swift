@@ -12,10 +12,14 @@ class ChartViewController: UIViewController {
     
     @IBOutlet weak var dateType: UIBarButtonItem!
     @IBOutlet weak var chartType: UIBarButtonItem!
-
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    let dateFormatter = NSDateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        dateFormatter.dateFormat = "yyyy.M.d"
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,14 +30,15 @@ class ChartViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = false;
+        timeLabel.text = Utils.getWeek(dateFormatter, date: NSDate())
     }
     
     @IBAction func plusDate(sender: AnyObject) {
-        
+        processTime(1)
     }
     
     @IBAction func minusDate(sender: AnyObject) {
-        
+        processTime(-1)
     }
     
     @IBAction func switchChartType(sender: AnyObject) {
@@ -60,6 +65,33 @@ class ChartViewController: UIViewController {
     func addDateType(alert: UIAlertController, type: String) {
         alert.addAction(UIAlertAction(title: type, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
             self.dateType.title = type
+            self.updateTime(type)
         }))
+    }
+    
+    func updateTime(type: String) {
+        switch type {
+        case "本周":
+            timeLabel.text = Utils.getWeek(dateFormatter, date: NSDate())
+        case "本月":
+            timeLabel.text = Utils.getYearMonth(NSDate())
+        case "本年":
+            timeLabel.text = Utils.getYear(NSDate())
+        default:
+            break
+        }
+    }
+    
+    func processTime(diff: Int) {
+        switch dateType.title! {
+        case "本周":
+            break
+        case "本月":
+            break
+        case "本年":
+            break
+        default:
+            break
+        }
     }
 }

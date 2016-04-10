@@ -2155,11 +2155,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nui-vY-vFm" userLabel="timeController">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKo-Gl-oVf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKo-Gl-oVf" userLabel="Time">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="179" y="11.5" width="42" height="21"/>
+                                        </variation>
                                     </label>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="plus.png" translatesAutoresizingMaskIntoConstraints="NO" id="vjB-ub-R0S">
                                         <rect key="frame" x="0.0" y="-50" width="50" height="50"/>
@@ -2224,11 +2227,11 @@
                                         <exclude reference="93x-QJ-yDl"/>
                                         <exclude reference="lre-3u-59Z"/>
                                         <exclude reference="ntQ-RW-USP"/>
-                                        <exclude reference="YeN-MA-dUe"/>
-                                        <exclude reference="eBg-od-3c1"/>
                                         <exclude reference="BOR-Tp-O23"/>
                                         <exclude reference="Uhj-pk-7hn"/>
                                         <exclude reference="kWe-ce-wJn"/>
+                                        <exclude reference="YeN-MA-dUe"/>
+                                        <exclude reference="eBg-od-3c1"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2242,11 +2245,11 @@
                                         <include reference="93x-QJ-yDl"/>
                                         <include reference="lre-3u-59Z"/>
                                         <include reference="ntQ-RW-USP"/>
-                                        <include reference="YeN-MA-dUe"/>
-                                        <include reference="eBg-od-3c1"/>
                                         <include reference="BOR-Tp-O23"/>
                                         <include reference="Uhj-pk-7hn"/>
                                         <include reference="kWe-ce-wJn"/>
+                                        <include reference="YeN-MA-dUe"/>
+                                        <include reference="eBg-od-3c1"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -2271,9 +2274,9 @@
                                 <exclude reference="ZJY-l3-1BS"/>
                                 <exclude reference="bfh-pu-mB0"/>
                                 <exclude reference="qhT-f5-e4x"/>
+                                <exclude reference="gXZ-rl-chH"/>
                                 <exclude reference="VYh-qc-5ZP"/>
                                 <exclude reference="bJW-f2-UUu"/>
-                                <exclude reference="gXZ-rl-chH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2286,9 +2289,9 @@
                                 <include reference="ZJY-l3-1BS"/>
                                 <include reference="bfh-pu-mB0"/>
                                 <include reference="qhT-f5-e4x"/>
+                                <include reference="gXZ-rl-chH"/>
                                 <include reference="VYh-qc-5ZP"/>
                                 <include reference="bJW-f2-UUu"/>
-                                <include reference="gXZ-rl-chH"/>
                             </mask>
                         </variation>
                     </view>
@@ -2310,6 +2313,7 @@
                     <connections>
                         <outlet property="chartType" destination="MyZ-Jw-rQH" id="hvg-xv-fMT"/>
                         <outlet property="dateType" destination="hUy-wX-0rh" id="Ajg-Lx-Tyc"/>
+                        <outlet property="timeLabel" destination="LKo-Gl-oVf" id="Ffx-UM-fzX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIb-SA-dc8" userLabel="First Responder" sceneMemberID="firstResponder"/>

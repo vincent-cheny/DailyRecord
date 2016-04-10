@@ -7,20 +7,21 @@
 //
 
 class Utils {
+    
     static func descriptionFromTime(date: NSDate) -> String {
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components(.Hour, fromDate: date)
         let hour = components.hour
         switch hour {
-        case 4-7:
+        case 4...7:
             return "晨起"
-        case 8-9:
+        case 8...9:
             return "早饭后"
-        case 10-12:
+        case 10...12:
             return "午饭前"
-        case 13-16:
+        case 13...16:
             return "下午"
-        case 17-20:
+        case 17...20:
             return "晚殿"
         default:
             return "睡前"
@@ -33,5 +34,38 @@ class Utils {
         let todayDate = dateFormatter.stringFromDate(date)
         let todayDescription = Utils.descriptionFromTime(date);
         return todayDate + " " + todayDescription;
+    }
+    
+    static func getYear(date: NSDate) -> String {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.Year, fromDate: date)
+        return String(components.year) + "年"
+    }
+    
+    static func getYearMonth(date: NSDate) -> String {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Year, .Month], fromDate: date)
+        return String(components.year) + "年" + String(components.month) + "月"
+    }
+    
+    static func getWeek(dateFormatter: NSDateFormatter, date: NSDate) -> String {
+        let calendar = NSCalendar.currentCalendar()
+        calendar.firstWeekday = 2
+        var startOfWeek : NSDate?;
+        calendar.rangeOfUnit(.WeekOfYear, startDate: &startOfWeek, interval: nil, forDate: date)
+        let weekComponet = NSDateComponents()
+        weekComponet.day = 6
+        let endOfWeek = calendar.dateByAddingComponents(weekComponet, toDate: startOfWeek!, options: NSCalendarOptions())
+        return dateFormatter.stringFromDate(startOfWeek!) + "-" + dateFormatter.stringFromDate(endOfWeek!)
+    }
+    
+    static func getMonth(dateFormatter: NSDateFormatter, date: NSDate) -> String {
+        let calendar = NSCalendar.currentCalendar()
+        var startOfMonth : NSDate?
+        calendar.rangeOfUnit(.Month, startDate: &startOfMonth, interval: nil, forDate: date)
+        let monthComponent = NSDateComponents()
+        monthComponent.month = 1;
+        let endOfMonth = calendar.dateByAddingComponents(monthComponent, toDate: startOfMonth!, options: NSCalendarOptions())?.dateByAddingTimeInterval(-1)
+        return dateFormatter.stringFromDate(startOfMonth!) + "-" + dateFormatter.stringFromDate(endOfMonth!)
     }
 }
