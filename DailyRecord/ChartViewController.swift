@@ -15,6 +15,7 @@ class ChartViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     
     let dateFormatter = NSDateFormatter()
+    var showDate = NSDate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +35,11 @@ class ChartViewController: UIViewController {
     }
     
     @IBAction func plusDate(sender: AnyObject) {
-        processTime(1)
+        updateTime(dateType.title!, diff: 1)
     }
     
     @IBAction func minusDate(sender: AnyObject) {
-        processTime(-1)
+        updateTime(dateType.title!, diff: -1)
     }
     
     @IBAction func switchChartType(sender: AnyObject) {
@@ -65,33 +66,31 @@ class ChartViewController: UIViewController {
     func addDateType(alert: UIAlertController, type: String) {
         alert.addAction(UIAlertAction(title: type, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
             self.dateType.title = type
-            self.updateTime(type)
+            self.showDate = NSDate()
+            self.updateTime(type, diff: 0)
         }))
     }
     
-    func updateTime(type: String) {
+    func updateTime(type: String, diff: Int) {
         switch type {
         case "本周":
-            timeLabel.text = Utils.getWeek(dateFormatter, date: NSDate())
+            let weekComponent = NSDateComponents()
+            weekComponent.day = diff * 7;
+            showDate = NSCalendar.currentCalendar().dateByAddingComponents(weekComponent, toDate: showDate, options: NSCalendarOptions())!
+            timeLabel.text = Utils.getWeek(dateFormatter, date: showDate)
         case "本月":
-            timeLabel.text = Utils.getYearMonth(NSDate())
+            let monthComponent = NSDateComponents()
+            monthComponent.month = diff;
+            showDate = NSCalendar.currentCalendar().dateByAddingComponents(monthComponent, toDate: showDate, options: NSCalendarOptions())!
+            timeLabel.text = Utils.getYearMonth(showDate)
         case "本年":
-            timeLabel.text = Utils.getYear(NSDate())
+            let yearComponent = NSDateComponents()
+            yearComponent.year = diff;
+            showDate = NSCalendar.currentCalendar().dateByAddingComponents(yearComponent, toDate: showDate, options: NSCalendarOptions())!
+            timeLabel.text = Utils.getYear(showDate)
         default:
             break
         }
     }
     
-    func processTime(diff: Int) {
-        switch dateType.title! {
-        case "本周":
-            break
-        case "本月":
-            break
-        case "本年":
-            break
-        default:
-            break
-        }
-    }
 }
