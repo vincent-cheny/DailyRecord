@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 class IndustryViewController: UIViewController, UITextViewDelegate {
     
     var industry = ""
+    let realm = try! Realm()
     var saveAlert :UIAlertController!
     
     @IBOutlet weak var titleButton: UIButton!
@@ -79,7 +81,7 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func chooseTemplate(sender: AnyObject) {
         let templateViewController = storyboard?.instantiateViewControllerWithIdentifier("TemplateViewController") as! TemplateViewController
-        templateViewController.templateFilter = titleButton.titleLabel!.text!
+        templateViewController.templateFilter = titleButton.titleForState(.Normal)!
         navigationController?.pushViewController(templateViewController, animated: true)
     }
     
@@ -87,7 +89,10 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
         saveAlert = UIAlertController(title: "请输入名称", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         saveAlert.addTextFieldWithConfigurationHandler(nil)
         saveAlert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
-            NSLog(self.saveAlert.textFields!.first!.text!)
+            try! self.realm.write {
+                let template = RecordTemplate(value: [RecordTemplate().incrementaId(), self.saveAlert.textFields!.first!.text!, self.titleButton.titleForState(.Normal)!, self.contentTextView.text]);
+                self.realm.add(template)
+            }
         }))
         saveAlert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(saveAlert, animated: true, completion: nil)
