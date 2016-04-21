@@ -1671,7 +1671,7 @@
         <!--模板-->
         <scene sceneID="N6Y-OX-JEJ">
             <objects>
-                <viewController title="模板" id="v05-90-WFN" customClass="TemplateViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TemplateViewController" title="模板" id="v05-90-WFN" customClass="TemplateViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n3X-w7-b4D"/>
                         <viewControllerLayoutGuide type="bottom" id="5NK-Ku-IyN"/>
@@ -2254,14 +2254,14 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="3BQ-EK-fgb"/>
-                                        <exclude reference="91e-aU-A4I"/>
-                                        <exclude reference="hOm-dK-omh"/>
-                                        <exclude reference="hfM-6d-X8H"/>
-                                        <exclude reference="YeN-MA-dUe"/>
-                                        <exclude reference="eBg-od-3c1"/>
                                         <exclude reference="BOR-Tp-O23"/>
                                         <exclude reference="Uhj-pk-7hn"/>
                                         <exclude reference="kWe-ce-wJn"/>
+                                        <exclude reference="YeN-MA-dUe"/>
+                                        <exclude reference="eBg-od-3c1"/>
+                                        <exclude reference="91e-aU-A4I"/>
+                                        <exclude reference="hOm-dK-omh"/>
+                                        <exclude reference="hfM-6d-X8H"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2272,14 +2272,14 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="3BQ-EK-fgb"/>
-                                        <include reference="91e-aU-A4I"/>
-                                        <include reference="hOm-dK-omh"/>
-                                        <include reference="hfM-6d-X8H"/>
-                                        <include reference="YeN-MA-dUe"/>
-                                        <include reference="eBg-od-3c1"/>
                                         <include reference="BOR-Tp-O23"/>
                                         <include reference="Uhj-pk-7hn"/>
                                         <include reference="kWe-ce-wJn"/>
+                                        <include reference="YeN-MA-dUe"/>
+                                        <include reference="eBg-od-3c1"/>
+                                        <include reference="91e-aU-A4I"/>
+                                        <include reference="hOm-dK-omh"/>
+                                        <include reference="hfM-6d-X8H"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -2548,7 +2548,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="业习" id="pGl-eY-mUb">
-                        <barButtonItem key="rightBarButtonItem" title="模板" id="vHE-kP-5Mx" userLabel="模板"/>
+                        <barButtonItem key="rightBarButtonItem" title="模板" id="vHE-kP-5Mx" userLabel="模板">
+                            <connections>
+                                <action selector="chooseTemplate:" destination="Sqm-2i-oAK" id="1Pb-uq-KKm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="contentTextView" destination="K91-A8-qHz" id="M6h-Cb-2O2"/>

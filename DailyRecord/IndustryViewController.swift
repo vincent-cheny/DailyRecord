@@ -75,4 +75,10 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
             self.timeButton.setTitle(Utils.allInfoFromTime(date), forState: .Normal)
         }
     }
+    
+    @IBAction func chooseTemplate(sender: AnyObject) {
+        let templateViewController = storyboard?.instantiateViewControllerWithIdentifier("TemplateViewController") as! TemplateViewController
+        templateViewController.templateFilter = titleButton.titleLabel!.text!
+        navigationController?.pushViewController(templateViewController, animated: true)
+    }
 }

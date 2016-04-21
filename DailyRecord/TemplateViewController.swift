@@ -14,6 +14,8 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var templateFilterBtn: UIBarButtonItem!
     @IBOutlet weak var templateTableView: UITableView!
     
+    var templateFilter = "全部"
+    
     let realm = try! Realm()
     var recordTemplates = try! Realm().objects(RecordTemplate).sorted("id")
     let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
@@ -28,6 +30,7 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
         templateTableView.dataSource = self
         // 解决底部多余行问题
         templateTableView.tableFooterView = UIView(frame: CGRectZero)
+        updateRecordTemplates(templateFilter)
     }
     
     override func didReceiveMemoryWarning() {
@@ -121,13 +124,17 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     
     func filterData(alert: UIAlertController, filter: String) {
         alert.addAction(UIAlertAction(title: filter, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
-            self.templateFilterBtn.title = filter
-            if filter == "全部" {
-                self.recordTemplates = self.realm.objects(RecordTemplate)
-            } else {
-                self.recordTemplates = self.realm.objects(RecordTemplate).filter("type = %@", filter)
-            }
+            self.updateRecordTemplates(filter)
             self.templateTableView.reloadData()
         }))
+    }
+    
+    func updateRecordTemplates(filter: String) {
+        self.templateFilterBtn.title = filter
+        if filter == "全部" {
+            self.recordTemplates = self.realm.objects(RecordTemplate)
+        } else {
+            self.recordTemplates = self.realm.objects(RecordTemplate).filter("type = %@", filter)
+        }
     }
 }
