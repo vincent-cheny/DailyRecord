@@ -11,6 +11,7 @@ import UIKit
 class IndustryViewController: UIViewController, UITextViewDelegate {
     
     var industry = ""
+    var saveAlert :UIAlertController!
     
     @IBOutlet weak var titleButton: UIButton!
     @IBOutlet weak var timeButton: UIButton!
@@ -80,5 +81,15 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
         let templateViewController = storyboard?.instantiateViewControllerWithIdentifier("TemplateViewController") as! TemplateViewController
         templateViewController.templateFilter = titleButton.titleLabel!.text!
         navigationController?.pushViewController(templateViewController, animated: true)
+    }
+    
+    @IBAction func saveTemplate(sender: AnyObject) {
+        saveAlert = UIAlertController(title: "请输入名称", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        saveAlert.addTextFieldWithConfigurationHandler(nil)
+        saveAlert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+            NSLog(self.saveAlert.textFields!.first!.text!)
+        }))
+        saveAlert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
+        self.presentViewController(saveAlert, animated: true, completion: nil)
     }
 }

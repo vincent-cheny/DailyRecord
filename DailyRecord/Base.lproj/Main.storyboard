@@ -2457,6 +2457,9 @@
                                         <include reference="7eC-Qt-Z5e"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="saveTemplate:" destination="Sqm-2i-oAK" eventType="touchUpInside" id="5wN-pL-kM6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
