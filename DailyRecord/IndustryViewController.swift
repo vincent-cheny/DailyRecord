@@ -82,7 +82,19 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
     @IBAction func chooseTemplate(sender: AnyObject) {
         let templateViewController = storyboard?.instantiateViewControllerWithIdentifier("TemplateViewController") as! TemplateViewController
         templateViewController.templateFilter = titleButton.titleForState(.Normal)!
+        templateViewController.initWithClosure(getValueClosure)
         navigationController?.pushViewController(templateViewController, animated: true)
+    }
+    
+    func getValueClosure(type: String, content: String) {
+        titleButton.setTitle(type, forState: .Normal)
+        if (content == "") {
+            contentTextView.text = "详细"
+            contentTextView.textColor = UIColor.lightGrayColor()
+        } else {
+            contentTextView.text = content
+            contentTextView.textColor = UIColor.blackColor()
+        }
     }
     
     @IBAction func saveTemplate(sender: AnyObject) {
@@ -90,7 +102,8 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
         saveAlert.addTextFieldWithConfigurationHandler(nil)
         saveAlert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
             try! self.realm.write {
-                let template = RecordTemplate(value: [RecordTemplate().incrementaId(), self.saveAlert.textFields!.first!.text!, self.titleButton.titleForState(.Normal)!, self.contentTextView.text]);
+                let contentText = self.contentTextView.textColor == UIColor.lightGrayColor() ? "" : self.contentTextView.text
+                let template = RecordTemplate(value: [RecordTemplate().incrementaId(), self.saveAlert.textFields!.first!.text!, self.titleButton.titleForState(.Normal)!, contentText]);
                 self.realm.add(template)
             }
         }))

@@ -14,6 +14,9 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var templateFilterBtn: UIBarButtonItem!
     @IBOutlet weak var templateTableView: UITableView!
     
+    typealias sendValueClosure = (type: String, content:String)->Void
+    var myClosure: sendValueClosure?
+
     var templateFilter = "全部"
     
     let realm = try! Realm()
@@ -42,6 +45,10 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewWillAppear(animated)
         templateTableView.reloadData()
         self.navigationController?.navigationBarHidden = false;
+    }
+    
+    func initWithClosure(closure: sendValueClosure){
+        myClosure = closure
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -107,9 +114,21 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // 模拟闪动效果
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let addTemplateViewController = storyboard?.instantiateViewControllerWithIdentifier("AddTemplateViewController") as! AddTemplateViewController
-        addTemplateViewController.templateId = recordTemplates[indexPath.row].id
-        navigationController?.pushViewController(addTemplateViewController, animated: true)
+        if (self.myClosure != nil) {
+            let template = recordTemplates[indexPath.row]
+            if (template.type == "黑业" || template.type == "白业") {
+                myClosure!(type: template.type, content: template.content)
+                navigationController?.popViewControllerAnimated(true)
+            } else {
+                let alert = UIAlertController(title: "请选择业习", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        } else {
+            let addTemplateViewController = storyboard?.instantiateViewControllerWithIdentifier("AddTemplateViewController") as! AddTemplateViewController
+            addTemplateViewController.templateId = recordTemplates[indexPath.row].id
+            navigationController?.pushViewController(addTemplateViewController, animated: true)
+        }
     }
     
     @IBAction func templateFilter(sender: AnyObject) {
@@ -137,4 +156,6 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
             self.recordTemplates = self.realm.objects(RecordTemplate).filter("type = %@", filter)
         }
     }
+    
+    
 }

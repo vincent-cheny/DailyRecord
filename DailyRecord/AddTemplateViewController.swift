@@ -106,16 +106,17 @@ class AddTemplateViewController: UIViewController, UITextViewDelegate {
             self.presentViewController(alert, animated: true, completion: nil)
             return
         }
+        let contentText = templateContent.textColor == UIColor.lightGrayColor() ? "" : templateContent.text
         if curTemplate == nil {
             try! realm.write {
-                let template = RecordTemplate(value: [RecordTemplate().incrementaId(), templateTitle.text, templateType.titleForState(.Normal)!, templateContent.text]);
+                let template = RecordTemplate(value: [RecordTemplate().incrementaId(), templateTitle.text, templateType.titleForState(.Normal)!, contentText]);
                 realm.add(template)
             }
         } else {
             try! realm.write {
                 curTemplate.title = templateTitle.text
                 curTemplate.type = templateType.titleForState(.Normal)!
-                curTemplate.content = templateContent.text
+                curTemplate.content = contentText
             }
         }
         navigationController?.popViewControllerAnimated(true)
