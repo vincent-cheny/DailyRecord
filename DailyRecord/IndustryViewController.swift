@@ -110,4 +110,8 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
         saveAlert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(saveAlert, animated: true, completion: nil)
     }
+    
+    @IBAction func addIndustry(sender: AnyObject) {
+        
+    }
 }

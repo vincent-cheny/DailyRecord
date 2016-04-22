@@ -2951,6 +2951,9 @@
                                         <include reference="vcn-1D-xKx"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="addIndustry:" destination="Sqm-2i-oAK" eventType="touchUpInside" id="GV8-ug-4mn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2f-0l-EdP" userLabel="存为模板">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
