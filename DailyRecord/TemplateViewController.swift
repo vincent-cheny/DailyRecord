@@ -14,7 +14,7 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var templateFilterBtn: UIBarButtonItem!
     @IBOutlet weak var templateTableView: UITableView!
     
-    typealias sendValueClosure = (type: String, content:String)->Void
+    typealias sendValueClosure = (type: String, content: String)->Void
     var myClosure: sendValueClosure?
 
     var templateFilter = "全部"
