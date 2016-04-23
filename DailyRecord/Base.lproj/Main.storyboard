@@ -2882,6 +2882,7 @@
                         <viewControllerLayoutGuide type="bottom" id="LuV-qn-tip"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UTt-VQ-StC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2t-T3-VEa" userLabel="Mask">
@@ -2977,10 +2978,6 @@
                                         <exclude reference="69N-X0-Zk3"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="6js-3x-cmg"/>
-                                        <exclude reference="fTA-B8-Ity"/>
-                                        <exclude reference="dTw-yu-xya"/>
-                                        <exclude reference="u0w-up-tdb"/>
                                         <exclude reference="Dh9-5k-w7h"/>
                                         <exclude reference="TSa-Pz-UZA"/>
                                         <exclude reference="pal-27-eNz"/>
@@ -2988,6 +2985,10 @@
                                         <exclude reference="eby-Ar-aDi"/>
                                         <exclude reference="tOJ-D9-ohV"/>
                                         <exclude reference="xnj-wE-xk9"/>
+                                        <exclude reference="dTw-yu-xya"/>
+                                        <exclude reference="u0w-up-tdb"/>
+                                        <exclude reference="6js-3x-cmg"/>
+                                        <exclude reference="fTA-B8-Ity"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2998,10 +2999,6 @@
                                         <include reference="69N-X0-Zk3"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="6js-3x-cmg"/>
-                                        <include reference="fTA-B8-Ity"/>
-                                        <include reference="dTw-yu-xya"/>
-                                        <include reference="u0w-up-tdb"/>
                                         <include reference="Dh9-5k-w7h"/>
                                         <include reference="TSa-Pz-UZA"/>
                                         <include reference="pal-27-eNz"/>
@@ -3009,6 +3006,10 @@
                                         <include reference="eby-Ar-aDi"/>
                                         <include reference="tOJ-D9-ohV"/>
                                         <include reference="xnj-wE-xk9"/>
+                                        <include reference="dTw-yu-xya"/>
+                                        <include reference="u0w-up-tdb"/>
+                                        <include reference="6js-3x-cmg"/>
+                                        <include reference="fTA-B8-Ity"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -3282,8 +3283,65 @@
                     <view key="view" contentMode="scaleToFill" id="PR8-df-QLD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8xf-xD-7FE">
+                                <rect key="frame" x="0.0" y="-960" width="640" height="960"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8xf-xD-7FE" firstAttribute="centerY" secondItem="PR8-df-QLD" secondAttribute="centerY" id="D3z-lI-piC"/>
+                            <constraint firstItem="8xf-xD-7FE" firstAttribute="width" secondItem="PR8-df-QLD" secondAttribute="width" id="Zwv-fK-ko8"/>
+                            <constraint firstItem="8xf-xD-7FE" firstAttribute="centerX" secondItem="PR8-df-QLD" secondAttribute="centerX" id="gq0-cO-6iT"/>
+                            <constraint firstItem="8xf-xD-7FE" firstAttribute="height" secondItem="PR8-df-QLD" secondAttribute="height" id="vOz-mc-MDq"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="8xf-xD-7FE"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="D3z-lI-piC"/>
+                                <exclude reference="Zwv-fK-ko8"/>
+                                <exclude reference="gq0-cO-6iT"/>
+                                <exclude reference="vOz-mc-MDq"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="8xf-xD-7FE"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="D3z-lI-piC"/>
+                                <include reference="Zwv-fK-ko8"/>
+                                <include reference="gq0-cO-6iT"/>
+                                <include reference="vOz-mc-MDq"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="siS-bt-FcX">
+                        <rightBarButtonItems>
+                            <barButtonItem title="今日" id="jC9-K7-w3h">
+                                <connections>
+                                    <action selector="dateFilter:" destination="x1z-sD-H0h" id="0Az-bT-4al"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="黑业" id="UXi-dt-anU">
+                                <connections>
+                                    <action selector="typeFilter:" destination="x1z-sD-H0h" id="BQD-F5-b8y"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="未对治" id="pas-of-XH7">
+                                <connections>
+                                    <action selector="checkStateFilter:" destination="x1z-sD-H0h" id="6sX-Zv-gb5"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="checkStateFilterBtn" destination="pas-of-XH7" id="anu-Fr-7ka"/>
+                        <outlet property="dateFilterBtn" destination="jC9-K7-w3h" id="bLl-CF-xIQ"/>
+                        <outlet property="typeFilterBtn" destination="UXi-dt-anU" id="b9j-JX-VOJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rU-Zb-geh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

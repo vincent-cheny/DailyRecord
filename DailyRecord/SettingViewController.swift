@@ -33,6 +33,7 @@ class SettingViewController: UIViewController {
         let alert = UIAlertController(title: "", message: "确认删除所有记录", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
             RecordTemplate().resetTemplate()
+            Industry().resetIndustry()
         }))
         alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)

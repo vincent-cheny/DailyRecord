@@ -10,6 +10,10 @@ import UIKit
 
 class CheckViewController: UIViewController {
     
+    @IBOutlet weak var dateFilterBtn: UIBarButtonItem!
+    @IBOutlet weak var typeFilterBtn: UIBarButtonItem!
+    @IBOutlet weak var checkStateFilterBtn: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,6 +27,18 @@ class CheckViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = false;
+    }
+    
+    @IBAction func dateFilter(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func typeFilter(sender: AnyObject) {
+        
+    }
+
+    @IBAction func checkStateFilter(sender: AnyObject) {
+        
     }
     
 }
