@@ -64,8 +64,8 @@ class Utils {
         var startOfWeek : NSDate?;
         calendar.rangeOfUnit(.WeekOfYear, startDate: &startOfWeek, interval: nil, forDate: date)
         let weekComponet = NSDateComponents()
-        weekComponet.day = 6
-        let endOfWeek = calendar.dateByAddingComponents(weekComponet, toDate: startOfWeek!, options: NSCalendarOptions())
+        weekComponet.day = 7
+        let endOfWeek = calendar.dateByAddingComponents(weekComponet, toDate: startOfWeek!, options: NSCalendarOptions())?.dateByAddingTimeInterval(-1)
         return dateFormatter.stringFromDate(startOfWeek!) + "-" + dateFormatter.stringFromDate(endOfWeek!)
     }
     
@@ -77,5 +77,15 @@ class Utils {
         monthComponent.month = 1;
         let endOfMonth = calendar.dateByAddingComponents(monthComponent, toDate: startOfMonth!, options: NSCalendarOptions())?.dateByAddingTimeInterval(-1)
         return dateFormatter.stringFromDate(startOfMonth!) + "-" + dateFormatter.stringFromDate(endOfMonth!)
+    }
+    
+    static func getDayRange(date: NSDate) -> [NSTimeInterval] {
+        let calendar = NSCalendar.currentCalendar()
+        var startOfDay : NSDate?
+        calendar.rangeOfUnit(.Day, startDate: &startOfDay, interval: nil, forDate: date)
+        let dayComponet = NSDateComponents()
+        dayComponet.day = 1
+        let endOfDay = calendar.dateByAddingComponents(dayComponet, toDate: startOfDay!, options: NSCalendarOptions())?.dateByAddingTimeInterval(-1)
+        return [startOfDay!.timeIntervalSince1970, endOfDay!.timeIntervalSince1970]
     }
 }

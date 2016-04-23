@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
 
@@ -14,6 +15,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var dayTime: UILabel!
     @IBOutlet weak var weekTime: UILabel!
     @IBOutlet weak var monthTime: UILabel!
+    
+    @IBOutlet weak var totalBlackLabel: UILabel!
+    @IBOutlet weak var totalBlackCheckLabel: UILabel!
+    @IBOutlet weak var totalWhiteLabel: UILabel!
+    @IBOutlet weak var totalWhiteCheckLabel: UILabel!
+    
+    @IBOutlet weak var dayBlack: UILabel!
+    @IBOutlet weak var dayBlackCheck: UILabel!
+    @IBOutlet weak var dayWhite: UILabel!
+    @IBOutlet weak var dayWhiteCheck: UILabel!
+    
+    @IBOutlet weak var weekBlack: UILabel!
+    @IBOutlet weak var weekBlackCheck: UILabel!
+    @IBOutlet weak var weekWhite: UILabel!
+    @IBOutlet weak var weekWhiteCheck: UILabel!
+    
+    @IBOutlet weak var monthBlack: UILabel!
+    @IBOutlet weak var monthBlackCheck: UILabel!
+    @IBOutlet weak var monthWhite: UILabel!
+    @IBOutlet weak var monthWhiteCheck: UILabel!
+    
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +63,26 @@ class ViewController: UIViewController {
         dayTime.text = todayDate
         weekTime.text = Utils.getWeek(dateFormatter, date: today)
         monthTime.text = Utils.getMonth(dateFormatter, date: today)
+        totalBlackLabel.text = String(realm.objects(Industry).filter("type = '黑业'").count)
+        totalBlackCheckLabel.text = String(realm.objects(Industry).filter("type = '黑业对治'").count)
+        totalWhiteLabel.text = String(realm.objects(Industry).filter("type = '白业'").count)
+        totalWhiteCheckLabel.text = String(realm.objects(Industry).filter("type = '白业对治'").count)
+        
+        let dayRange = Utils.getDayRange(today)
+        dayBlack.text = String(realm.objects(Industry).filter("type = '黑业' AND time BETWEEN {%@, %@}", dayRange[0], dayRange[1]).count)
+        dayBlackCheck.text = String(realm.objects(Industry).filter("type = '黑业对治'").count)
+        dayWhite.text = String(realm.objects(Industry).filter("type = '白业'").count)
+        dayWhiteCheck.text = String(realm.objects(Industry).filter("type = '白业对治'").count)
+        
+        weekBlack.text = String(realm.objects(Industry).filter("type = '黑业'").count)
+        weekBlackCheck.text = String(realm.objects(Industry).filter("type = '黑业对治'").count)
+        weekWhite.text = String(realm.objects(Industry).filter("type = '白业'").count)
+        weekWhiteCheck.text = String(realm.objects(Industry).filter("type = '白业对治'").count)
+        
+        monthBlack.text = String(realm.objects(Industry).filter("type = '黑业'").count)
+        monthBlackCheck.text = String(realm.objects(Industry).filter("type = '黑业对治'").count)
+        monthWhite.text = String(realm.objects(Industry).filter("type = '白业'").count)
+        monthWhiteCheck.text = String(realm.objects(Industry).filter("type = '白业对治'").count)
     }
     
     @IBAction func navigateBlack(sender: AnyObject) {

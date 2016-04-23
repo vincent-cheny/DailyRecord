@@ -14,6 +14,7 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
     var industry = ""
     let realm = try! Realm()
     var saveAlert :UIAlertController!
+    var showDate = NSDate()
     
     @IBOutlet weak var titleButton: UIButton!
     @IBOutlet weak var timeButton: UIButton!
@@ -23,7 +24,7 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         titleButton.setTitle(industry, forState: .Normal)
-        timeButton.setTitle(Utils.allInfoFromTime(NSDate()), forState: .Normal)
+        timeButton.setTitle(Utils.allInfoFromTime(showDate), forState: .Normal)
         contentTextView.delegate = self
         textViewDidEndEditing(contentTextView)
     }
@@ -121,7 +122,7 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
 //        }
         try! self.realm.write {
             let contentText = self.contentTextView.textColor == UIColor.lightGrayColor() ? "" : self.contentTextView.text
-            let industry = Industry(value: [Industry().incrementaId(), self.titleButton.titleForState(.Normal)!, contentText, 0]);
+            let industry = Industry(value: [Industry().incrementaId(), self.titleButton.titleForState(.Normal)!, contentText, showDate.timeIntervalSince1970, 0]);
             self.realm.add(industry)
         }
         navigationController?.popViewControllerAnimated(true)

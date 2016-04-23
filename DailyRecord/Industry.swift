@@ -19,7 +19,7 @@ class Industry: Object {
     dynamic var id = 0
     dynamic var type = ""
     dynamic var content = ""
-    dynamic var time: Int64 = 0
+    dynamic var time = NSTimeInterval()
     dynamic var check_id = 0
     
     override class func primaryKey() -> String {
