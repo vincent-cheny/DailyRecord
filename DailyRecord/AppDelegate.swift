@@ -12,14 +12,13 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let IsInitialized: String = "isInitialized"
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let defaults = NSUserDefaults.standardUserDefaults()
-        if defaults.objectForKey(IsInitialized) == nil {
-            defaults.setBool(true, forKey: IsInitialized)
+        if defaults.objectForKey(Utils.isInitialized) == nil {
+            defaults.setBool(true, forKey: Utils.isInitialized)
             RecordTemplate().resetTemplate()
         }
         return true

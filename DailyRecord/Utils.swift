@@ -8,6 +8,10 @@
 
 class Utils {
     
+    static let isInitialized: String = "isInitialized"
+    static let needBlackCheck: String = "needBlackCheck"
+    static let needWhiteCheck: String = "needWhiteCheck"
+    
     static func descriptionFromTime(date: NSDate) -> String {
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components(.Hour, fromDate: date)

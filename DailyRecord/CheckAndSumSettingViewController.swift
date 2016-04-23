@@ -10,8 +10,6 @@ import UIKit
 
 class CheckAndSumSettingViewController: UIViewController {
     
-    let needBlackCheck: String = "needBlackCheck"
-    let needWhiteCheck: String = "needWhiteCheck"
     let defaults = NSUserDefaults.standardUserDefaults()
     
     @IBOutlet weak var blackSwitch: UISwitch!
@@ -20,22 +18,22 @@ class CheckAndSumSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if defaults.objectForKey(needBlackCheck) == nil {
-            defaults.setBool(true, forKey: needBlackCheck)
+        if defaults.objectForKey(Utils.needBlackCheck) == nil {
+            defaults.setBool(true, forKey: Utils.needBlackCheck)
         }
-        if defaults.objectForKey(needWhiteCheck) == nil {
-            defaults.setBool(false, forKey: needWhiteCheck)
+        if defaults.objectForKey(Utils.needWhiteCheck) == nil {
+            defaults.setBool(false, forKey: Utils.needWhiteCheck)
         }
-        blackSwitch.on = defaults.boolForKey(needBlackCheck)
-        whiteSwitch.on = defaults.boolForKey(needWhiteCheck)
+        blackSwitch.on = defaults.boolForKey(Utils.needBlackCheck)
+        whiteSwitch.on = defaults.boolForKey(Utils.needWhiteCheck)
     }
     
     @IBAction func switchBlackCheck(sender: AnyObject) {
-        defaults.setBool(blackSwitch.on, forKey: needBlackCheck)
+        defaults.setBool(blackSwitch.on, forKey: Utils.needBlackCheck)
     }
     
     @IBAction func switchWhiteCheck(sender: AnyObject) {
-        defaults.setBool(whiteSwitch.on, forKey: needWhiteCheck)
+        defaults.setBool(whiteSwitch.on, forKey: Utils.needWhiteCheck)
     }
     
 }

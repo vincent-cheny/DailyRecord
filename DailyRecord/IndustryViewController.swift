@@ -112,6 +112,12 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func addIndustry(sender: AnyObject) {
-        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if (defaults.boolForKey(Utils.needBlackCheck)) {
+            let checkDialogViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckDialogViewController") as! CheckDialogViewController
+            presentViewController(checkDialogViewController, animated: true, completion: nil)
+        } else {
+            
+        }
     }
 }
