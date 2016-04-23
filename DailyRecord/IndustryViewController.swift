@@ -81,7 +81,7 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func chooseTemplate(sender: AnyObject) {
         let templateViewController = storyboard?.instantiateViewControllerWithIdentifier("TemplateViewController") as! TemplateViewController
-        templateViewController.templateFilter = titleButton.titleForState(.Normal)!
+        templateViewController.templateFilterBtn.title = titleButton.titleForState(.Normal)!
         templateViewController.initWithClosure(getValueClosure)
         navigationController?.pushViewController(templateViewController, animated: true)
     }

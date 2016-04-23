@@ -21,6 +21,7 @@ class ChartViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         dateFormatter.dateFormat = "yyyy.M.d"
+        timeLabel.text = Utils.getWeek(dateFormatter, date: showDate)
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,7 +32,6 @@ class ChartViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = false;
-        timeLabel.text = Utils.getWeek(dateFormatter, date: NSDate())
     }
     
     @IBAction func plusDate(sender: AnyObject) {

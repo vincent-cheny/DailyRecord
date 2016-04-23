@@ -16,8 +16,6 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     
     typealias sendValueClosure = (type: String, content: String)->Void
     var myClosure: sendValueClosure?
-
-    var templateFilter = "全部"
     
     let realm = try! Realm()
     var recordTemplates = try! Realm().objects(RecordTemplate).sorted("id")
@@ -33,7 +31,7 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
         templateTableView.dataSource = self
         // 解决底部多余行问题
         templateTableView.tableFooterView = UIView(frame: CGRectZero)
-        updateRecordTemplates(templateFilter)
+        updateRecordTemplates(templateFilterBtn.title!)
     }
     
     override func didReceiveMemoryWarning() {
