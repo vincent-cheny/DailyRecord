@@ -23,10 +23,13 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let realm = try! Realm()
     var industrieAndChecks = try! Realm().objects(Industry).sorted("time")
 
+    var dateRange: [NSTimeInterval]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         dateFormatter.dateFormat = "yyyy.M.d"
+        updateTime(dateFilterBtn.title!, diff: 0)
         timeLabel.text = Utils.getDay(showDate)
         industryAndCheckTabelView.delegate = self
         industryAndCheckTabelView.dataSource = self
@@ -164,16 +167,16 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func filterType(alert: UIAlertController, filter: String) {
         alert.addAction(UIAlertAction(title: filter, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
             self.typeFilterBtn.title = filter
-//            self.updateRecordTemplates(filter)
-//            self.templateTableView.reloadData()
+            self.updateTableView()
+            self.industryAndCheckTabelView.reloadData()
         }))
     }
     
     func filterCheckState(alert: UIAlertController, filter: String) {
         alert.addAction(UIAlertAction(title: filter, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
             self.checkStateFilterBtn.title = filter
-//            self.updateRecordTemplates(filter)
-//            self.templateTableView.reloadData()
+            self.updateTableView()
+            self.industryAndCheckTabelView.reloadData()
         }))
     }
     
@@ -184,23 +187,55 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
             dayComponent.day = diff
             showDate = NSCalendar.currentCalendar().dateByAddingComponents(dayComponent, toDate: showDate, options: NSCalendarOptions())!
             timeLabel.text = Utils.getDay(showDate)
+            dateRange = Utils.getDayRange(showDate)
+            updateTableView()
+            industryAndCheckTabelView.reloadData()
         case "本周":
             let weekComponent = NSDateComponents()
             weekComponent.day = diff * 7;
             showDate = NSCalendar.currentCalendar().dateByAddingComponents(weekComponent, toDate: showDate, options: NSCalendarOptions())!
             timeLabel.text = Utils.getWeek(dateFormatter, date: showDate)
+            dateRange = Utils.getWeekRange(showDate)
+            updateTableView()
+            industryAndCheckTabelView.reloadData()
         case "本月":
             let monthComponent = NSDateComponents()
             monthComponent.month = diff;
             showDate = NSCalendar.currentCalendar().dateByAddingComponents(monthComponent, toDate: showDate, options: NSCalendarOptions())!
             timeLabel.text = Utils.getYearMonth(showDate)
+            dateRange = Utils.getMonthRange(showDate)
+            updateTableView()
+            industryAndCheckTabelView.reloadData()
         default:
             break
         }
     }
     
-    func updateIndustry() {
-        
+    func updateTableView() {
+        let filter = self.typeFilterBtn.title
+        if filter == "全部" {
+            switch checkStateFilterBtn.title! {
+            case "全部业习":
+                industrieAndChecks = self.realm.objects(Industry).filter("time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).sorted("time")
+            case "已对治":
+                industrieAndChecks = self.realm.objects(Industry).filter("check_id > 0 AND time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).sorted("time")
+            case "未对治":
+                industrieAndChecks = self.realm.objects(Industry).filter("check_id = 0 AND time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).sorted("time")
+            default:
+                break
+            }
+        } else {
+            switch checkStateFilterBtn.title! {
+            case "全部业习":
+                industrieAndChecks = self.realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", typeFilterBtn.title!, dateRange[0], dateRange[1]).sorted("time")
+            case "已对治":
+                industrieAndChecks = self.realm.objects(Industry).filter("check_id > 0 AND type = %@ AND time BETWEEN {%@, %@}", typeFilterBtn.title!, dateRange[0], dateRange[1]).sorted("time")
+            case "未对治":
+                industrieAndChecks = self.realm.objects(Industry).filter("check_id = 0 AND type = %@ AND time BETWEEN {%@, %@}", typeFilterBtn.title!, dateRange[0], dateRange[1]).sorted("time")
+            default:
+                break
+            }
+        }
     }
     
 }

@@ -11,7 +11,6 @@ import RealmSwift
 
 class IndustryViewController: UIViewController, UITextViewDelegate {
     
-    var industry = ""
     let realm = try! Realm()
     var saveAlert :UIAlertController!
     var showDate = NSDate()
@@ -23,7 +22,6 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        titleButton.setTitle(industry, forState: .Normal)
         timeButton.setTitle(Utils.allInfoFromTime(showDate), forState: .Normal)
         contentTextView.delegate = self
         textViewDidEndEditing(contentTextView)
