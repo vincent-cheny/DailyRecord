@@ -19,7 +19,6 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     
     let realm = try! Realm()
     var recordTemplates = try! Realm().objects(RecordTemplate).sorted("id")
-    let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()

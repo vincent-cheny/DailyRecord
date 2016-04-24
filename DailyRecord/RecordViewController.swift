@@ -9,19 +9,27 @@
 import UIKit
 import RealmSwift
 
-class RecordViewController: UIViewController {//, UITableViewDelegate, UITableViewDataSource {
+class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var dateFilterBtn: UIBarButtonItem!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var industryTableView: UITableView!
     
     let dateFormatter = NSDateFormatter()
     var showDate = NSDate()
+    
+    let realm = try! Realm()
+    var industries = try! Realm().objects(Industry).sorted("id")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         dateFormatter.dateFormat = "yyyy.M.d"
         updateTime(dateFilterBtn.title!, diff: 0)
+        industryTableView.delegate = self
+        industryTableView.dataSource = self
+        // 解决底部多余行问题
+        industryTableView.tableFooterView = UIView(frame: CGRectZero)
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,6 +40,66 @@ class RecordViewController: UIViewController {//, UITableViewDelegate, UITableVi
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = false;
+        industryTableView.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let industryCell = tableView.dequeueReusableCellWithIdentifier("industryCell", forIndexPath: indexPath)
+        let industry = industries[indexPath.row]
+        let imageView = industryCell.viewWithTag(1) as! UIImageView
+        let type = industryCell.viewWithTag(2) as! UILabel
+        let date = industryCell.viewWithTag(3) as! UILabel
+        let content = industryCell.viewWithTag(4) as! UILabel
+        type.text = industry.type
+        date.text = Utils.getDay(NSDate(timeIntervalSince1970: industry.time))
+        content.text = industry.content
+        switch industry.type {
+        case "黑业":
+            imageView.image = UIImage(named: "blackdot")
+            type.textColor = UIColor.blackColor()
+        case "白业":
+            imageView.image = UIImage(named: "whitedot")
+            type.textColor = UIColor.whiteColor()
+        case "黑业对治":
+            imageView.image = UIImage(named: "greendot")
+            type.textColor = UIColor.greenColor()
+        case "白业对治":
+            imageView.image = UIImage(named: "reddot")
+            type.textColor = UIColor.redColor()
+        default:
+            break
+        }
+        // 解决左对齐问题
+        industryTableView.layoutMargins = UIEdgeInsetsZero
+        industryTableView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(TemplateViewController.longPressCell(_:))))
+        return industryCell
+    }
+    
+    func longPressCell(recognizer: UIGestureRecognizer) {
+        if recognizer.state == .Began {
+            let indexPath = industryTableView.indexPathForRowAtPoint(recognizer.locationInView(industryTableView))
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "编辑", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+                
+            }))
+            alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Default, handler: nil))
+            alert.addAction(UIAlertAction(title: "删除", style: UIAlertActionStyle.Destructive, handler: { (UIAlertAction) -> Void in
+                try! self.realm.write {
+                    self.realm.delete(self.industries[indexPath!.row])
+                }
+                self.industryTableView.reloadData()
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return industries.count
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // 模拟闪动效果
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     @IBAction func plusDate(sender: AnyObject) {
