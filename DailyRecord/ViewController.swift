@@ -122,5 +122,15 @@ class ViewController: UIViewController {
         let checkViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
         navigationController?.pushViewController(checkViewController, animated: true)
     }
+    
+    @IBAction func searchDay(sender: AnyObject) {
+    }
+    
+    @IBAction func searchWeek(sender: AnyObject) {
+    }
+    
+    @IBAction func searchMonth(sender: AnyObject) {
+    }
+    
 }
 

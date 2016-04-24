@@ -28,6 +28,15 @@ class CheckAndSumSettingViewController: UIViewController {
         whiteSwitch.on = defaults.boolForKey(Utils.needWhiteCheck)
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     @IBAction func switchBlackCheck(sender: AnyObject) {
         defaults.setBool(blackSwitch.on, forKey: Utils.needBlackCheck)
     }
