@@ -19,7 +19,7 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var showDate = NSDate()
     
     let realm = try! Realm()
-    var industries = try! Realm().objects(Industry).sorted("id")
+    var industries = try! Realm().objects(Industry).sorted("time")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -163,6 +163,6 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func updateTableView(dateRange: [NSTimeInterval]) {
-        industries = self.realm.objects(Industry).filter("time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).sorted("id")
+        industries = self.realm.objects(Industry).filter("time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).sorted("time")
     }
 }

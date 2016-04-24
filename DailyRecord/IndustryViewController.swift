@@ -76,7 +76,8 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
     @IBAction func changeTime(sender: AnyObject) {
         DatePickerDialog().show("时间设置", doneButtonTitle: "确定", cancelButtonTitle: "取消", datePickerMode: .DateAndTime) {
             (date) -> Void in
-            self.timeButton.setTitle(Utils.allInfoFromTime(date), forState: .Normal)
+            self.showDate = date
+            self.timeButton.setTitle(Utils.allInfoFromTime(self.showDate), forState: .Normal)
         }
     }
     
