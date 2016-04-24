@@ -2969,6 +2969,7 @@
                                                 </variation>
                                             </imageView>
                                         </subviews>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="x3Q-ZS-DIZ" firstAttribute="centerX" secondItem="lAp-L5-jHt" secondAttribute="centerX" id="Chq-id-er3"/>
                                             <constraint firstItem="x3Q-ZS-DIZ" firstAttribute="width" secondItem="lAp-L5-jHt" secondAttribute="width" id="N2V-Rx-HOD"/>
@@ -2997,9 +2998,13 @@
                                                 <include reference="Chq-id-er3"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="UMT-0i-8na" appends="YES" id="7wW-E4-iAQ"/>
+                                        </connections>
                                     </view>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="plus.png" translatesAutoresizingMaskIntoConstraints="NO" id="YeA-QZ-txb">
                                         <rect key="frame" x="0.0" y="-50" width="50" height="50"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="YeA-QZ-txb" secondAttribute="height" multiplier="1:1" id="aYq-9i-RVV"/>
                                         </constraints>
@@ -3013,6 +3018,9 @@
                                                 <include reference="aYq-9i-RVV"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="E5D-eA-plD" appends="YES" id="c9L-3X-rtO"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1843137255" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -3110,7 +3118,7 @@
                         <rightBarButtonItems>
                             <barButtonItem title="今日" id="HV7-Yc-Gt2">
                                 <connections>
-                                    <action selector="filterDate:" destination="rxP-VG-cSh" id="ipb-tw-DTc"/>
+                                    <action selector="dateFilter:" destination="rxP-VG-cSh" id="srD-ut-2TK"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="查询" id="CxQ-1u-7Rp">
@@ -3122,9 +3130,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateFilterBtn" destination="HV7-Yc-Gt2" id="uG5-53-uZR"/>
+                        <outlet property="timeLabel" destination="3Uq-fJ-3Mi" id="Gba-Ie-DXS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FFz-Mw-9hg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="UMT-0i-8na">
+                    <connections>
+                        <action selector="minusDate:" destination="rxP-VG-cSh" id="hOj-wn-uYm"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="E5D-eA-plD">
+                    <connections>
+                        <action selector="plusDate:" destination="rxP-VG-cSh" id="KWi-q6-1qH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1419" y="1002.75"/>
         </scene>
@@ -3450,7 +3469,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
+                                        <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>

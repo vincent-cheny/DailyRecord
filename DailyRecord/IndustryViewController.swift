@@ -113,18 +113,18 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func addIndustry(sender: AnyObject) {
-//        let defaults = NSUserDefaults.standardUserDefaults()
-//        if (defaults.boolForKey(Utils.needBlackCheck)) {
-//            let checkDialogViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckDialogViewController") as! CheckDialogViewController
-//            presentViewController(checkDialogViewController, animated: true, completion: nil)
-//        } else {
-//            
-//        }
-        try! self.realm.write {
-            let contentText = self.contentTextView.textColor == UIColor.lightGrayColor() ? "" : self.contentTextView.text
-            let industry = Industry(value: [Industry().incrementaId(), self.titleButton.titleForState(.Normal)!, contentText, showDate.timeIntervalSince1970, 0]);
-            self.realm.add(industry)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if (defaults.boolForKey(Utils.needBlackCheck)) {
+            let checkDialogViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckDialogViewController") as! CheckDialogViewController
+            presentViewController(checkDialogViewController, animated: true, completion: nil)
+        } else {
+            
         }
-        navigationController?.popViewControllerAnimated(true)
+//        try! self.realm.write {
+//            let contentText = self.contentTextView.textColor == UIColor.lightGrayColor() ? "" : self.contentTextView.text
+//            let industry = Industry(value: [Industry().incrementaId(), self.titleButton.titleForState(.Normal)!, contentText, showDate.timeIntervalSince1970, 0]);
+//            self.realm.add(industry)
+//        }
+//        navigationController?.popViewControllerAnimated(true)
     }
 }
