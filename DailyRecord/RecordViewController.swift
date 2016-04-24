@@ -51,7 +51,7 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let date = industryCell.viewWithTag(3) as! UILabel
         let content = industryCell.viewWithTag(4) as! UILabel
         type.text = industry.type
-        date.text = Utils.getDay(NSDate(timeIntervalSince1970: industry.time))
+        date.text = Utils.getShortDay(NSDate(timeIntervalSince1970: industry.time))
         content.text = industry.content
         switch industry.type {
         case "黑业":
@@ -70,8 +70,8 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
             break
         }
         // 解决左对齐问题
-        industryTableView.layoutMargins = UIEdgeInsetsZero
-        industryTableView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(TemplateViewController.longPressCell(_:))))
+        industryCell.layoutMargins = UIEdgeInsetsZero
+        industryCell.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(longPressCell(_:))))
         return industryCell
     }
     

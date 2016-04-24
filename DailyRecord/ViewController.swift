@@ -77,10 +77,12 @@ class ViewController: UIViewController {
         totalWhiteLabel.text = String(totalWhite)
         totalWhiteCheckLabel.text = String(totalWhiteCheck)
         
-        pieChart.updateChartData([PNPieChartDataItem(value: CGFloat(totalBlack), color: UIColor.blackColor()), PNPieChartDataItem(value: CGFloat(totalBlackCheck), color: UIColor.greenColor()), PNPieChartDataItem(value: CGFloat(totalWhite), color: UIColor.whiteColor()), PNPieChartDataItem(value: CGFloat(totalWhiteCheck), color: UIColor.redColor())])
-        pieChart.displayAnimated = false
-        pieChart.hideValues = true
-        pieChart.strokeChart()
+        if (totalBlack + totalBlackCheck + totalWhite + totalWhiteCheck > 0) {
+            pieChart.updateChartData([PNPieChartDataItem(value: CGFloat(totalBlack), color: UIColor.blackColor()), PNPieChartDataItem(value: CGFloat(totalBlackCheck), color: UIColor.greenColor()), PNPieChartDataItem(value: CGFloat(totalWhite), color: UIColor.whiteColor()), PNPieChartDataItem(value: CGFloat(totalWhiteCheck), color: UIColor.redColor())])
+            pieChart.displayAnimated = false
+            pieChart.hideValues = true
+            pieChart.strokeChart()
+        }
         
         let dayRange = Utils.getDayRange(today)
         dayBlack.text = String(realm.objects(Industry).filter("type = '黑业' AND time BETWEEN {%@, %@}", dayRange[0], dayRange[1]).count)

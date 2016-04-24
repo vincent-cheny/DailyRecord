@@ -58,6 +58,12 @@ class Utils {
         return String(components.year) + "年" + String(components.month) + "月" + String(components.day) + "日"
     }
     
+    static func getShortDay(date: NSDate) -> String {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Year, .Month, .Day], fromDate: date)
+        return String(components.year) + "." + String(components.month) + "." + String(components.day)
+    }
+    
     static func getWeek(dateFormatter: NSDateFormatter, date: NSDate) -> String {
         let calendar = NSCalendar.currentCalendar()
         calendar.firstWeekday = 2

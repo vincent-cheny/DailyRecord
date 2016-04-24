@@ -80,7 +80,7 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
         }
         // 解决左对齐问题
         templateCell.layoutMargins = UIEdgeInsetsZero
-        templateCell.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(TemplateViewController.longPressCell(_:))))
+        templateCell.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(longPressCell(_:))))
         return templateCell
     }
     
@@ -148,9 +148,9 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     func updateRecordTemplates(filter: String) {
         self.templateFilterBtn.title = filter
         if filter == "全部" {
-            self.recordTemplates = self.realm.objects(RecordTemplate)
+            self.recordTemplates = self.realm.objects(RecordTemplate).sorted("id")
         } else {
-            self.recordTemplates = self.realm.objects(RecordTemplate).filter("type = %@", filter)
+            self.recordTemplates = self.realm.objects(RecordTemplate).filter("type = %@", filter).sorted("id")
         }
     }
     
