@@ -35,12 +35,12 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        industryTableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = false;
-        industryTableView.reloadData()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -113,7 +113,8 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func search(sender: AnyObject) {
         DatePickerDialog().show("请选择查询日期", doneButtonTitle: "确定", cancelButtonTitle: "取消", datePickerMode: .Date) {
             (date) -> Void in
-
+            self.updateTableView(Utils.getDayRange(date))
+            self.industryTableView.reloadData()
         }
     }
     
@@ -140,18 +141,28 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
             dayComponent.day = diff
             showDate = NSCalendar.currentCalendar().dateByAddingComponents(dayComponent, toDate: showDate, options: NSCalendarOptions())!
             timeLabel.text = Utils.getDay(showDate)
+            updateTableView(Utils.getDayRange(showDate))
+            industryTableView.reloadData()
         case "本周":
             let weekComponent = NSDateComponents()
             weekComponent.day = diff * 7;
             showDate = NSCalendar.currentCalendar().dateByAddingComponents(weekComponent, toDate: showDate, options: NSCalendarOptions())!
             timeLabel.text = Utils.getWeek(dateFormatter, date: showDate)
+            updateTableView(Utils.getWeekRange(showDate))
+            industryTableView.reloadData()
         case "本月":
             let monthComponent = NSDateComponents()
             monthComponent.month = diff;
             showDate = NSCalendar.currentCalendar().dateByAddingComponents(monthComponent, toDate: showDate, options: NSCalendarOptions())!
             timeLabel.text = Utils.getYearMonth(showDate)
+            updateTableView(Utils.getMonthRange(showDate))
+            industryTableView.reloadData()
         default:
             break
         }
+    }
+    
+    func updateTableView(dateRange: [NSTimeInterval]) {
+        industries = self.realm.objects(Industry).filter("time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).sorted("id")
     }
 }

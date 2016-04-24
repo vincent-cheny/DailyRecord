@@ -40,8 +40,8 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        templateTableView.reloadData()
         self.navigationController?.navigationBarHidden = false;
+        templateTableView.reloadData()
     }
     
     func initWithClosure(closure: sendValueClosure){
@@ -153,6 +153,5 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
             self.recordTemplates = self.realm.objects(RecordTemplate).filter("type = %@", filter).sorted("id")
         }
     }
-    
     
 }
