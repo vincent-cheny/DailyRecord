@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import PNChart
 
 class ViewController: UIViewController {
 
@@ -36,6 +37,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var monthWhite: UILabel!
     @IBOutlet weak var monthWhiteCheck: UILabel!
     
+    @IBOutlet weak var pieChart: CustomPNPieChart!
+    
     let realm = try! Realm()
     
     override func viewDidLoad() {
@@ -63,10 +66,21 @@ class ViewController: UIViewController {
         dayTime.text = todayDate
         weekTime.text = Utils.getWeek(dateFormatter, date: today)
         monthTime.text = Utils.getMonth(dateFormatter, date: today)
-        totalBlackLabel.text = String(realm.objects(Industry).filter("type = '黑业'").count)
-        totalBlackCheckLabel.text = String(realm.objects(Industry).filter("type = '黑业对治'").count)
-        totalWhiteLabel.text = String(realm.objects(Industry).filter("type = '白业'").count)
-        totalWhiteCheckLabel.text = String(realm.objects(Industry).filter("type = '白业对治'").count)
+        
+        let totalBlack = realm.objects(Industry).filter("type = '黑业'").count
+        let totalBlackCheck = realm.objects(Industry).filter("type = '黑业对治'").count
+        let totalWhite = realm.objects(Industry).filter("type = '白业'").count
+        let totalWhiteCheck = realm.objects(Industry).filter("type = '白业对治'").count
+        
+        totalBlackLabel.text = String(totalBlack)
+        totalBlackCheckLabel.text = String(totalBlackCheck)
+        totalWhiteLabel.text = String(totalWhite)
+        totalWhiteCheckLabel.text = String(totalWhiteCheck)
+        
+        pieChart.updateChartData([PNPieChartDataItem(value: CGFloat(totalBlack), color: UIColor.blackColor()), PNPieChartDataItem(value: CGFloat(totalBlackCheck), color: UIColor.greenColor()), PNPieChartDataItem(value: CGFloat(totalWhite), color: UIColor.whiteColor()), PNPieChartDataItem(value: CGFloat(totalWhiteCheck), color: UIColor.redColor())])
+        pieChart.displayAnimated = false
+        pieChart.hideValues = true
+        pieChart.strokeChart()
         
         let dayRange = Utils.getDayRange(today)
         dayBlack.text = String(realm.objects(Industry).filter("type = '黑业' AND time BETWEEN {%@, %@}", dayRange[0], dayRange[1]).count)

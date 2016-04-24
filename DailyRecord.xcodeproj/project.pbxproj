@@ -33,6 +33,7 @@
 		9A7F8B681CCA26B2004BC3AC /* CheckAndSumSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F8B671CCA26B2004BC3AC /* CheckAndSumSettingViewController.swift */; };
 		9A7F8B6A1CCA364F004BC3AC /* Industry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F8B691CCA364F004BC3AC /* Industry.swift */; };
 		9A7F8B6C1CCA5681004BC3AC /* CheckDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F8B6B1CCA5681004BC3AC /* CheckDialogViewController.swift */; };
+		9A7F8B741CCC6232004BC3AC /* CustomPNPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F8B731CCC6232004BC3AC /* CustomPNPieChart.swift */; };
 		9AC8B1981C6D931C0064B5CC /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1901C6D931C0064B5CC /* calendar.png */; };
 		9AC8B1991C6D931C0064B5CC /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1911C6D931C0064B5CC /* chart.png */; };
 		9AC8B19A1C6D931C0064B5CC /* ic_launcher@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1921C6D931C0064B5CC /* ic_launcher@2x.png */; };
@@ -92,6 +93,8 @@
 		9A7F8B671CCA26B2004BC3AC /* CheckAndSumSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckAndSumSettingViewController.swift; sourceTree = "<group>"; };
 		9A7F8B691CCA364F004BC3AC /* Industry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Industry.swift; sourceTree = "<group>"; };
 		9A7F8B6B1CCA5681004BC3AC /* CheckDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckDialogViewController.swift; sourceTree = "<group>"; };
+		9A7F8B6F1CCC5747004BC3AC /* DailyRecord-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DailyRecord-Bridging-Header.h"; sourceTree = "<group>"; };
+		9A7F8B731CCC6232004BC3AC /* CustomPNPieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPNPieChart.swift; sourceTree = "<group>"; };
 		9AC8B1901C6D931C0064B5CC /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = Resources/calendar.png; sourceTree = "<group>"; };
 		9AC8B1911C6D931C0064B5CC /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chart.png; path = Resources/chart.png; sourceTree = "<group>"; };
 		9AC8B1921C6D931C0064B5CC /* ic_launcher@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_launcher@2x.png"; path = "Resources/ic_launcher@2x.png"; sourceTree = "<group>"; };
@@ -105,7 +108,6 @@
 		9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
 		9AE8F6211C7611C500471786 /* AddTemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTemplateViewController.swift; sourceTree = "<group>"; };
-		9AFADE7A1C6F221900A1A79B /* DailyRecord-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DailyRecord-Bridging-Header.h"; sourceTree = "<group>"; };
 		DBF5CAD9252C59CCEFB9F1A0 /* Pods-DailyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyRecord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyRecord/Pods-DailyRecord.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +187,7 @@
 				9AE8F6211C7611C500471786 /* AddTemplateViewController.swift */,
 				9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */,
 				9AD94BB91C6D6426006216BB /* ChartViewController.swift */,
+				9A7F8B731CCC6232004BC3AC /* CustomPNPieChart.swift */,
 				9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */,
 				9ACCA6241C6EC2CD00AF7D55 /* AboutViewController.swift */,
 				9A7908181C7BED14008CE40F /* IndustryViewController.swift */,
@@ -195,8 +198,8 @@
 				0DFFB2821B896E80001E1EA4 /* Main.storyboard */,
 				0DFFB2851B896E81001E1EA4 /* Images.xcassets */,
 				0DFFB2871B896E81001E1EA4 /* LaunchScreen.xib */,
+				9A7F8B6F1CCC5747004BC3AC /* DailyRecord-Bridging-Header.h */,
 				0DFFB27D1B896E80001E1EA4 /* DailyRecord.xcdatamodeld */,
-				9AFADE7A1C6F221900A1A79B /* DailyRecord-Bridging-Header.h */,
 				0D6743451B898C5B00F6F22C /* Resources */,
 				0DFFB2791B896E80001E1EA4 /* Supporting Files */,
 			);
@@ -293,7 +296,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = LazyPanda;
 				TargetAttributes = {
@@ -422,6 +425,7 @@
 				0DFFB2811B896E80001E1EA4 /* ViewController.swift in Sources */,
 				0DFFB27F1B896E80001E1EA4 /* DailyRecord.xcdatamodeld in Sources */,
 				0DFFB27C1B896E80001E1EA4 /* AppDelegate.swift in Sources */,
+				9A7F8B741CCC6232004BC3AC /* CustomPNPieChart.swift in Sources */,
 				9A1C3F461CB2BA8800F134F0 /* DatePickerDialog.swift in Sources */,
 				9A1C3F441CB2B26600F134F0 /* Utils.swift in Sources */,
 				9A7F8B681CCA26B2004BC3AC /* CheckAndSumSettingViewController.swift in Sources */,
