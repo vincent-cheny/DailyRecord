@@ -25,6 +25,7 @@ class RecordViewController: UIViewController {//, UITableViewDelegate, UITableVi
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = false;
     }
     
     @IBAction func search(sender: AnyObject) {

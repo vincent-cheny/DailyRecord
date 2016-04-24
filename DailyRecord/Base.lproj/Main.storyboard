@@ -3106,16 +3106,16 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="D00-mp-p5O">
+                    <navigationItem key="navigationItem" title="记录" id="D00-mp-p5O">
                         <rightBarButtonItems>
-                            <barButtonItem title="查询" id="CxQ-1u-7Rp">
-                                <connections>
-                                    <action selector="search:" destination="rxP-VG-cSh" id="J56-fI-lXA"/>
-                                </connections>
-                            </barButtonItem>
                             <barButtonItem title="今日" id="HV7-Yc-Gt2">
                                 <connections>
                                     <action selector="filterDate:" destination="rxP-VG-cSh" id="ipb-tw-DTc"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="查询" id="CxQ-1u-7Rp">
+                                <connections>
+                                    <action selector="search:" destination="rxP-VG-cSh" id="J56-fI-lXA"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -3448,6 +3448,12 @@
                                     <constraint firstItem="AjM-Un-hdo" firstAttribute="top" secondItem="gzi-kA-PkR" secondAttribute="top" constant="20" id="u0w-up-tdb"/>
                                     <constraint firstAttribute="trailing" secondItem="eSV-t1-fne" secondAttribute="trailing" id="xnj-wE-xk9"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="dW5-kU-xdB"/>

@@ -124,12 +124,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func searchDay(sender: AnyObject) {
+        let recordViewController = storyboard?.instantiateViewControllerWithIdentifier("RecordViewController") as! RecordViewController
+        recordViewController.dateFilterBtn.title = "今日"
+        navigationController?.pushViewController(recordViewController, animated: true)
     }
     
     @IBAction func searchWeek(sender: AnyObject) {
+        let recordViewController = storyboard?.instantiateViewControllerWithIdentifier("RecordViewController") as! RecordViewController
+        recordViewController.dateFilterBtn.title = "本周"
+        navigationController?.pushViewController(recordViewController, animated: true)
     }
     
     @IBAction func searchMonth(sender: AnyObject) {
+        let recordViewController = storyboard?.instantiateViewControllerWithIdentifier("RecordViewController") as! RecordViewController
+        recordViewController.dateFilterBtn.title = "本月"
+        navigationController?.pushViewController(recordViewController, animated: true)
     }
     
 }
