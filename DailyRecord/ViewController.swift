@@ -70,19 +70,21 @@ class ViewController: UIViewController {
         
         let dayRange = Utils.getDayRange(today)
         dayBlack.text = String(realm.objects(Industry).filter("type = '黑业' AND time BETWEEN {%@, %@}", dayRange[0], dayRange[1]).count)
-        dayBlackCheck.text = String(realm.objects(Industry).filter("type = '黑业对治'").count)
-        dayWhite.text = String(realm.objects(Industry).filter("type = '白业'").count)
-        dayWhiteCheck.text = String(realm.objects(Industry).filter("type = '白业对治'").count)
+        dayBlackCheck.text = String(realm.objects(Industry).filter("type = '黑业对治' AND time BETWEEN {%@, %@}", dayRange[0], dayRange[1]).count)
+        dayWhite.text = String(realm.objects(Industry).filter("type = '白业' AND time BETWEEN {%@, %@}", dayRange[0], dayRange[1]).count)
+        dayWhiteCheck.text = String(realm.objects(Industry).filter("type = '白业对治' AND time BETWEEN {%@, %@}", dayRange[0], dayRange[1]).count)
         
-        weekBlack.text = String(realm.objects(Industry).filter("type = '黑业'").count)
-        weekBlackCheck.text = String(realm.objects(Industry).filter("type = '黑业对治'").count)
-        weekWhite.text = String(realm.objects(Industry).filter("type = '白业'").count)
-        weekWhiteCheck.text = String(realm.objects(Industry).filter("type = '白业对治'").count)
+        let weekRange = Utils.getWeekRange(today)
+        weekBlack.text = String(realm.objects(Industry).filter("type = '黑业' AND time BETWEEN {%@, %@}", weekRange[0], weekRange[1]).count)
+        weekBlackCheck.text = String(realm.objects(Industry).filter("type = '黑业对治' AND time BETWEEN {%@, %@}", weekRange[0], weekRange[1]).count)
+        weekWhite.text = String(realm.objects(Industry).filter("type = '白业' AND time BETWEEN {%@, %@}", weekRange[0], weekRange[1]).count)
+        weekWhiteCheck.text = String(realm.objects(Industry).filter("type = '白业对治' AND time BETWEEN {%@, %@}", weekRange[0], weekRange[1]).count)
         
-        monthBlack.text = String(realm.objects(Industry).filter("type = '黑业'").count)
-        monthBlackCheck.text = String(realm.objects(Industry).filter("type = '黑业对治'").count)
-        monthWhite.text = String(realm.objects(Industry).filter("type = '白业'").count)
-        monthWhiteCheck.text = String(realm.objects(Industry).filter("type = '白业对治'").count)
+        let monthRange = Utils.getMonthRange(today)
+        monthBlack.text = String(realm.objects(Industry).filter("type = '黑业' AND time BETWEEN {%@, %@}", monthRange[0], monthRange[1]).count)
+        monthBlackCheck.text = String(realm.objects(Industry).filter("type = '黑业对治' AND time BETWEEN {%@, %@}", monthRange[0], monthRange[1]).count)
+        monthWhite.text = String(realm.objects(Industry).filter("type = '白业' AND time BETWEEN {%@, %@}", monthRange[0], monthRange[1]).count)
+        monthWhiteCheck.text = String(realm.objects(Industry).filter("type = '白业对治' AND time BETWEEN {%@, %@}", monthRange[0], monthRange[1]).count)
     }
     
     @IBAction func navigateBlack(sender: AnyObject) {

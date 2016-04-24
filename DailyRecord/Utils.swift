@@ -88,4 +88,35 @@ class Utils {
         let endOfDay = calendar.dateByAddingComponents(dayComponet, toDate: startOfDay!, options: NSCalendarOptions())?.dateByAddingTimeInterval(-1)
         return [startOfDay!.timeIntervalSince1970, endOfDay!.timeIntervalSince1970]
     }
+    
+    static func getWeekRange(date: NSDate) -> [NSTimeInterval] {
+        let calendar = NSCalendar.currentCalendar()
+        calendar.firstWeekday = 2
+        var startOfWeek : NSDate?;
+        calendar.rangeOfUnit(.WeekOfYear, startDate: &startOfWeek, interval: nil, forDate: date)
+        let weekComponet = NSDateComponents()
+        weekComponet.day = 7
+        let endOfWeek = calendar.dateByAddingComponents(weekComponet, toDate: startOfWeek!, options: NSCalendarOptions())?.dateByAddingTimeInterval(-1)
+        return [startOfWeek!.timeIntervalSince1970, endOfWeek!.timeIntervalSince1970]
+    }
+    
+    static func getMonthRange(date: NSDate) -> [NSTimeInterval] {
+        let calendar = NSCalendar.currentCalendar()
+        var startOfMonth : NSDate?
+        calendar.rangeOfUnit(.Month, startDate: &startOfMonth, interval: nil, forDate: date)
+        let monthComponent = NSDateComponents()
+        monthComponent.month = 1;
+        let endOfMonth = calendar.dateByAddingComponents(monthComponent, toDate: startOfMonth!, options: NSCalendarOptions())?.dateByAddingTimeInterval(-1)
+        return [startOfMonth!.timeIntervalSince1970, endOfMonth!.timeIntervalSince1970]
+    }
+    
+    static func getYearRange(date: NSDate) -> [NSTimeInterval] {
+        let calendar = NSCalendar.currentCalendar()
+        var startOfYear : NSDate?
+        calendar.rangeOfUnit(.Year, startDate: &startOfYear, interval: nil, forDate: date)
+        let yearComponent = NSDateComponents()
+        yearComponent.year = 1;
+        let endOfYear = calendar.dateByAddingComponents(yearComponent, toDate: startOfYear!, options: NSCalendarOptions())?.dateByAddingTimeInterval(-1)
+        return [startOfYear!.timeIntervalSince1970, endOfYear!.timeIntervalSince1970]
+    }
 }
