@@ -11,7 +11,7 @@ import RealmSwift
 
 class IndustryViewController: UIViewController, UITextViewDelegate {
     
-    var industry = ""
+    var industryType = ""
     var industryId = 0
     let realm = try! Realm()
     var saveAlert :UIAlertController!
@@ -35,7 +35,7 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
             titleButton.enabled = false
             checkButton.enabled = true
         } else {
-            titleButton.setTitle(industry, forState: .Normal)
+            titleButton.setTitle(industryType, forState: .Normal)
         }
         timeButton.setTitle(Utils.allInfoFromTime(showDate), forState: .Normal)
         contentTextView.delegate = self

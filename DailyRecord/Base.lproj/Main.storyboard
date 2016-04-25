@@ -4438,6 +4438,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="changeTime:" destination="L1a-7k-zmk" eventType="touchUpInside" id="can-1l-Qos"/>
                                     <action selector="changeTime:" destination="Sqm-2i-oAK" eventType="touchUpInside" id="plR-Ty-A6H"/>
                                 </connections>
                             </button>
@@ -4601,9 +4602,19 @@
                     <navigationItem key="navigationItem" title="对治" id="XhX-ba-pVL">
                         <rightBarButtonItems>
                             <barButtonItem title="业习" id="PAk-Y0-v7r"/>
-                            <barButtonItem title="模板" id="JCS-JF-BgY"/>
+                            <barButtonItem title="模板" id="JCS-JF-BgY">
+                                <connections>
+                                    <action selector="chooseTemplate:" destination="L1a-7k-zmk" id="5YG-Dx-LQS"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="checkContentTextView" destination="BpT-9M-sSG" id="Zb5-DW-eUp"/>
+                        <outlet property="industryContentTextView" destination="VM5-ek-N8X" id="AUG-lD-Ojz"/>
+                        <outlet property="timeButton" destination="7jR-Oq-HSq" id="AhD-dR-pRK"/>
+                        <outlet property="titleButton" destination="0XI-ko-MSD" id="VaK-Te-0xG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ziL-9R-hc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
