@@ -21,7 +21,7 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
     var showDate = NSDate()
     
     let realm = try! Realm()
-    var industrieAndChecks = try! Realm().objects(Industry).sorted("time")
+    var industrieAndChecks = try! Realm().objects(Industry).filter("type IN {'黑业', '白业'}").sorted("time")
 
     var dateRange: [NSTimeInterval]!
     
@@ -61,7 +61,7 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
         industryType.text = industrieAndCheck.type
         industryDate.text = Utils.getShortDay(NSDate(timeIntervalSince1970: industrieAndCheck.time))
         industryContent.text = industrieAndCheck.content
-        if (industrieAndCheck.check_id > 0) {
+        if (industrieAndCheck.bind_id > 0) {
             checkImageView.hidden = false
             checkDate.hidden = false
             checkContent.hidden = false
@@ -79,7 +79,7 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
         case "黑业":
             industryImageView.image = UIImage(named: "blackdot")
             industryType.textColor = UIColor.blackColor()
-            if (industrieAndCheck.check_id > 0) {
+            if (industrieAndCheck.bind_id > 0) {
                 checkImageView.image = UIImage(named: "greendot")
                 checkType.textColor = UIColor.greenColor()
             } else {
@@ -88,7 +88,7 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
         case "白业":
             industryImageView.image = UIImage(named: "whitedot")
             industryType.textColor = UIColor.whiteColor()
-            if (industrieAndCheck.check_id > 0) {
+            if (industrieAndCheck.bind_id > 0) {
                 checkImageView.image = UIImage(named: "reddot")
                 checkType.textColor = UIColor.redColor()
             } else {
@@ -216,11 +216,11 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
         if filter == "全部" {
             switch checkStateFilterBtn.title! {
             case "全部业习":
-                industrieAndChecks = self.realm.objects(Industry).filter("time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).sorted("time")
+                industrieAndChecks = self.realm.objects(Industry).filter("type IN {'黑业', '白业'} AND time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).sorted("time")
             case "已对治":
-                industrieAndChecks = self.realm.objects(Industry).filter("check_id > 0 AND time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).sorted("time")
+                industrieAndChecks = self.realm.objects(Industry).filter("type IN {'黑业', '白业'} AND bind_id > 0 AND time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).sorted("time")
             case "未对治":
-                industrieAndChecks = self.realm.objects(Industry).filter("check_id = 0 AND time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).sorted("time")
+                industrieAndChecks = self.realm.objects(Industry).filter("type IN {'黑业', '白业'} AND bind_id = 0 AND time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).sorted("time")
             default:
                 break
             }
@@ -229,9 +229,9 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
             case "全部业习":
                 industrieAndChecks = self.realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", typeFilterBtn.title!, dateRange[0], dateRange[1]).sorted("time")
             case "已对治":
-                industrieAndChecks = self.realm.objects(Industry).filter("check_id > 0 AND type = %@ AND time BETWEEN {%@, %@}", typeFilterBtn.title!, dateRange[0], dateRange[1]).sorted("time")
+                industrieAndChecks = self.realm.objects(Industry).filter("bind_id > 0 AND type = %@ AND time BETWEEN {%@, %@}", typeFilterBtn.title!, dateRange[0], dateRange[1]).sorted("time")
             case "未对治":
-                industrieAndChecks = self.realm.objects(Industry).filter("check_id = 0 AND type = %@ AND time BETWEEN {%@, %@}", typeFilterBtn.title!, dateRange[0], dateRange[1]).sorted("time")
+                industrieAndChecks = self.realm.objects(Industry).filter("bind_id = 0 AND type = %@ AND time BETWEEN {%@, %@}", typeFilterBtn.title!, dateRange[0], dateRange[1]).sorted("time")
             default:
                 break
             }

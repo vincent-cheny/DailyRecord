@@ -4385,12 +4385,13 @@
         <!--对治-->
         <scene sceneID="QyJ-1L-VRY">
             <objects>
-                <viewController title="对治" id="L1a-7k-zmk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckViewController" title="对治" id="L1a-7k-zmk" customClass="CheckViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AL6-Xh-OEp"/>
                         <viewControllerLayoutGuide type="bottom" id="XtF-g7-TQM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8WS-Zc-lHK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-Ie-hUH">
@@ -4530,6 +4531,9 @@
                                 <exclude reference="kCZ-L3-jzs"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="JEz-VO-i7A"/>
+                                <exclude reference="b9t-y0-Mmf"/>
+                                <exclude reference="du2-hQ-ogR"/>
                                 <exclude reference="jzv-T1-9Dm"/>
                                 <exclude reference="nft-4R-wac"/>
                                 <exclude reference="rF3-sE-cSs"/>
@@ -4540,20 +4544,17 @@
                                 <exclude reference="SWt-3a-3qP"/>
                                 <exclude reference="Sbv-qt-q8z"/>
                                 <exclude reference="zC8-LB-iia"/>
-                                <exclude reference="Hui-6Z-Ivc"/>
-                                <exclude reference="IHA-2I-fJO"/>
-                                <exclude reference="ss2-mj-yDt"/>
-                                <exclude reference="Fim-bM-oen"/>
-                                <exclude reference="I07-Fc-2xm"/>
-                                <exclude reference="Mwd-eg-9yJ"/>
-                                <exclude reference="Vec-Te-MMA"/>
                                 <exclude reference="5PK-wO-blA"/>
                                 <exclude reference="cOf-Dg-Nhq"/>
                                 <exclude reference="UCa-uH-Aep"/>
                                 <exclude reference="yq9-su-LPR"/>
-                                <exclude reference="JEz-VO-i7A"/>
-                                <exclude reference="b9t-y0-Mmf"/>
-                                <exclude reference="du2-hQ-ogR"/>
+                                <exclude reference="Fim-bM-oen"/>
+                                <exclude reference="I07-Fc-2xm"/>
+                                <exclude reference="Mwd-eg-9yJ"/>
+                                <exclude reference="Vec-Te-MMA"/>
+                                <exclude reference="Hui-6Z-Ivc"/>
+                                <exclude reference="IHA-2I-fJO"/>
+                                <exclude reference="ss2-mj-yDt"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -4567,6 +4568,9 @@
                                 <include reference="kCZ-L3-jzs"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="JEz-VO-i7A"/>
+                                <include reference="b9t-y0-Mmf"/>
+                                <include reference="du2-hQ-ogR"/>
                                 <include reference="jzv-T1-9Dm"/>
                                 <include reference="nft-4R-wac"/>
                                 <include reference="rF3-sE-cSs"/>
@@ -4577,20 +4581,17 @@
                                 <include reference="SWt-3a-3qP"/>
                                 <include reference="Sbv-qt-q8z"/>
                                 <include reference="zC8-LB-iia"/>
-                                <include reference="Hui-6Z-Ivc"/>
-                                <include reference="IHA-2I-fJO"/>
-                                <include reference="ss2-mj-yDt"/>
-                                <include reference="Fim-bM-oen"/>
-                                <include reference="I07-Fc-2xm"/>
-                                <include reference="Mwd-eg-9yJ"/>
-                                <include reference="Vec-Te-MMA"/>
                                 <include reference="5PK-wO-blA"/>
                                 <include reference="cOf-Dg-Nhq"/>
                                 <include reference="UCa-uH-Aep"/>
                                 <include reference="yq9-su-LPR"/>
-                                <include reference="JEz-VO-i7A"/>
-                                <include reference="b9t-y0-Mmf"/>
-                                <include reference="du2-hQ-ogR"/>
+                                <include reference="Fim-bM-oen"/>
+                                <include reference="I07-Fc-2xm"/>
+                                <include reference="Mwd-eg-9yJ"/>
+                                <include reference="Vec-Te-MMA"/>
+                                <include reference="Hui-6Z-Ivc"/>
+                                <include reference="IHA-2I-fJO"/>
+                                <include reference="ss2-mj-yDt"/>
                             </mask>
                         </variation>
                     </view>
