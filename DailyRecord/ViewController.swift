@@ -105,26 +105,26 @@ class ViewController: UIViewController {
     
     @IBAction func navigateBlack(sender: AnyObject) {
         let industryViewController = storyboard?.instantiateViewControllerWithIdentifier("IndustryViewController") as! IndustryViewController
-        industryViewController.titleButton.setTitle("黑业", forState: .Normal)
+        industryViewController.industry = "黑业"
         navigationController?.pushViewController(industryViewController, animated: true)
     }
     
     @IBAction func navigateWhite(sender: AnyObject) {
         let industryViewController = storyboard?.instantiateViewControllerWithIdentifier("IndustryViewController") as! IndustryViewController
-        industryViewController.titleButton.setTitle("白业", forState: .Normal)
+        industryViewController.industry = "白业"
         navigationController?.pushViewController(industryViewController, animated: true)
     }
     
     @IBAction func navigateBlackCheck(sender: AnyObject) {
-        let checkViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
-        checkViewController.typeFilterBtn.title = "黑业"
-        navigationController?.pushViewController(checkViewController, animated: true)
+        let checkSummaryViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckSummaryViewController") as! CheckSummaryViewController
+        checkSummaryViewController.typeFilterBtn.title = "黑业"
+        navigationController?.pushViewController(checkSummaryViewController, animated: true)
     }
     
     @IBAction func navigateWhiteCheck(sender: AnyObject) {
-        let checkViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
-        checkViewController.typeFilterBtn.title = "白业"
-        navigationController?.pushViewController(checkViewController, animated: true)
+        let checkSummaryViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckSummaryViewController") as! CheckSummaryViewController
+        checkSummaryViewController.typeFilterBtn.title = "白业"
+        navigationController?.pushViewController(checkSummaryViewController, animated: true)
     }
     
     @IBAction func searchDay(sender: AnyObject) {
