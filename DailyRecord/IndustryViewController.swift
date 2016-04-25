@@ -116,6 +116,7 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
         saveAlert = UIAlertController(title: "请输入名称", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         saveAlert.addTextFieldWithConfigurationHandler(nil)
         saveAlert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+            
             try! self.realm.write {
                 let contentText = self.contentTextView.textColor == UIColor.lightGrayColor() ? "" : self.contentTextView.text
                 let template = RecordTemplate(value: [RecordTemplate().incrementaId(), self.saveAlert.textFields!.first!.text!, self.titleButton.titleForState(.Normal)!, contentText]);
@@ -134,10 +135,18 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
 //        } else {
 //            
 //        }
-        try! realm.write {
-            let contentText = contentTextView.textColor == UIColor.lightGrayColor() ? "" : contentTextView.text
-            let industry = Industry(value: [Industry().incrementaId(), titleButton.titleForState(.Normal)!, contentText, showDate.timeIntervalSince1970, 0]);
-            realm.add(industry)
+        let contentText = contentTextView.textColor == UIColor.lightGrayColor() ? "" : contentTextView.text
+        if curIndustry == nil {
+            try! realm.write {
+                let industry = Industry(value: [Industry().incrementaId(), titleButton.titleForState(.Normal)!, contentText, showDate.timeIntervalSince1970, 0]);
+                realm.add(industry)
+            }
+        } else {
+            try! realm.write {
+                curIndustry.type = titleButton.titleForState(.Normal)!
+                curIndustry.content = contentText
+                curIndustry.time = showDate.timeIntervalSince1970
+            }
         }
         navigationController?.popViewControllerAnimated(true)
     }
