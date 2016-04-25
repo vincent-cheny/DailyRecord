@@ -21,13 +21,13 @@ class CheckViewController: UIViewController, UITextViewDelegate {
     var checkType = ""
     var industryId = 0
     var checkId = 0
+    var saveAlert :UIAlertController!
     let realm = try! Realm()
     var showDate = NSDate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        curIndustry = realm.objects(Industry).filter("id = %d", industryId).first
         titleButton.setTitleColor(UIColor.blackColor(), forState: .Disabled)
         titleButton.enabled = false
         if checkId > 0 {
@@ -35,7 +35,10 @@ class CheckViewController: UIViewController, UITextViewDelegate {
             titleButton.setTitle(curCheck.type, forState: .Normal)
             checkContentTextView.text = curCheck.content
             showDate = NSDate(timeIntervalSince1970: curCheck.time)
+            industryId = curCheck.bind_id
+            curIndustry = realm.objects(Industry).filter("id = %d", industryId).first
         } else {
+            curIndustry = realm.objects(Industry).filter("id = %d", industryId).first
             if curIndustry.type == "黑业" {
                 titleButton.setTitle("黑业对治", forState: .Normal)
             } else if curIndustry.type == "白业" {
@@ -105,4 +108,38 @@ class CheckViewController: UIViewController, UITextViewDelegate {
             checkContentTextView.textColor = UIColor.blackColor()
         }
     }
+    
+    @IBAction func saveTemplate(sender: AnyObject) {
+        saveAlert = UIAlertController(title: "请输入名称", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        saveAlert.addTextFieldWithConfigurationHandler(nil)
+        saveAlert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+            try! self.realm.write {
+                let contentText = self.checkContentTextView.textColor == UIColor.lightGrayColor() ? "" : self.checkContentTextView.text
+                let template = RecordTemplate(value: [RecordTemplate().incrementaId(), self.saveAlert.textFields!.first!.text!, self.titleButton.titleForState(.Normal)!, contentText]);
+                self.realm.add(template)
+            }
+        }))
+        saveAlert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
+        self.presentViewController(saveAlert, animated: true, completion: nil)
+    }
+    
+    @IBAction func addCheck(sender: AnyObject) {
+        let contentText = checkContentTextView.textColor == UIColor.lightGrayColor() ? "" : checkContentTextView.text
+        if curCheck == nil {
+            try! realm.write {
+                let id = Industry().incrementaId()
+                curIndustry.bind_id = id
+                let check = Industry(value: [id, titleButton.titleForState(.Normal)!, contentText, showDate.timeIntervalSince1970, industryId]);
+                realm.add(check)
+            }
+        } else {
+            try! realm.write {
+                curCheck.type = titleButton.titleForState(.Normal)!
+                curCheck.content = contentText
+                curCheck.time = showDate.timeIntervalSince1970
+            }
+        }
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
 }

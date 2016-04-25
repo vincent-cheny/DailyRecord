@@ -10,20 +10,18 @@ import UIKit
 import RealmSwift
 
 class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+   
+    let dateFormatter = NSDateFormatter()
+    var showDate = NSDate()
+    let realm = try! Realm()
+    var industrieAndChecks = try! Realm().objects(Industry).filter("type IN {'黑业', '白业'}").sorted("time")
+    var dateRange: [NSTimeInterval]!
     
     @IBOutlet weak var dateFilterBtn: UIBarButtonItem!
     @IBOutlet weak var typeFilterBtn: UIBarButtonItem!
     @IBOutlet weak var checkStateFilterBtn: UIBarButtonItem!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var industryAndCheckTabelView: UITableView!
-    
-    let dateFormatter = NSDateFormatter()
-    var showDate = NSDate()
-    
-    let realm = try! Realm()
-    var industrieAndChecks = try! Realm().objects(Industry).filter("type IN {'黑业', '白业'}").sorted("time")
-
-    var dateRange: [NSTimeInterval]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +43,7 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = false;
+        industryAndCheckTabelView.reloadData()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -65,10 +64,10 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
             checkImageView.hidden = false
             checkDate.hidden = false
             checkContent.hidden = false
-            
-//            checkType.text = industrieAndCheck.type
-//            checkDate.text = Utils.getShortDay(NSDate(timeIntervalSince1970: industrieAndCheck.time))
-//            checkContent.text = industrieAndCheck.content
+            let check = realm.objects(Industry).filter("id = %d", industrieAndCheck.bind_id).first!
+            checkType.text = check.type
+            checkDate.text = Utils.getShortDay(NSDate(timeIntervalSince1970: check.time))
+            checkContent.text = check.content
         } else {
             checkImageView.hidden = true
             checkDate.hidden = true
@@ -108,8 +107,7 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
             let indexPath = industryAndCheckTabelView.indexPathForRowAtPoint(recognizer.locationInView(industryAndCheckTabelView))
             let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "编辑", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
-                let checkViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
-                self.navigationController?.pushViewController(checkViewController, animated: true)
+                self.navigateCheck(indexPath!)
             }))
             alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
@@ -123,7 +121,17 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // 模拟闪动效果
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        navigateCheck(indexPath)
+    }
+    
+    func navigateCheck(indexPath: NSIndexPath) {
         let checkViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
+        let industry = industrieAndChecks[indexPath.row]
+        if industry.bind_id > 0 {
+            checkViewController.checkId = industry.bind_id
+        } else {
+            checkViewController.industryId = industry.id
+        }
         navigationController?.pushViewController(checkViewController, animated: true)
     }
     

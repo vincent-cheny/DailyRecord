@@ -11,17 +11,17 @@ import RealmSwift
 
 class IndustryViewController: UIViewController, UITextViewDelegate {
     
+    @IBOutlet weak var titleButton: UIButton!
+    @IBOutlet weak var timeButton: UIButton!
+    @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var checkButton: UIBarButtonItem!
+    
     var industryType = ""
     var industryId = 0
     let realm = try! Realm()
     var saveAlert :UIAlertController!
     var showDate = NSDate()
     var curIndustry: Industry!
-    
-    @IBOutlet weak var titleButton: UIButton!
-    @IBOutlet weak var timeButton: UIButton!
-    @IBOutlet weak var contentTextView: UITextView!
-    @IBOutlet weak var checkButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,10 +134,10 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
 //        } else {
 //            
 //        }
-        try! self.realm.write {
-            let contentText = self.contentTextView.textColor == UIColor.lightGrayColor() ? "" : self.contentTextView.text
-            let industry = Industry(value: [Industry().incrementaId(), self.titleButton.titleForState(.Normal)!, contentText, showDate.timeIntervalSince1970, 0]);
-            self.realm.add(industry)
+        try! realm.write {
+            let contentText = contentTextView.textColor == UIColor.lightGrayColor() ? "" : contentTextView.text
+            let industry = Industry(value: [Industry().incrementaId(), titleButton.titleForState(.Normal)!, contentText, showDate.timeIntervalSince1970, 0]);
+            realm.add(industry)
         }
         navigationController?.popViewControllerAnimated(true)
     }
@@ -146,8 +146,9 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
         let checkViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
         if curIndustry.bind_id > 0 {
             checkViewController.checkId = curIndustry.bind_id
+        } else {
+            checkViewController.industryId = curIndustry.id
         }
-        checkViewController.industryId = curIndustry.id
         navigationController?.pushViewController(checkViewController, animated: true)
     }
 }

@@ -16,6 +16,7 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     
     typealias sendValueClosure = (type: String, content: String)->Void
     var myClosure: sendValueClosure?
+    var templateType = ""
     
     let realm = try! Realm()
     var recordTemplates = try! Realm().objects(RecordTemplate).sorted("id")
@@ -30,6 +31,7 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
         templateTableView.dataSource = self
         // 解决底部多余行问题
         templateTableView.tableFooterView = UIView(frame: CGRectZero)
+        templateType = templateFilterBtn.title!
         updateRecordTemplates(templateFilterBtn.title!)
     }
     
@@ -89,9 +91,7 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
             let indexPath = templateTableView.indexPathForRowAtPoint(recognizer.locationInView(templateTableView))
             let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "编辑", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
-                let addTemplateViewController = self.storyboard?.instantiateViewControllerWithIdentifier("AddTemplateViewController") as! AddTemplateViewController
-                addTemplateViewController.templateId = self.recordTemplates[indexPath!.row].id
-                self.navigationController?.pushViewController(addTemplateViewController, animated: true)
+                self.navigateTemplate(indexPath!)
             }))
             alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Default, handler: nil))
             alert.addAction(UIAlertAction(title: "删除", style: UIAlertActionStyle.Destructive, handler: { (UIAlertAction) -> Void in
@@ -113,11 +113,11 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if self.myClosure != nil {
             let template = recordTemplates[indexPath.row]
-            if template.type == "黑业" || template.type == "白业" {
+            if template.type == templateType {
                 myClosure!(type: template.type, content: template.content)
                 navigationController?.popViewControllerAnimated(true)
             } else {
-                let alert = UIAlertController(title: "请选择业习", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "请选择" + templateType, message: "", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
@@ -126,6 +126,12 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
             addTemplateViewController.templateId = recordTemplates[indexPath.row].id
             navigationController?.pushViewController(addTemplateViewController, animated: true)
         }
+    }
+    
+    func navigateTemplate(indexPath: NSIndexPath) {
+        let addTemplateViewController = storyboard?.instantiateViewControllerWithIdentifier("AddTemplateViewController") as! AddTemplateViewController
+        addTemplateViewController.templateId = recordTemplates[indexPath.row].id
+        navigationController?.pushViewController(addTemplateViewController, animated: true)
     }
     
     @IBAction func templateFilter(sender: AnyObject) {
