@@ -141,4 +141,13 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
         }
         navigationController?.popViewControllerAnimated(true)
     }
+    
+    @IBAction func navigateCheck(sender: AnyObject) {
+        let checkViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
+        if curIndustry.bind_id > 0 {
+            checkViewController.checkId = curIndustry.bind_id
+        }
+        checkViewController.industryId = curIndustry.id
+        navigationController?.pushViewController(checkViewController, animated: true)
+    }
 }

@@ -16,8 +16,10 @@ class CheckViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var industryContentTextView: UITextView!
     @IBOutlet weak var checkContentTextView: UITextView!
     
+    var curIndustry: Industry!
     var curCheck: Industry!
     var checkType = ""
+    var industryId = 0
     var checkId = 0
     let realm = try! Realm()
     var showDate = NSDate()
@@ -25,16 +27,24 @@ class CheckViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        curIndustry = realm.objects(Industry).filter("id = %d", industryId).first
+        titleButton.setTitleColor(UIColor.blackColor(), forState: .Disabled)
+        titleButton.enabled = false
         if checkId > 0 {
             curCheck = realm.objects(Industry).filter("id = %d", checkId).first
             titleButton.setTitle(curCheck.type, forState: .Normal)
             checkContentTextView.text = curCheck.content
             showDate = NSDate(timeIntervalSince1970: curCheck.time)
-            titleButton.setTitleColor(UIColor.blackColor(), forState: .Disabled)
-            titleButton.enabled = false
         } else {
-//            titleButton.setTitle(industry, forState: .Normal)
+            if curIndustry.type == "黑业" {
+                titleButton.setTitle("黑业对治", forState: .Normal)
+            } else if curIndustry.type == "白业" {
+                titleButton.setTitle("白业对治", forState: .Normal)
+            }
         }
+        industryContentTextView.textColor = UIColor.lightGrayColor()
+        industryContentTextView.editable = false
+        industryContentTextView.text = curIndustry.content
         timeButton.setTitle(Utils.allInfoFromTime(showDate), forState: .Normal)
         checkContentTextView.delegate = self
         textViewDidEndEditing(checkContentTextView)
