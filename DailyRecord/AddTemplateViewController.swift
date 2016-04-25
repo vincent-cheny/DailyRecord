@@ -22,7 +22,7 @@ class AddTemplateViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if templateId != 0 {
+        if templateId > 0 {
             curTemplate = realm.objects(RecordTemplate).filter("id = %d", templateId).first
             templateTitle.text = curTemplate.title
             templateType.setTitle(curTemplate.type, forState: .Normal)

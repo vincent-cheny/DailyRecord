@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         totalWhiteLabel.text = String(totalWhite)
         totalWhiteCheckLabel.text = String(totalWhiteCheck)
         
-        if (totalBlack + totalBlackCheck + totalWhite + totalWhiteCheck > 0) {
+        if totalBlack + totalBlackCheck + totalWhite + totalWhiteCheck > 0 {
             pieChart.updateChartData([PNPieChartDataItem(value: CGFloat(totalBlack), color: UIColor.blackColor()), PNPieChartDataItem(value: CGFloat(totalBlackCheck), color: UIColor.greenColor()), PNPieChartDataItem(value: CGFloat(totalWhite), color: UIColor.whiteColor()), PNPieChartDataItem(value: CGFloat(totalWhiteCheck), color: UIColor.redColor())])
             pieChart.displayAnimated = false
             pieChart.hideValues = true

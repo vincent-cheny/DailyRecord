@@ -12,18 +12,31 @@ import RealmSwift
 class IndustryViewController: UIViewController, UITextViewDelegate {
     
     var industry = ""
+    var industryId = 0
     let realm = try! Realm()
     var saveAlert :UIAlertController!
     var showDate = NSDate()
+    var curIndustry: Industry!
     
     @IBOutlet weak var titleButton: UIButton!
     @IBOutlet weak var timeButton: UIButton!
     @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var checkButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        titleButton.setTitle(industry, forState: .Normal)
+        if industryId > 0 {
+            curIndustry = realm.objects(Industry).filter("id = %d", industryId).first
+            titleButton.setTitle(curIndustry.type, forState: .Normal)
+            contentTextView.text = curIndustry.content
+            showDate = NSDate(timeIntervalSince1970: curIndustry.time)
+            titleButton.setTitleColor(UIColor.blackColor(), forState: .Disabled)
+            titleButton.enabled = false
+            checkButton.enabled = true
+        } else {
+            titleButton.setTitle(industry, forState: .Normal)
+        }
         timeButton.setTitle(Utils.allInfoFromTime(showDate), forState: .Normal)
         contentTextView.delegate = self
         textViewDidEndEditing(contentTextView)
@@ -90,7 +103,7 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
     
     func getValueClosure(type: String, content: String) {
         titleButton.setTitle(type, forState: .Normal)
-        if (content == "") {
+        if content == "" {
             contentTextView.text = "详细"
             contentTextView.textColor = UIColor.lightGrayColor()
         } else {
@@ -115,7 +128,7 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func addIndustry(sender: AnyObject) {
 //        let defaults = NSUserDefaults.standardUserDefaults()
-//        if (defaults.boolForKey(Utils.needBlackCheck)) {
+//        if defaults.boolForKey(Utils.needBlackCheck) {
 //            let checkDialogViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckDialogViewController") as! CheckDialogViewController
 //            presentViewController(checkDialogViewController, animated: true, completion: nil)
 //        } else {

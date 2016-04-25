@@ -111,9 +111,9 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // 模拟闪动效果
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if (self.myClosure != nil) {
+        if self.myClosure != nil {
             let template = recordTemplates[indexPath.row]
-            if (template.type == "黑业" || template.type == "白业") {
+            if template.type == "黑业" || template.type == "白业" {
                 myClosure!(type: template.type, content: template.content)
                 navigationController?.popViewControllerAnimated(true)
             } else {

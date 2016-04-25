@@ -61,7 +61,7 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
         industryType.text = industrieAndCheck.type
         industryDate.text = Utils.getShortDay(NSDate(timeIntervalSince1970: industrieAndCheck.time))
         industryContent.text = industrieAndCheck.content
-        if (industrieAndCheck.bind_id > 0) {
+        if industrieAndCheck.bind_id > 0 {
             checkImageView.hidden = false
             checkDate.hidden = false
             checkContent.hidden = false
@@ -79,7 +79,7 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
         case "黑业":
             industryImageView.image = UIImage(named: "blackdot")
             industryType.textColor = UIColor.blackColor()
-            if (industrieAndCheck.bind_id > 0) {
+            if industrieAndCheck.bind_id > 0 {
                 checkImageView.image = UIImage(named: "greendot")
                 checkType.textColor = UIColor.greenColor()
             } else {
@@ -88,7 +88,7 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
         case "白业":
             industryImageView.image = UIImage(named: "whitedot")
             industryType.textColor = UIColor.whiteColor()
-            if (industrieAndCheck.bind_id > 0) {
+            if industrieAndCheck.bind_id > 0 {
                 checkImageView.image = UIImage(named: "reddot")
                 checkType.textColor = UIColor.redColor()
             } else {
@@ -108,7 +108,8 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
             let indexPath = industryAndCheckTabelView.indexPathForRowAtPoint(recognizer.locationInView(industryAndCheckTabelView))
             let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "编辑", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
-                
+                let checkViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
+                self.navigationController?.pushViewController(checkViewController, animated: true)
             }))
             alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
@@ -122,6 +123,8 @@ class CheckSummaryViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // 模拟闪动效果
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let checkViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
+        navigationController?.pushViewController(checkViewController, animated: true)
     }
     
     @IBAction func plusDate(sender: AnyObject) {

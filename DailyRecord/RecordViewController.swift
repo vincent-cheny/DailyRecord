@@ -80,7 +80,9 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let indexPath = industryTableView.indexPathForRowAtPoint(recognizer.locationInView(industryTableView))
             let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "编辑", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
-                
+                let industryViewController = self.storyboard?.instantiateViewControllerWithIdentifier("IndustryViewController") as! IndustryViewController
+                industryViewController.industryId = self.industries[indexPath!.row].id
+                self.navigationController?.pushViewController(industryViewController, animated: true)
             }))
             alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Default, handler: nil))
             alert.addAction(UIAlertAction(title: "删除", style: UIAlertActionStyle.Destructive, handler: { (UIAlertAction) -> Void in
@@ -100,6 +102,9 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // 模拟闪动效果
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let industryViewController = storyboard?.instantiateViewControllerWithIdentifier("IndustryViewController") as! IndustryViewController
+        industryViewController.industryId = industries[indexPath.row].id
+        navigationController?.pushViewController(industryViewController, animated: true)
     }
     
     @IBAction func plusDate(sender: AnyObject) {
