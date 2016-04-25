@@ -150,10 +150,21 @@ class CheckViewController: UIViewController, UITextViewDelegate {
         navigationController?.popViewControllerAnimated(true)
     }
     
+    func getIndustryContentClosure(content: String) {
+        industryContentTextView.text = content
+    }
+    
     @IBAction func navigateIndustry(sender: AnyObject) {
-        let industryViewController = storyboard?.instantiateViewControllerWithIdentifier("IndustryViewController") as! IndustryViewController
-        industryViewController.industryId = curIndustry.id
-        navigationController?.pushViewController(industryViewController, animated: true)
+        let viewControllers = navigationController!.viewControllers
+        let rootViewController = viewControllers[viewControllers.count - 2]
+        if rootViewController is IndustryViewController {
+            navigationController?.popViewControllerAnimated(true)
+        } else {
+            let industryViewController = storyboard?.instantiateViewControllerWithIdentifier("IndustryViewController") as! IndustryViewController
+            industryViewController.industryId = curIndustry.id
+            industryViewController.initWithClosure(getIndustryContentClosure)
+            navigationController?.pushViewController(industryViewController, animated: true)
+        }
     }
     
 }

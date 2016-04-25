@@ -4133,8 +4133,7 @@
                                                             <exclude reference="tGU-oc-CCa"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="-12" y="0.0" width="132" height="43.5"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="subviews">
                                                             <include reference="Fu5-px-zPS"/>
                                                             <include reference="Dif-pJ-LdA"/>
@@ -4223,8 +4222,7 @@
                                                             <exclude reference="S6o-Tq-h90"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="120" y="0.0" width="132" height="43.5"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="subviews">
                                                             <include reference="OZA-lJ-EDH"/>
                                                             <include reference="B9S-6J-cr6"/>

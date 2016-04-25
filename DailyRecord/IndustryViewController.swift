@@ -16,6 +16,9 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var checkButton: UIBarButtonItem!
     
+    typealias sendIndustryContentClosure = (content: String)->Void
+    var myClosure: sendIndustryContentClosure?
+    
     var industryType = ""
     var industryId = 0
     let realm = try! Realm()
@@ -50,6 +53,10 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = false;
+    }
+    
+    func initWithClosure(closure: sendIndustryContentClosure){
+        myClosure = closure
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
@@ -148,16 +155,25 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
                 curIndustry.time = showDate.timeIntervalSince1970
             }
         }
+        if myClosure != nil {
+            myClosure!(content: curIndustry.content)
+        }
         navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func navigateCheck(sender: AnyObject) {
-        let checkViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
-        if curIndustry.bind_id > 0 {
-            checkViewController.checkId = curIndustry.bind_id
+        let viewControllers = navigationController!.viewControllers
+        let rootViewController = viewControllers[viewControllers.count - 2]
+        if rootViewController is CheckViewController {
+            navigationController?.popViewControllerAnimated(true)
         } else {
-            checkViewController.industryId = curIndustry.id
+            let checkViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
+            if curIndustry.bind_id > 0 {
+                checkViewController.checkId = curIndustry.bind_id
+            } else {
+                checkViewController.industryId = curIndustry.id
+            }
+            navigationController?.pushViewController(checkViewController, animated: true)
         }
-        navigationController?.pushViewController(checkViewController, animated: true)
     }
 }
