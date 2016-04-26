@@ -117,7 +117,20 @@ class ChartViewController: UIViewController {
             switch chartType.title! {
             case "饼状图":
                 pieChart.hidden = false
-                pieChart.updateChartData([PNPieChartDataItem(value: CGFloat(black), color: UIColor.blackColor(), description: "黑业"), PNPieChartDataItem(value: CGFloat(blackCheck), color: UIColor.greenColor(), description: "黑业对治"), PNPieChartDataItem(value: CGFloat(white), color: UIColor.whiteColor(), description: "白业"), PNPieChartDataItem(value: CGFloat(whiteCheck), color: UIColor.redColor(), description: "白业对治")])
+                var dataItems = [PNPieChartDataItem]()
+                if black > 0 {
+                    dataItems.append(PNPieChartDataItem(value: CGFloat(black), color: UIColor.blackColor(), description: "黑业"))
+                }
+                if blackCheck > 0 {
+                    dataItems.append(PNPieChartDataItem(value: CGFloat(blackCheck), color: UIColor.greenColor(), description: "黑业对治"))
+                }
+                if white > 0 {
+                    dataItems.append(PNPieChartDataItem(value: CGFloat(white), color: UIColor.whiteColor(), description: "白业"))
+                }
+                if whiteCheck > 0 {
+                    dataItems.append(PNPieChartDataItem(value: CGFloat(whiteCheck), color: UIColor.redColor(), description: "白业对治"))
+                }
+                pieChart.updateChartData(dataItems)
                 pieChart.descriptionTextColor = UIColor.lightGrayColor()
                 pieChart.descriptionTextFont  = UIFont.systemFontOfSize(11.0)
                 pieChart.descriptionTextShadowColor = UIColor.clearColor()
@@ -125,6 +138,12 @@ class ChartViewController: UIViewController {
                 pieChart.showAbsoluteValues = true
                 pieChart.userInteractionEnabled = false
                 pieChart.strokeChart()
+                pieChart.legendStyle = PNLegendItemStyle.Stacked
+                pieChart.legendFontColor = UIColor.lightGrayColor()
+                pieChart.legendFont = UIFont.boldSystemFontOfSize(12.0)
+                let legend = pieChart.getLegendWithMaxWidth(200)
+                legend.frame = CGRect(x: 0, y: view.frame.width * 2 / 3, width: legend.frame.size.width, height: legend.frame.size.height)
+                pieChart.addSubview(legend)
                 break
             case "折线图":
                 lineChart.hidden = false
