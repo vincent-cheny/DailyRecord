@@ -123,7 +123,6 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
         saveAlert = UIAlertController(title: "请输入名称", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         saveAlert.addTextFieldWithConfigurationHandler(nil)
         saveAlert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
-            
             try! self.realm.write {
                 let contentText = self.contentTextView.textColor == UIColor.lightGrayColor() ? "" : self.contentTextView.text
                 let template = RecordTemplate(value: [RecordTemplate().incrementaId(), self.saveAlert.textFields!.first!.text!, self.titleButton.titleForState(.Normal)!, contentText]);
@@ -135,18 +134,38 @@ class IndustryViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func addIndustry(sender: AnyObject) {
-//        let defaults = NSUserDefaults.standardUserDefaults()
-//        if defaults.boolForKey(Utils.needBlackCheck) {
-//            let checkDialogViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckDialogViewController") as! CheckDialogViewController
-//            presentViewController(checkDialogViewController, animated: true, completion: nil)
-//        } else {
-//            
-//        }
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let title = titleButton.titleForState(.Normal)!
+        if (title == "黑业" && defaults.boolForKey(Utils.needBlackCheck)) || (title == "白业" && defaults.boolForKey(Utils.needWhiteCheck)) {
+            let checkDialogViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckDialogViewController") as! CheckDialogViewController
+            checkDialogViewController.checkType = title + "对治"
+            checkDialogViewController.initWithClosure(confirmAndPopViewClosure)
+            presentViewController(checkDialogViewController, animated: true, completion: nil)
+        } else {
+            confirmAndPopView("", isConfirm: false)
+        }
+    }
+    
+    func confirmAndPopViewClosure(checkContent: String, isConfirm: Bool) {
+        dismissViewControllerAnimated(true, completion: nil)
+        confirmAndPopView(checkContent, isConfirm: isConfirm)
+    }
+    
+    func confirmAndPopView(checkContent: String, isConfirm: Bool) {
         let contentText = contentTextView.textColor == UIColor.lightGrayColor() ? "" : contentTextView.text
         if curIndustry == nil {
             try! realm.write {
-                let industry = Industry(value: [Industry().incrementaId(), titleButton.titleForState(.Normal)!, contentText, showDate.timeIntervalSince1970, 0]);
-                realm.add(industry)
+                let id = Industry().incrementaId()
+                let title = titleButton.titleForState(.Normal)!
+                if isConfirm {
+                    let industry = Industry(value: [id, title, contentText, showDate.timeIntervalSince1970, id + 1])
+                    realm.add(industry)
+                    let check = Industry(value: [id + 1, title + "对治", checkContent, showDate.timeIntervalSince1970, id])
+                    realm.add(check)
+                } else {
+                    let industry = Industry(value: [id, title, contentText, showDate.timeIntervalSince1970, 0])
+                    realm.add(industry)
+                }
             }
         } else {
             try! realm.write {
