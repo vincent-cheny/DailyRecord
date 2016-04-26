@@ -80,6 +80,7 @@ class ViewController: UIViewController {
         if totalBlack + totalBlackCheck + totalWhite + totalWhiteCheck > 0 {
             pieChart.updateChartData([PNPieChartDataItem(value: CGFloat(totalBlack), color: UIColor.blackColor()), PNPieChartDataItem(value: CGFloat(totalBlackCheck), color: UIColor.greenColor()), PNPieChartDataItem(value: CGFloat(totalWhite), color: UIColor.whiteColor()), PNPieChartDataItem(value: CGFloat(totalWhiteCheck), color: UIColor.redColor())])
             pieChart.displayAnimated = false
+            pieChart.userInteractionEnabled = false
             pieChart.hideValues = true
             pieChart.strokeChart()
         }

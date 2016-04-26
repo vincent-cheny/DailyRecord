@@ -3280,6 +3280,27 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OZ9-eC-Bxi">
                                 <rect key="frame" x="0.0" y="-960" width="640" height="960"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTK-nc-qLI" customClass="CustomPNPieChart" customModule="DailyRecord" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GTK-nc-qLI" secondAttribute="height" id="Ypg-ga-ZaC"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ypg-ga-ZaC"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Ypg-ga-ZaC"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32b-Z0-uCp" customClass="PNLineChart">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nui-vY-vFm" userLabel="timeController">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
@@ -3414,17 +3435,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GTK-nc-qLI" firstAttribute="centerY" secondItem="EHL-Dx-4bw" secondAttribute="centerY" id="14n-EA-OKS"/>
+                            <constraint firstItem="sgR-k0-JL3" firstAttribute="top" secondItem="32b-Z0-uCp" secondAttribute="bottom" constant="44" id="Cqm-5k-UTL"/>
+                            <constraint firstItem="GTK-nc-qLI" firstAttribute="leading" secondItem="EHL-Dx-4bw" secondAttribute="leadingMargin" constant="-20" id="J8g-l4-mdS"/>
                             <constraint firstItem="OZ9-eC-Bxi" firstAttribute="width" secondItem="EHL-Dx-4bw" secondAttribute="width" id="RUW-HJ-vEr"/>
                             <constraint firstItem="Nui-vY-vFm" firstAttribute="leading" secondItem="EHL-Dx-4bw" secondAttribute="leadingMargin" constant="-20" id="VYh-qc-5ZP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="32b-Z0-uCp" secondAttribute="trailing" constant="-20" id="ViN-eq-2dZ"/>
                             <constraint firstItem="OZ9-eC-Bxi" firstAttribute="centerX" secondItem="EHL-Dx-4bw" secondAttribute="centerX" id="ZJY-l3-1BS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nui-vY-vFm" secondAttribute="trailing" constant="-20" id="bJW-f2-UUu"/>
                             <constraint firstItem="OZ9-eC-Bxi" firstAttribute="centerY" secondItem="EHL-Dx-4bw" secondAttribute="centerY" id="bfh-pu-mB0"/>
+                            <constraint firstItem="32b-Z0-uCp" firstAttribute="leading" secondItem="EHL-Dx-4bw" secondAttribute="leadingMargin" constant="-20" id="fPJ-DB-J89"/>
                             <constraint firstItem="sgR-k0-JL3" firstAttribute="top" secondItem="Nui-vY-vFm" secondAttribute="bottom" id="gXZ-rl-chH"/>
                             <constraint firstItem="OZ9-eC-Bxi" firstAttribute="height" secondItem="EHL-Dx-4bw" secondAttribute="height" id="qhT-f5-e4x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GTK-nc-qLI" secondAttribute="trailing" constant="-20" id="um6-vJ-5NX"/>
+                            <constraint firstItem="32b-Z0-uCp" firstAttribute="top" secondItem="0JI-h2-Wmd" secondAttribute="bottom" id="xVZ-nC-fXH"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="OZ9-eC-Bxi"/>
+                                <exclude reference="GTK-nc-qLI"/>
+                                <exclude reference="32b-Z0-uCp"/>
                                 <exclude reference="Nui-vY-vFm"/>
                             </mask>
                             <mask key="constraints">
@@ -3432,14 +3462,23 @@
                                 <exclude reference="ZJY-l3-1BS"/>
                                 <exclude reference="bfh-pu-mB0"/>
                                 <exclude reference="qhT-f5-e4x"/>
-                                <exclude reference="gXZ-rl-chH"/>
+                                <exclude reference="ViN-eq-2dZ"/>
+                                <exclude reference="fPJ-DB-J89"/>
+                                <exclude reference="xVZ-nC-fXH"/>
+                                <exclude reference="14n-EA-OKS"/>
+                                <exclude reference="J8g-l4-mdS"/>
+                                <exclude reference="um6-vJ-5NX"/>
                                 <exclude reference="VYh-qc-5ZP"/>
                                 <exclude reference="bJW-f2-UUu"/>
+                                <exclude reference="Cqm-5k-UTL"/>
+                                <exclude reference="gXZ-rl-chH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="OZ9-eC-Bxi"/>
+                                <include reference="GTK-nc-qLI"/>
+                                <include reference="32b-Z0-uCp"/>
                                 <include reference="Nui-vY-vFm"/>
                             </mask>
                             <mask key="constraints">
@@ -3447,9 +3486,16 @@
                                 <include reference="ZJY-l3-1BS"/>
                                 <include reference="bfh-pu-mB0"/>
                                 <include reference="qhT-f5-e4x"/>
-                                <include reference="gXZ-rl-chH"/>
+                                <include reference="ViN-eq-2dZ"/>
+                                <include reference="fPJ-DB-J89"/>
+                                <include reference="xVZ-nC-fXH"/>
+                                <include reference="14n-EA-OKS"/>
+                                <include reference="J8g-l4-mdS"/>
+                                <include reference="um6-vJ-5NX"/>
                                 <include reference="VYh-qc-5ZP"/>
                                 <include reference="bJW-f2-UUu"/>
+                                <include reference="Cqm-5k-UTL"/>
+                                <include reference="gXZ-rl-chH"/>
                             </mask>
                         </variation>
                     </view>
@@ -3471,6 +3517,8 @@
                     <connections>
                         <outlet property="chartType" destination="MyZ-Jw-rQH" id="hvg-xv-fMT"/>
                         <outlet property="dateType" destination="hUy-wX-0rh" id="Ajg-Lx-Tyc"/>
+                        <outlet property="lineChart" destination="32b-Z0-uCp" id="jXi-dC-gTC"/>
+                        <outlet property="pieChart" destination="GTK-nc-qLI" id="vXE-JD-fwf"/>
                         <outlet property="timeLabel" destination="LKo-Gl-oVf" id="Ffx-UM-fzX"/>
                     </connections>
                 </viewController>

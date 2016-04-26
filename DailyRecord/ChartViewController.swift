@@ -7,21 +7,27 @@
 //
 
 import UIKit
+import RealmSwift
+import PNChart
 
 class ChartViewController: UIViewController {
     
     @IBOutlet weak var dateType: UIBarButtonItem!
     @IBOutlet weak var chartType: UIBarButtonItem!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var pieChart: CustomPNPieChart!
+    @IBOutlet weak var lineChart: PNLineChart!
     
+    let realm = try! Realm()
     let dateFormatter = NSDateFormatter()
     var showDate = NSDate()
+    var dateRange: [NSTimeInterval]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         dateFormatter.dateFormat = "yyyy.M.d"
-        timeLabel.text = Utils.getWeek(dateFormatter, date: showDate)
+        updateTime(dateType.title!, diff: 0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,6 +66,7 @@ class ChartViewController: UIViewController {
     func addChartType(alert: UIAlertController, type: String) {
         alert.addAction(UIAlertAction(title: type, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
             self.chartType.title = type
+            self.updateChart()
         }))
     }
     
@@ -78,18 +85,52 @@ class ChartViewController: UIViewController {
             weekComponent.day = diff * 7;
             showDate = NSCalendar.currentCalendar().dateByAddingComponents(weekComponent, toDate: showDate, options: NSCalendarOptions())!
             timeLabel.text = Utils.getWeek(dateFormatter, date: showDate)
+            dateRange = Utils.getWeekRange(showDate)
+            updateChart()
         case "本月":
             let monthComponent = NSDateComponents()
             monthComponent.month = diff;
             showDate = NSCalendar.currentCalendar().dateByAddingComponents(monthComponent, toDate: showDate, options: NSCalendarOptions())!
             timeLabel.text = Utils.getYearMonth(showDate)
+            dateRange = Utils.getMonthRange(showDate)
+            updateChart()
         case "本年":
             let yearComponent = NSDateComponents()
             yearComponent.year = diff;
             showDate = NSCalendar.currentCalendar().dateByAddingComponents(yearComponent, toDate: showDate, options: NSCalendarOptions())!
             timeLabel.text = Utils.getYear(showDate)
+            dateRange = Utils.getYearRange(showDate)
+            updateChart()
         default:
             break
+        }
+    }
+    
+    func updateChart() {
+        let black = realm.objects(Industry).filter("type = '黑业' AND time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).count
+        let blackCheck = realm.objects(Industry).filter("type = '黑业对治' AND time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).count
+        let white = realm.objects(Industry).filter("type = '白业' AND time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).count
+        let whiteCheck = realm.objects(Industry).filter("type = '白业对治' AND time BETWEEN {%@, %@}", dateRange[0], dateRange[1]).count
+        pieChart.hidden = true
+        lineChart.hidden = true
+        if black + blackCheck + white + whiteCheck > 0 {
+            switch chartType.title! {
+            case "饼状图":
+                pieChart.hidden = false
+                pieChart.updateChartData([PNPieChartDataItem(value: CGFloat(black), color: UIColor.blackColor(), description: "黑业"), PNPieChartDataItem(value: CGFloat(blackCheck), color: UIColor.greenColor(), description: "黑业对治"), PNPieChartDataItem(value: CGFloat(white), color: UIColor.whiteColor(), description: "白业"), PNPieChartDataItem(value: CGFloat(whiteCheck), color: UIColor.redColor(), description: "白业对治")])
+                pieChart.descriptionTextColor = UIColor.lightGrayColor()
+                pieChart.descriptionTextFont  = UIFont.systemFontOfSize(11.0)
+                pieChart.descriptionTextShadowColor = UIColor.clearColor()
+                pieChart.displayAnimated = false
+                pieChart.showAbsoluteValues = true
+                pieChart.userInteractionEnabled = false
+                pieChart.strokeChart()
+                break
+            case "折线图":
+                lineChart.hidden = false
+            default:
+                break
+            }
         }
     }
     
