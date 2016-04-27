@@ -147,6 +147,82 @@ class ChartViewController: UIViewController {
                 break
             case "折线图":
                 lineChart.hidden = false
+                lineChart.chartMarginLeft = 35
+                lineChart.chartCavanHeight = lineChart.frame.height - 50
+                var data01Array: [NSNumber]!
+                var data02Array: [NSNumber]!
+                var data03Array: [NSNumber]!
+                var data04Array: [NSNumber]!
+                switch dateType.title! {
+                case "本周":
+                    lineChart.setXLabels(["", "2", "", "4", "", "6", ""], withWidth: (view.frame.width - 75) / 8)
+                    data01Array = [1, 2, 3, 4, 3, 6, 7]
+                    data02Array = [1, 2, 3, 4, 3, 6, 7]
+                    data03Array = [1, 2, 3, 4, 3, 6, 7]
+                    data04Array = [1, 2, 3, 4, 3, 6, 7]
+                case "本月":
+                    lineChart.setXLabels(["", "", "", "", "", "", "", "", "", "10", "", "", "", "", "", "", "", "", "", "20", "", "", "", "", "", "", "", "", "", "30", ""], withWidth: (view.frame.width - 75) / 32)
+                    data01Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3]
+                    data02Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3]
+                    data03Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3]
+                    data04Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3]
+                case "本年":
+                    lineChart.setXLabels(["", "", "", "", "5", "", "", "", "", "10", "", ""], withWidth: (view.frame.width - 75) / 13)
+                    data01Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3]
+                    data02Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3]
+                    data03Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3]
+                    data04Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3]
+                default:
+                    break
+                }
+                lineChart.showCoordinateAxis = true
+                lineChart.yFixedValueMin = 0.0
+                lineChart.backgroundColor = UIColor.clearColor()
+                lineChart.axisColor = UIColor.lightGrayColor()
+                let data01 = PNLineChartData()
+                data01.inflexionPointStyle = PNLineChartPointStyle.Circle;
+                data01.dataTitle = "黑业"
+                data01.color = UIColor.blackColor()
+                data01.itemCount = UInt(data01Array.count)
+                data01.getData = { (index: UInt) -> PNLineChartDataItem in
+                    let yValue = data01Array[Int(index)]
+                    return PNLineChartDataItem.init(y: CGFloat(yValue))
+                }
+                let data02 = PNLineChartData()
+                data02.inflexionPointStyle = PNLineChartPointStyle.Circle;
+                data02.dataTitle = "黑业对治"
+                data02.color = UIColor.greenColor()
+                data02.itemCount = UInt(data02Array.count)
+                data02.getData = { (index: UInt) -> PNLineChartDataItem in
+                    let yValue = data02Array[Int(index)]
+                    return PNLineChartDataItem.init(y: CGFloat(yValue))
+                }
+                let data03 = PNLineChartData()
+                data03.inflexionPointStyle = PNLineChartPointStyle.Circle;
+                data03.dataTitle = "白业"
+                data03.color = UIColor.whiteColor()
+                data03.itemCount = UInt(data03Array.count)
+                data03.getData = { (index: UInt) -> PNLineChartDataItem in
+                    let yValue = data03Array[Int(index)]
+                    return PNLineChartDataItem.init(y: CGFloat(yValue))
+                }
+                let data04 = PNLineChartData()
+                data04.inflexionPointStyle = PNLineChartPointStyle.Circle;
+                data04.dataTitle = "白业对治"
+                data04.color = UIColor.redColor()
+                data04.itemCount = UInt(data04Array.count)
+                data04.getData = { (index: UInt) -> PNLineChartDataItem in
+                    let yValue = data04Array[Int(index)]
+                    return PNLineChartDataItem.init(y: CGFloat(yValue))
+                }
+                lineChart.chartData = [data01, data02, data03, data04]
+                lineChart.strokeChart()
+                lineChart.legendStyle = PNLegendItemStyle.Stacked
+                lineChart.legendFont = UIFont.boldSystemFontOfSize(12.0)
+                lineChart.legendFontColor = UIColor.lightGrayColor()
+                let legend = lineChart.getLegendWithMaxWidth(320)
+                legend.frame = CGRect(x: 100, y: view.frame.height - 200, width: legend.frame.size.width, height: legend.frame.size.height)
+                view.addSubview(legend)
             default:
                 break
             }

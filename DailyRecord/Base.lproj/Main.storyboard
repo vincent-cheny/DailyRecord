@@ -3436,7 +3436,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GTK-nc-qLI" firstAttribute="centerY" secondItem="EHL-Dx-4bw" secondAttribute="centerY" multiplier="9:10" id="14n-EA-OKS"/>
-                            <constraint firstItem="sgR-k0-JL3" firstAttribute="top" secondItem="32b-Z0-uCp" secondAttribute="bottom" constant="44" id="Cqm-5k-UTL"/>
+                            <constraint firstItem="sgR-k0-JL3" firstAttribute="top" secondItem="32b-Z0-uCp" secondAttribute="bottom" constant="200" id="Cqm-5k-UTL"/>
                             <constraint firstItem="GTK-nc-qLI" firstAttribute="centerX" secondItem="EHL-Dx-4bw" secondAttribute="centerX" id="L2R-Hj-vcj"/>
                             <constraint firstItem="OZ9-eC-Bxi" firstAttribute="width" secondItem="EHL-Dx-4bw" secondAttribute="width" id="RUW-HJ-vEr"/>
                             <constraint firstItem="Nui-vY-vFm" firstAttribute="leading" secondItem="EHL-Dx-4bw" secondAttribute="leadingMargin" constant="-20" id="VYh-qc-5ZP"/>
@@ -3447,7 +3447,7 @@
                             <constraint firstItem="32b-Z0-uCp" firstAttribute="leading" secondItem="EHL-Dx-4bw" secondAttribute="leadingMargin" constant="-20" id="fPJ-DB-J89"/>
                             <constraint firstItem="sgR-k0-JL3" firstAttribute="top" secondItem="Nui-vY-vFm" secondAttribute="bottom" id="gXZ-rl-chH"/>
                             <constraint firstItem="OZ9-eC-Bxi" firstAttribute="height" secondItem="EHL-Dx-4bw" secondAttribute="height" id="qhT-f5-e4x"/>
-                            <constraint firstItem="32b-Z0-uCp" firstAttribute="top" secondItem="0JI-h2-Wmd" secondAttribute="bottom" id="xVZ-nC-fXH"/>
+                            <constraint firstItem="32b-Z0-uCp" firstAttribute="top" secondItem="0JI-h2-Wmd" secondAttribute="bottom" constant="20" id="xVZ-nC-fXH"/>
                             <constraint firstItem="GTK-nc-qLI" firstAttribute="width" secondItem="EHL-Dx-4bw" secondAttribute="width" multiplier="2:3" id="xYG-Wr-dcw"/>
                         </constraints>
                         <variation key="default">
