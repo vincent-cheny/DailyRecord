@@ -18,12 +18,6 @@ class CheckAndSumSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if defaults.objectForKey(Utils.needBlackCheck) == nil {
-            defaults.setBool(true, forKey: Utils.needBlackCheck)
-        }
-        if defaults.objectForKey(Utils.needWhiteCheck) == nil {
-            defaults.setBool(false, forKey: Utils.needWhiteCheck)
-        }
         blackSwitch.on = defaults.boolForKey(Utils.needBlackCheck)
         whiteSwitch.on = defaults.boolForKey(Utils.needWhiteCheck)
     }

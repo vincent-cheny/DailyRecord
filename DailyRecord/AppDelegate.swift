@@ -21,6 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             defaults.setBool(true, forKey: Utils.isInitialized)
             RecordTemplate().resetTemplate()
         }
+        if defaults.objectForKey(Utils.needBlackCheck) == nil {
+            defaults.setBool(true, forKey: Utils.needBlackCheck)
+        }
+        if defaults.objectForKey(Utils.needWhiteCheck) == nil {
+            defaults.setBool(false, forKey: Utils.needWhiteCheck)
+        }
         return true
     }
 

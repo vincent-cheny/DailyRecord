@@ -63,6 +63,31 @@ class ChartViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    @IBAction func respondToRightSwipeGesture(sender: AnyObject) {
+        updateTime(dateType.title!, diff: -1)
+    }
+    
+    @IBAction func respondToLeftSwipeGesture(sender: AnyObject) {
+        updateTime(dateType.title!, diff: 1)
+    }
+    
+    @IBAction func respondToUpSwipeGesture(sender: AnyObject) {
+        switchChartType()
+    }
+    
+    @IBAction func respondToDownSwipeGesture(sender: AnyObject) {
+        switchChartType()
+    }
+    
+    func switchChartType() {
+        if chartType.title == "饼状图" {
+            chartType.title = "折线图"
+        } else {
+            chartType.title = "饼状图"
+        }
+        updateChart()
+    }
+    
     func addChartType(alert: UIAlertController, type: String) {
         alert.addAction(UIAlertAction(title: type, style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
             self.chartType.title = type
@@ -149,7 +174,7 @@ class ChartViewController: UIViewController {
                 lineChart.hidden = false
                 lineChart.displayAnimated = false
                 lineChart.chartMarginLeft = 35
-                lineChart.chartCavanHeight = lineChart.frame.height - 50
+                lineChart.chartCavanHeight = lineChart.frame.height - 250
                 var data01Array: [NSNumber]!
                 var data02Array: [NSNumber]!
                 var data03Array: [NSNumber]!
@@ -226,8 +251,8 @@ class ChartViewController: UIViewController {
                 lineChart.legendFont = UIFont.boldSystemFontOfSize(12.0)
                 lineChart.legendFontColor = UIColor.lightGrayColor()
                 let legend = lineChart.getLegendWithMaxWidth(320)
-                legend.frame = CGRect(x: 100, y: view.frame.height - 200, width: legend.frame.size.width, height: legend.frame.size.height)
-                view.addSubview(legend)
+                legend.frame = CGRect(x: 100, y: view.frame.height - 280, width: legend.frame.size.width, height: legend.frame.size.height)
+                lineChart.addSubview(legend)
             default:
                 break
             }
