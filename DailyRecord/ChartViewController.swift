@@ -147,6 +147,7 @@ class ChartViewController: UIViewController {
                 break
             case "折线图":
                 lineChart.hidden = false
+                lineChart.displayAnimated = false
                 lineChart.chartMarginLeft = 35
                 lineChart.chartCavanHeight = lineChart.frame.height - 50
                 var data01Array: [NSNumber]!
@@ -156,22 +157,22 @@ class ChartViewController: UIViewController {
                 switch dateType.title! {
                 case "本周":
                     lineChart.setXLabels(["", "2", "", "4", "", "6", ""], withWidth: (view.frame.width - 75) / 8)
-                    data01Array = [1, 2, 3, 4, 3, 6, 7]
-                    data02Array = [1, 2, 3, 4, 3, 6, 7]
-                    data03Array = [1, 2, 3, 4, 3, 6, 7]
-                    data04Array = [1, 2, 3, 4, 3, 6, 7]
+                    data01Array = getEveryDayData("黑业")
+                    data02Array = getEveryDayData("黑业对治")
+                    data03Array = getEveryDayData("白业")
+                    data04Array = getEveryDayData("白业对治")
                 case "本月":
                     lineChart.setXLabels(["", "", "", "", "", "", "", "", "", "10", "", "", "", "", "", "", "", "", "", "20", "", "", "", "", "", "", "", "", "", "30", ""], withWidth: (view.frame.width - 75) / 32)
-                    data01Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3]
-                    data02Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3]
-                    data03Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3]
-                    data04Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3, 6, 7, 1, 2, 3]
+                    data01Array = getEveryDayData("黑业")
+                    data02Array = getEveryDayData("黑业对治")
+                    data03Array = getEveryDayData("白业")
+                    data04Array = getEveryDayData("白业对治")
                 case "本年":
                     lineChart.setXLabels(["", "", "", "", "5", "", "", "", "", "10", "", ""], withWidth: (view.frame.width - 75) / 13)
-                    data01Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3]
-                    data02Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3]
-                    data03Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3]
-                    data04Array = [1, 2, 3, 4, 3, 6, 7, 1, 2, 3, 4, 3]
+                    data01Array = getEveryMonthData("黑业")
+                    data02Array = getEveryMonthData("黑业对治")
+                    data03Array = getEveryMonthData("白业")
+                    data04Array = getEveryMonthData("白业对治")
                 default:
                     break
                 }
@@ -181,6 +182,7 @@ class ChartViewController: UIViewController {
                 lineChart.axisColor = UIColor.lightGrayColor()
                 let data01 = PNLineChartData()
                 data01.inflexionPointStyle = PNLineChartPointStyle.Circle;
+                data01.inflexionPointWidth = 2
                 data01.dataTitle = "黑业"
                 data01.color = UIColor.blackColor()
                 data01.itemCount = UInt(data01Array.count)
@@ -190,6 +192,7 @@ class ChartViewController: UIViewController {
                 }
                 let data02 = PNLineChartData()
                 data02.inflexionPointStyle = PNLineChartPointStyle.Circle;
+                data02.inflexionPointWidth = 2
                 data02.dataTitle = "黑业对治"
                 data02.color = UIColor.greenColor()
                 data02.itemCount = UInt(data02Array.count)
@@ -199,6 +202,7 @@ class ChartViewController: UIViewController {
                 }
                 let data03 = PNLineChartData()
                 data03.inflexionPointStyle = PNLineChartPointStyle.Circle;
+                data03.inflexionPointWidth = 2
                 data03.dataTitle = "白业"
                 data03.color = UIColor.whiteColor()
                 data03.itemCount = UInt(data03Array.count)
@@ -208,6 +212,7 @@ class ChartViewController: UIViewController {
                 }
                 let data04 = PNLineChartData()
                 data04.inflexionPointStyle = PNLineChartPointStyle.Circle;
+                data04.inflexionPointWidth = 2
                 data04.dataTitle = "白业对治"
                 data04.color = UIColor.redColor()
                 data04.itemCount = UInt(data04Array.count)
@@ -229,4 +234,28 @@ class ChartViewController: UIViewController {
         }
     }
     
+    func getEveryDayData(type: String) -> [NSNumber] {
+        var result = [NSNumber]()
+        let dayDuration = Double(60 * 60 * 24)
+        var startDay = dateRange[0]
+        while startDay < dateRange[1] {
+            result.append(realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, startDay, startDay + dayDuration - 1).count)
+            startDay += dayDuration
+        }
+        return result
+    }
+    
+    func getEveryMonthData(type: String) -> [NSNumber] {
+        var result = [NSNumber]()
+        let calendar = NSCalendar.currentCalendar()
+        let monthComponent = NSDateComponents()
+        monthComponent.month = 1;
+        var startDay = dateRange[0]
+        while startDay < dateRange[1] {
+            let nextStartDay = calendar.dateByAddingComponents(monthComponent, toDate: NSDate(timeIntervalSince1970: startDay), options: NSCalendarOptions())!.timeIntervalSince1970
+            result.append(realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, startDay, nextStartDay - 1).count)
+            startDay = nextStartDay
+        }
+        return result
+    }
 }
