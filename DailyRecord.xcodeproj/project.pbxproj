@@ -50,6 +50,7 @@
 		9AD0561F1CD226F1000BC07E /* triangle05.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD0561B1CD226F1000BC07E /* triangle05.png */; };
 		9AD056201CD226F1000BC07E /* triangle06_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD0561C1CD226F1000BC07E /* triangle06_pressed.png */; };
 		9AD056211CD226F1000BC07E /* triangle06.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD0561D1CD226F1000BC07E /* triangle06.png */; };
+		9AD056231CD2318E000BC07E /* CalendarDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD056221CD2318E000BC07E /* CalendarDayViewController.swift */; };
 		9AD94BBA1C6D6426006216BB /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BB91C6D6426006216BB /* ChartViewController.swift */; };
 		9AD94BBC1C6D644D006216BB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */; };
 		9AD94BBE1C6D6460006216BB /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */; };
@@ -118,6 +119,7 @@
 		9AD0561B1CD226F1000BC07E /* triangle05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangle05.png; path = Resources/triangle05.png; sourceTree = "<group>"; };
 		9AD0561C1CD226F1000BC07E /* triangle06_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangle06_pressed.png; path = Resources/triangle06_pressed.png; sourceTree = "<group>"; };
 		9AD0561D1CD226F1000BC07E /* triangle06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangle06.png; path = Resources/triangle06.png; sourceTree = "<group>"; };
+		9AD056221CD2318E000BC07E /* CalendarDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDayViewController.swift; sourceTree = "<group>"; };
 		9AD94BB91C6D6426006216BB /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */,
 				9AE8F6211C7611C500471786 /* AddTemplateViewController.swift */,
 				9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */,
+				9AD056221CD2318E000BC07E /* CalendarDayViewController.swift */,
 				9AD94BB91C6D6426006216BB /* ChartViewController.swift */,
 				9A7F8B731CCC6232004BC3AC /* CustomPNPieChart.swift */,
 				9AD056181CD1F71F000BC07E /* DayCollectionViewCell.swift */,
@@ -449,6 +452,7 @@
 				9A6E08EA1C7011EC00C0358A /* RecordTemplate.swift in Sources */,
 				0DFFB2811B896E80001E1EA4 /* ViewController.swift in Sources */,
 				9AD056191CD1F71F000BC07E /* DayCollectionViewCell.swift in Sources */,
+				9AD056231CD2318E000BC07E /* CalendarDayViewController.swift in Sources */,
 				0DFFB27F1B896E80001E1EA4 /* DailyRecord.xcdatamodeld in Sources */,
 				0DFFB27C1B896E80001E1EA4 /* AppDelegate.swift in Sources */,
 				9A25FF281CCD98E600A255F8 /* CheckViewController.swift in Sources */,

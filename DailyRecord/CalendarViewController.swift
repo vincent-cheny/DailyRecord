@@ -101,7 +101,8 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-
+        let calendarDayViewController = storyboard?.instantiateViewControllerWithIdentifier("CalendarDayViewController") as! CalendarDayViewController
+        navigationController?.pushViewController(calendarDayViewController, animated: true)
     }
     
     func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
