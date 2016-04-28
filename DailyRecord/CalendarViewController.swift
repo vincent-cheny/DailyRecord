@@ -11,7 +11,7 @@ import UIKit
 class CalendarViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var dayColelectionView: UICollectionView!
-    @IBOutlet weak var monthTitle: UILabel!
+    @IBOutlet weak var monthTitle: UIButton!
     
     var showDate = NSDate()
     let todayColor = UIColor.init(red: 10 / 255.0, green: 0 / 255.0, blue: 200 / 255.0, alpha: 80 / 255.0)
@@ -22,7 +22,7 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
         // Do any additional setup after loading the view, typically from a nib.
         dayColelectionView.delegate = self
         dayColelectionView.dataSource = self
-        monthTitle.text = Utils.getYearMonth(showDate)
+        monthTitle.setTitle(Utils.getYearMonth(showDate), forState: .Normal)
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,24 +37,27 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
     
     @IBAction func navigateToday(sender: AnyObject) {
         showDate = NSDate()
-        monthTitle.text = Utils.getYearMonth(showDate)
+        monthTitle.setTitle(Utils.getYearMonth(showDate), forState: .Normal)
         dayColelectionView.reloadData()
     }
     
     @IBAction func navigateLastMonth(sender: AnyObject) {
         showDate = Utils.lastMonth(showDate)
-        monthTitle.text = Utils.getYearMonth(showDate)
+        monthTitle.setTitle(Utils.getYearMonth(showDate), forState: .Normal)
         dayColelectionView.reloadData()
     }
     
     @IBAction func navigateNextMonth(sender: AnyObject) {
         showDate = Utils.nextMonth(showDate)
-        monthTitle.text = Utils.getYearMonth(showDate)
+        monthTitle.setTitle(Utils.getYearMonth(showDate), forState: .Normal)
         dayColelectionView.reloadData()
     }
     
     @IBAction func navigateMonthRecord(sender: AnyObject) {
-        
+        let recordViewController = storyboard?.instantiateViewControllerWithIdentifier("RecordViewController") as! RecordViewController
+        recordViewController.dateFilterBtn.title = "本月"
+        recordViewController.showDate = showDate
+        navigationController?.pushViewController(recordViewController, animated: true)
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

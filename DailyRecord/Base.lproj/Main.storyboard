@@ -2556,16 +2556,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6V-F4-YOv" userLabel="Month View">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkU-7G-zDr">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <gestureRecognizers/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3N-J5-meC" userLabel="Month Title">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="Qp3-M8-0qJ" appends="YES" id="jRM-y6-N9x"/>
+                                            <action selector="navigateMonthRecord:" destination="uR2-J2-q0W" eventType="touchUpInside" id="5tW-TO-cfd"/>
                                         </connections>
-                                    </label>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUR-yW-vX4" userLabel="Left Button">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" image="triangle06.png"/>
@@ -2584,16 +2584,16 @@
                                 <color key="backgroundColor" red="0.1843137255" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="tUR-yW-vX4" firstAttribute="leading" secondItem="b6V-F4-YOv" secondAttribute="leading" constant="40" id="CDs-zB-Yk9"/>
+                                    <constraint firstItem="X3N-J5-meC" firstAttribute="centerY" secondItem="b6V-F4-YOv" secondAttribute="centerY" id="Cm0-67-haH"/>
                                     <constraint firstItem="tUR-yW-vX4" firstAttribute="centerY" secondItem="b6V-F4-YOv" secondAttribute="centerY" id="DHf-xD-Awn"/>
-                                    <constraint firstItem="dkU-7G-zDr" firstAttribute="centerX" secondItem="b6V-F4-YOv" secondAttribute="centerX" id="Ewk-c2-s9V"/>
-                                    <constraint firstItem="dkU-7G-zDr" firstAttribute="centerY" secondItem="b6V-F4-YOv" secondAttribute="centerY" id="KNh-51-Oyb"/>
+                                    <constraint firstItem="X3N-J5-meC" firstAttribute="centerX" secondItem="b6V-F4-YOv" secondAttribute="centerX" id="dBv-gm-CX0"/>
                                     <constraint firstItem="P3D-Wo-zRF" firstAttribute="centerY" secondItem="b6V-F4-YOv" secondAttribute="centerY" id="iYv-tH-QNe"/>
                                     <constraint firstAttribute="trailing" secondItem="P3D-Wo-zRF" secondAttribute="trailing" constant="40" id="kBg-oZ-wgu"/>
                                     <constraint firstAttribute="height" constant="50" id="tRy-ad-EIO"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="dkU-7G-zDr"/>
+                                        <exclude reference="X3N-J5-meC"/>
                                         <exclude reference="tUR-yW-vX4"/>
                                         <exclude reference="P3D-Wo-zRF"/>
                                     </mask>
@@ -2601,15 +2601,15 @@
                                         <exclude reference="tRy-ad-EIO"/>
                                         <exclude reference="CDs-zB-Yk9"/>
                                         <exclude reference="DHf-xD-Awn"/>
+                                        <exclude reference="Cm0-67-haH"/>
+                                        <exclude reference="dBv-gm-CX0"/>
                                         <exclude reference="iYv-tH-QNe"/>
                                         <exclude reference="kBg-oZ-wgu"/>
-                                        <exclude reference="Ewk-c2-s9V"/>
-                                        <exclude reference="KNh-51-Oyb"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
-                                        <include reference="dkU-7G-zDr"/>
+                                        <include reference="X3N-J5-meC"/>
                                         <include reference="tUR-yW-vX4"/>
                                         <include reference="P3D-Wo-zRF"/>
                                     </mask>
@@ -2617,10 +2617,10 @@
                                         <include reference="tRy-ad-EIO"/>
                                         <include reference="CDs-zB-Yk9"/>
                                         <include reference="DHf-xD-Awn"/>
+                                        <include reference="Cm0-67-haH"/>
+                                        <include reference="dBv-gm-CX0"/>
                                         <include reference="iYv-tH-QNe"/>
                                         <include reference="kBg-oZ-wgu"/>
-                                        <include reference="Ewk-c2-s9V"/>
-                                        <include reference="KNh-51-Oyb"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -2821,15 +2821,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dayColelectionView" destination="efA-Lt-CPA" id="nsy-za-7Z5"/>
-                        <outlet property="monthTitle" destination="dkU-7G-zDr" id="EuI-8R-bAK"/>
+                        <outlet property="monthTitle" destination="X3N-J5-meC" id="voU-BN-30e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FjD-7i-VvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Qp3-M8-0qJ">
-                    <connections>
-                        <action selector="navigateMonthRecord:" destination="uR2-J2-q0W" id="Aga-og-d9q"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4599" y="-139.5"/>
         </scene>
