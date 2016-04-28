@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import RealmSwift
+
 class CalendarDayViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var dayTitle: UIButton!
     @IBOutlet weak var industryCollectionView: UICollectionView!
     
     var showDate = NSDate()
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,16 +44,31 @@ class CalendarDayViewController: UIViewController, UICollectionViewDataSource, U
     @IBAction func navigateLastDay(sender: AnyObject) {
         showDate = Utils.lastDay(showDate)
         dayTitle.setTitle(Utils.getDay(showDate), forState: .Normal)
+        industryCollectionView.reloadData()
     }
     
     @IBAction func navigateNextDay(sender: AnyObject) {
         showDate = Utils.nextDay(showDate)
         dayTitle.setTitle(Utils.getDay(showDate), forState: .Normal)
+        industryCollectionView.reloadData()
     }
     
     @IBAction func navigateToday(sender: AnyObject) {
         showDate = NSDate()
         dayTitle.setTitle(Utils.getDay(showDate), forState: .Normal)
+        industryCollectionView.reloadData()
+    }
+    
+    @IBAction func respondToRightSwipeGesture(sender: AnyObject) {
+        showDate = Utils.lastDay(showDate)
+        dayTitle.setTitle(Utils.getDay(showDate), forState: .Normal)
+        industryCollectionView.reloadData()
+    }
+    
+    @IBAction func respondToLeftSwipeGesture(sender: AnyObject) {
+        showDate = Utils.nextDay(showDate)
+        dayTitle.setTitle(Utils.getDay(showDate), forState: .Normal)
+        industryCollectionView.reloadData()
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -59,7 +77,51 @@ class CalendarDayViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let industryCalendarCell = collectionView.dequeueReusableCellWithReuseIdentifier("industryCalendarCell", forIndexPath: indexPath) as! IndustryCollectionViewCell
+        let index = indexPath.row
+        industryCalendarCell.industryLabel.text = ""
+        switch index % 4 {
+        case 0:
+            industryCalendarCell.industryLabel.textColor = UIColor.blackColor()
+            industryCalendarCell.industryLabel.text = getIndustryCount("黑业", timeIndex: index / 4)
+        case 1:
+            industryCalendarCell.industryLabel.textColor = UIColor.greenColor()
+            industryCalendarCell.industryLabel.text = getIndustryCount("黑业对治", timeIndex: index / 4)
+        case 2:
+            industryCalendarCell.industryLabel.textColor = UIColor.whiteColor()
+            industryCalendarCell.industryLabel.text = getIndustryCount("白业", timeIndex: index / 4)
+        case 3:
+            industryCalendarCell.industryLabel.textColor = UIColor.redColor()
+            industryCalendarCell.industryLabel.text = getIndustryCount("白业对治", timeIndex: index / 4)
+        default:
+            break
+        }
         return industryCalendarCell
+    }
+    
+    func getIndustryCount(type: String, timeIndex: Int) -> String {
+        var result = 0
+        let dayRange = Utils.getDayRange(showDate)
+        switch timeIndex {
+        case 0:
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0], dayRange[1]).count
+        case 1:
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0], dayRange[1]).count
+        case 2:
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0], dayRange[1]).count
+        case 3:
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0], dayRange[1]).count
+        case 4:
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0], dayRange[1]).count
+        case 5:
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0], dayRange[1]).count
+        default:
+            break
+        }
+        if result == 0 {
+            return ""
+        } else {
+            return String(result)
+        }
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

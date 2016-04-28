@@ -2746,6 +2746,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="b6V-F4-YOv" firstAttribute="top" secondItem="jBg-Ze-Q3v" secondAttribute="bottom" id="5RG-4T-afi"/>
                             <constraint firstItem="mvW-UT-xOp" firstAttribute="centerX" secondItem="UhN-uj-e3U" secondAttribute="centerX" id="CMO-Pl-zFA"/>
@@ -2808,6 +2809,10 @@
                                 <include reference="YCE-qJ-Tae"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="46K-ex-ud9" appends="YES" id="J1o-Q6-3cl"/>
+                            <outletCollection property="gestureRecognizers" destination="IYc-0E-YhH" appends="YES" id="Vrs-Wp-gtH"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="日历" id="ubp-7w-9Al">
@@ -2823,6 +2828,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FjD-7i-VvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="46K-ex-ud9">
+                    <connections>
+                        <action selector="respondToRightSwipeGesture:" destination="uR2-J2-q0W" id="5op-xE-C1A"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="IYc-0E-YhH">
+                    <connections>
+                        <action selector="respondToLeftSwipeGesture:" destination="uR2-J2-q0W" id="mVa-S3-yBw"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4599" y="-139.5"/>
         </scene>
@@ -3071,6 +3086,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="HCS-aG-GBt" firstAttribute="height" secondItem="MaL-GY-6VJ" secondAttribute="height" id="5mM-Jh-Y76"/>
                             <constraint firstItem="MaL-GY-6VJ" firstAttribute="top" secondItem="ycL-1Q-SgQ" secondAttribute="bottom" id="6uH-Ht-XJW"/>
@@ -3142,6 +3158,10 @@
                                 <include reference="tHR-q2-kSi"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="rUg-zO-DEp" appends="YES" id="z2J-sR-mu6"/>
+                            <outletCollection property="gestureRecognizers" destination="SAb-32-zJQ" appends="YES" id="Qpd-h4-zXt"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="日历" id="bPT-ok-cPR">
                         <barButtonItem key="rightBarButtonItem" title="今日" id="dGK-yG-hk1">
@@ -3156,6 +3176,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mh1-NN-EAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="rUg-zO-DEp">
+                    <connections>
+                        <action selector="respondToRightSwipeGesture:" destination="vKX-hb-O2p" id="0tk-Ph-xuE"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="SAb-32-zJQ">
+                    <connections>
+                        <action selector="respondToLeftSwipeGesture:" destination="vKX-hb-O2p" id="59J-NJ-yDI"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5406" y="-139.5"/>
         </scene>

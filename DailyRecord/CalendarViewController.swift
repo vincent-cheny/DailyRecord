@@ -60,6 +60,18 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
         navigationController?.pushViewController(recordViewController, animated: true)
     }
     
+    @IBAction func respondToRightSwipeGesture(sender: AnyObject) {
+        showDate = Utils.lastMonth(showDate)
+        monthTitle.setTitle(Utils.getYearMonth(showDate), forState: .Normal)
+        dayColelectionView.reloadData()
+    }
+    
+    @IBAction func respondToLeftSwipeGesture(sender: AnyObject) {
+        showDate = Utils.nextMonth(showDate)
+        monthTitle.setTitle(Utils.getYearMonth(showDate), forState: .Normal)
+        dayColelectionView.reloadData()
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 42
     }
@@ -96,6 +108,7 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
         let todayComponents = calendar.components([.Year, .Month, .Day], fromDate: NSDate())
         if showDayComponents == todayComponents {
             dayCalendarCell.backgroundColor = todayColor
+            dayCalendarCell.dayLabel.textColor = UIColor.whiteColor()
         }
         return dayCalendarCell
     }
