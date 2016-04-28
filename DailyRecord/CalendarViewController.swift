@@ -8,14 +8,18 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController {
+class CalendarViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    @IBOutlet weak var dayView: UIStackView!
+    @IBOutlet weak var dayColelectionView: UICollectionView!
+    
+    var showDate = NSDate()
+    let todayColor = UIColor.init(red: 10 / 255.0, green: 0 / 255.0, blue: 200 / 255.0, alpha: 80 / 255.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        updateDayView();
+        dayColelectionView.delegate = self
+        dayColelectionView.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,11 +32,73 @@ class CalendarViewController: UIViewController {
         self.navigationController?.navigationBarHidden = false;
     }
     
-    func updateDayView() {
-        for dayViewRow in dayView.subviews {
-            for dayViewItem in dayViewRow.subviews {
-                (dayViewItem as! UIButton).setTitle("ddd", forState: .Normal)
-            }
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 42
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let dayCell = collectionView.dequeueReusableCellWithReuseIdentifier("dayCell", forIndexPath: indexPath) as! DayCollectionViewCell
+        let index = indexPath.row
+        let firstWeekdayInMonth = Utils.firstWeekdayInMonth(showDate)
+        let totalDaysInMonth = Utils.totalDaysInMonth(showDate)
+        let lastMonth = Utils.lastMonth(showDate)
+        let nextMonth = Utils.nextMonth(showDate)
+        let totalDaysInLastMonth = Utils.totalDaysInMonth(lastMonth)
+        let calendar = NSCalendar.currentCalendar()
+        var showDayComponents: NSDateComponents
+        let dayValue: NSInteger
+        if index < firstWeekdayInMonth {
+            showDayComponents = calendar.components([.Year, .Month], fromDate: lastMonth)
+            dayValue = totalDaysInLastMonth - firstWeekdayInMonth + index + 1
+            dayCell.dayLabel.textColor = UIColor.lightGrayColor()
+            dayCell.dayLabel.text = String(dayValue)
+        } else if index >= firstWeekdayInMonth + totalDaysInMonth {
+            showDayComponents = calendar.components([.Year, .Month], fromDate: nextMonth)
+            dayValue = index - firstWeekdayInMonth - totalDaysInMonth + 1
+            dayCell.dayLabel.textColor = UIColor.lightGrayColor()
+            dayCell.dayLabel.text = String(dayValue)
+        } else {
+            showDayComponents = calendar.components([.Year, .Month], fromDate: showDate)
+            dayValue = index - firstWeekdayInMonth + 1
+            dayCell.dayLabel.textColor = UIColor.blackColor()
+            dayCell.dayLabel.text = String(dayValue)
         }
+        showDayComponents.day = dayValue
+        let todayComponents = calendar.components([.Year, .Month, .Day], fromDate: NSDate())
+        if showDayComponents == todayComponents {
+            dayCell.backgroundColor = todayColor
+        }
+        return dayCell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+
+    }
+    
+    func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        cell?.backgroundColor = UIColor.whiteColor()
+    }
+    
+    func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        cell?.backgroundColor = UIColor.clearColor()
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat{
+        return 0.0
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat{
+        return 0.0
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize{
+        return CGSize(width: view.frame.width / 7, height: 50)
+    }
+    
+    func updateTime(diff: Int) {
+        let monthComponent = NSDateComponents()
+        monthComponent.month = diff;
+        showDate = NSCalendar.currentCalendar().dateByAddingComponents(monthComponent, toDate: showDate, options: NSCalendarOptions())!
     }
 }

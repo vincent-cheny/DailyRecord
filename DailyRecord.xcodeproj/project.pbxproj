@@ -45,6 +45,7 @@
 		9AC8B19E1C6D931C0064B5CC /* template.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1961C6D931C0064B5CC /* template.png */; };
 		9AC8B19F1C6D931C0064B5CC /* title_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1971C6D931C0064B5CC /* title_bar.png */; };
 		9ACCA6251C6EC2CD00AF7D55 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCA6241C6EC2CD00AF7D55 /* AboutViewController.swift */; };
+		9AD056191CD1F71F000BC07E /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD056181CD1F71F000BC07E /* DayCollectionViewCell.swift */; };
 		9AD94BBA1C6D6426006216BB /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BB91C6D6426006216BB /* ChartViewController.swift */; };
 		9AD94BBC1C6D644D006216BB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */; };
 		9AD94BBE1C6D6460006216BB /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */; };
@@ -108,6 +109,7 @@
 		9AC8B1961C6D931C0064B5CC /* template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = template.png; path = Resources/template.png; sourceTree = "<group>"; };
 		9AC8B1971C6D931C0064B5CC /* title_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = title_bar.png; path = Resources/title_bar.png; sourceTree = "<group>"; };
 		9ACCA6241C6EC2CD00AF7D55 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		9AD056181CD1F71F000BC07E /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
 		9AD94BB91C6D6426006216BB /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */,
 				9AD94BB91C6D6426006216BB /* ChartViewController.swift */,
 				9A7F8B731CCC6232004BC3AC /* CustomPNPieChart.swift */,
+				9AD056181CD1F71F000BC07E /* DayCollectionViewCell.swift */,
 				9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */,
 				9ACCA6241C6EC2CD00AF7D55 /* AboutViewController.swift */,
 				9A7908181C7BED14008CE40F /* IndustryViewController.swift */,
@@ -429,6 +432,7 @@
 				9A7F8B6C1CCA5681004BC3AC /* CheckDialogViewController.swift in Sources */,
 				9A6E08EA1C7011EC00C0358A /* RecordTemplate.swift in Sources */,
 				0DFFB2811B896E80001E1EA4 /* ViewController.swift in Sources */,
+				9AD056191CD1F71F000BC07E /* DayCollectionViewCell.swift in Sources */,
 				0DFFB27F1B896E80001E1EA4 /* DailyRecord.xcdatamodeld in Sources */,
 				0DFFB27C1B896E80001E1EA4 /* AppDelegate.swift in Sources */,
 				9A25FF281CCD98E600A255F8 /* CheckViewController.swift in Sources */,

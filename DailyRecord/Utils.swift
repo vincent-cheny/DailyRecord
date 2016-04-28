@@ -125,4 +125,28 @@ class Utils {
         let endOfYear = calendar.dateByAddingComponents(yearComponent, toDate: startOfYear!, options: NSCalendarOptions())?.dateByAddingTimeInterval(-1)
         return [startOfYear!.timeIntervalSince1970, endOfYear!.timeIntervalSince1970]
     }
+    
+    static func firstWeekdayInMonth(date: NSDate) -> NSInteger {
+        let calendar = NSCalendar.currentCalendar()
+        calendar.firstWeekday = 2
+        var startOfMonth : NSDate?
+        calendar.rangeOfUnit(.Month, startDate: &startOfMonth, interval: nil, forDate: date)
+        return calendar.ordinalityOfUnit(.Weekday, inUnit: .WeekOfMonth, forDate: startOfMonth!)
+    }
+    
+    static func totalDaysInMonth(date: NSDate) -> NSInteger {
+        return NSCalendar.currentCalendar().rangeOfUnit(.Day, inUnit: .Month, forDate: date).length
+    }
+    
+    static func lastMonth(date: NSDate) -> NSDate {
+        let monthComponent = NSDateComponents()
+        monthComponent.month = -1;
+        return NSCalendar.currentCalendar().dateByAddingComponents(monthComponent, toDate: date, options: NSCalendarOptions())!
+    }
+    
+    static func nextMonth(date: NSDate) -> NSDate {
+        let monthComponent = NSDateComponents()
+        monthComponent.month = 1;
+        return NSCalendar.currentCalendar().dateByAddingComponents(monthComponent, toDate: date, options: NSCalendarOptions())!
+    }
 }
