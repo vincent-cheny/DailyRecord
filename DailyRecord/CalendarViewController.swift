@@ -65,8 +65,8 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let dayCell = collectionView.dequeueReusableCellWithReuseIdentifier("dayCell", forIndexPath: indexPath) as! DayCollectionViewCell
-        dayCell.backgroundColor = UIColor.clearColor()
+        let dayCalendarCell = collectionView.dequeueReusableCellWithReuseIdentifier("dayCalendarCell", forIndexPath: indexPath) as! DayCollectionViewCell
+        dayCalendarCell.backgroundColor = UIColor.clearColor()
         let index = indexPath.row
         let firstWeekdayInMonth = Utils.firstWeekdayInMonth(showDate)
         let totalDaysInMonth = Utils.totalDaysInMonth(showDate)
@@ -79,25 +79,25 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
         if index < firstWeekdayInMonth {
             showDayComponents = calendar.components([.Year, .Month], fromDate: lastMonth)
             dayValue = totalDaysInLastMonth - firstWeekdayInMonth + index + 1
-            dayCell.dayLabel.textColor = UIColor.lightGrayColor()
-            dayCell.dayLabel.text = String(dayValue)
+            dayCalendarCell.dayLabel.textColor = UIColor.lightGrayColor()
+            dayCalendarCell.dayLabel.text = String(dayValue)
         } else if index >= firstWeekdayInMonth + totalDaysInMonth {
             showDayComponents = calendar.components([.Year, .Month], fromDate: nextMonth)
             dayValue = index - firstWeekdayInMonth - totalDaysInMonth + 1
-            dayCell.dayLabel.textColor = UIColor.lightGrayColor()
-            dayCell.dayLabel.text = String(dayValue)
+            dayCalendarCell.dayLabel.textColor = UIColor.lightGrayColor()
+            dayCalendarCell.dayLabel.text = String(dayValue)
         } else {
             showDayComponents = calendar.components([.Year, .Month], fromDate: showDate)
             dayValue = index - firstWeekdayInMonth + 1
-            dayCell.dayLabel.textColor = UIColor.blackColor()
-            dayCell.dayLabel.text = String(dayValue)
+            dayCalendarCell.dayLabel.textColor = UIColor.blackColor()
+            dayCalendarCell.dayLabel.text = String(dayValue)
         }
         showDayComponents.day = dayValue
         let todayComponents = calendar.components([.Year, .Month, .Day], fromDate: NSDate())
         if showDayComponents == todayComponents {
-            dayCell.backgroundColor = todayColor
+            dayCalendarCell.backgroundColor = todayColor
         }
-        return dayCell
+        return dayCalendarCell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -148,9 +148,4 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
         return CGSize(width: view.frame.width / 7, height: 50)
     }
     
-    func updateTime(diff: Int) {
-        let monthComponent = NSDateComponents()
-        monthComponent.month = diff;
-        showDate = NSCalendar.currentCalendar().dateByAddingComponents(monthComponent, toDate: showDate, options: NSCalendarOptions())!
-    }
 }
