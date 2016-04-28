@@ -46,6 +46,10 @@
 		9AC8B19F1C6D931C0064B5CC /* title_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1971C6D931C0064B5CC /* title_bar.png */; };
 		9ACCA6251C6EC2CD00AF7D55 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCA6241C6EC2CD00AF7D55 /* AboutViewController.swift */; };
 		9AD056191CD1F71F000BC07E /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD056181CD1F71F000BC07E /* DayCollectionViewCell.swift */; };
+		9AD0561E1CD226F1000BC07E /* triangle05_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD0561A1CD226F1000BC07E /* triangle05_pressed.png */; };
+		9AD0561F1CD226F1000BC07E /* triangle05.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD0561B1CD226F1000BC07E /* triangle05.png */; };
+		9AD056201CD226F1000BC07E /* triangle06_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD0561C1CD226F1000BC07E /* triangle06_pressed.png */; };
+		9AD056211CD226F1000BC07E /* triangle06.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD0561D1CD226F1000BC07E /* triangle06.png */; };
 		9AD94BBA1C6D6426006216BB /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BB91C6D6426006216BB /* ChartViewController.swift */; };
 		9AD94BBC1C6D644D006216BB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */; };
 		9AD94BBE1C6D6460006216BB /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */; };
@@ -110,6 +114,10 @@
 		9AC8B1971C6D931C0064B5CC /* title_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = title_bar.png; path = Resources/title_bar.png; sourceTree = "<group>"; };
 		9ACCA6241C6EC2CD00AF7D55 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		9AD056181CD1F71F000BC07E /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
+		9AD0561A1CD226F1000BC07E /* triangle05_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangle05_pressed.png; path = Resources/triangle05_pressed.png; sourceTree = "<group>"; };
+		9AD0561B1CD226F1000BC07E /* triangle05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangle05.png; path = Resources/triangle05.png; sourceTree = "<group>"; };
+		9AD0561C1CD226F1000BC07E /* triangle06_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangle06_pressed.png; path = Resources/triangle06_pressed.png; sourceTree = "<group>"; };
+		9AD0561D1CD226F1000BC07E /* triangle06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangle06.png; path = Resources/triangle06.png; sourceTree = "<group>"; };
 		9AD94BB91C6D6426006216BB /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +147,10 @@
 		0D6743451B898C5B00F6F22C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9AD0561A1CD226F1000BC07E /* triangle05_pressed.png */,
+				9AD0561B1CD226F1000BC07E /* triangle05.png */,
+				9AD0561C1CD226F1000BC07E /* triangle06_pressed.png */,
+				9AD0561D1CD226F1000BC07E /* triangle06.png */,
 				9A35D4161CB33FE4008B26F3 /* minus.png */,
 				9A35D4171CB33FE4008B26F3 /* plus.png */,
 				9A46CF671C7954DC00964A71 /* forward.png */,
@@ -345,6 +357,7 @@
 				9AC8B19F1C6D931C0064B5CC /* title_bar.png in Resources */,
 				9A76AB851C74CD2B000E8B53 /* greendot.png in Resources */,
 				9A76AB871C74CD2B000E8B53 /* whitedot.png in Resources */,
+				9AD0561E1CD226F1000BC07E /* triangle05_pressed.png in Resources */,
 				9A46CF6C1C7954DC00964A71 /* thisday.png in Resources */,
 				9A46CF6D1C7954DC00964A71 /* thismonth.png in Resources */,
 				9A35D4191CB33FE4008B26F3 /* plus.png in Resources */,
@@ -358,8 +371,11 @@
 				9AC8B1991C6D931C0064B5CC /* chart.png in Resources */,
 				9AC8B19D1C6D931C0064B5CC /* setting.png in Resources */,
 				9A76AB841C74CD2B000E8B53 /* blackdot.png in Resources */,
+				9AD056211CD226F1000BC07E /* triangle06.png in Resources */,
 				9AC8B19A1C6D931C0064B5CC /* ic_launcher@2x.png in Resources */,
+				9AD056201CD226F1000BC07E /* triangle06_pressed.png in Resources */,
 				0DFFB2861B896E81001E1EA4 /* Images.xcassets in Resources */,
+				9AD0561F1CD226F1000BC07E /* triangle05.png in Resources */,
 				9AC8B19C1C6D931C0064B5CC /* main_bg.jpg in Resources */,
 				9A46CF6E1C7954DC00964A71 /* thisweek.png in Resources */,
 				9AC8B19E1C6D931C0064B5CC /* template.png in Resources */,

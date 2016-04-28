@@ -11,15 +11,18 @@ import UIKit
 class CalendarViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var dayColelectionView: UICollectionView!
+    @IBOutlet weak var monthTitle: UILabel!
     
     var showDate = NSDate()
     let todayColor = UIColor.init(red: 10 / 255.0, green: 0 / 255.0, blue: 200 / 255.0, alpha: 80 / 255.0)
+    var unhighlightColor: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         dayColelectionView.delegate = self
         dayColelectionView.dataSource = self
+        monthTitle.text = Utils.getYearMonth(showDate)
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,12 +35,35 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
         self.navigationController?.navigationBarHidden = false;
     }
     
+    @IBAction func navigateToday(sender: AnyObject) {
+        showDate = NSDate()
+        monthTitle.text = Utils.getYearMonth(showDate)
+        dayColelectionView.reloadData()
+    }
+    
+    @IBAction func navigateLastMonth(sender: AnyObject) {
+        showDate = Utils.lastMonth(showDate)
+        monthTitle.text = Utils.getYearMonth(showDate)
+        dayColelectionView.reloadData()
+    }
+    
+    @IBAction func navigateNextMonth(sender: AnyObject) {
+        showDate = Utils.nextMonth(showDate)
+        monthTitle.text = Utils.getYearMonth(showDate)
+        dayColelectionView.reloadData()
+    }
+    
+    @IBAction func navigateMonthRecord(sender: AnyObject) {
+        
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 42
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let dayCell = collectionView.dequeueReusableCellWithReuseIdentifier("dayCell", forIndexPath: indexPath) as! DayCollectionViewCell
+        dayCell.backgroundColor = UIColor.clearColor()
         let index = indexPath.row
         let firstWeekdayInMonth = Utils.firstWeekdayInMonth(showDate)
         let totalDaysInMonth = Utils.totalDaysInMonth(showDate)
@@ -77,12 +103,13 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        unhighlightColor = cell?.backgroundColor
         cell?.backgroundColor = UIColor.whiteColor()
     }
     
     func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath)
-        cell?.backgroundColor = UIColor.clearColor()
+        cell?.backgroundColor = unhighlightColor
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat{
