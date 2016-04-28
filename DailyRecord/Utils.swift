@@ -149,4 +149,16 @@ class Utils {
         monthComponent.month = 1;
         return NSCalendar.currentCalendar().dateByAddingComponents(monthComponent, toDate: date, options: NSCalendarOptions())!
     }
+    
+    static func lastDay(date: NSDate) -> NSDate {
+        let dayComponent = NSDateComponents()
+        dayComponent.day = -1;
+        return NSCalendar.currentCalendar().dateByAddingComponents(dayComponent, toDate: date, options: NSCalendarOptions())!
+    }
+    
+    static func nextDay(date: NSDate) -> NSDate {
+        let dayComponent = NSDateComponents()
+        dayComponent.day = 1;
+        return NSCalendar.currentCalendar().dateByAddingComponents(dayComponent, toDate: date, options: NSCalendarOptions())!
+    }
 }

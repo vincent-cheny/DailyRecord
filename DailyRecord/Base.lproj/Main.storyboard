@@ -2853,6 +2853,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="navigateDayRecord:" destination="vKX-hb-O2p" eventType="touchUpInside" id="sYi-Lg-jVt"/>
                                             <action selector="navigateMonthRecord:" destination="uR2-J2-q0W" eventType="touchUpInside" id="lbZ-lh-piG"/>
                                         </connections>
                                     </button>
@@ -2860,13 +2861,14 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" image="triangle06.png"/>
                                         <connections>
-                                            <action selector="navigateLastMonth:" destination="uR2-J2-q0W" eventType="touchUpInside" id="kva-WK-BPA"/>
+                                            <action selector="navigateLastDay:" destination="vKX-hb-O2p" eventType="touchUpInside" id="HdW-as-y7p"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ea-xL-bGP" userLabel="Right Button">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" image="triangle05.png"/>
                                         <connections>
+                                            <action selector="navigateNextDay:" destination="vKX-hb-O2p" eventType="touchUpInside" id="Psy-Ir-aA6"/>
                                             <action selector="navigateNextMonth:" destination="uR2-J2-q0W" eventType="touchUpInside" id="cxz-sJ-iR5"/>
                                         </connections>
                                     </button>
@@ -2954,7 +2956,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MaL-GY-6VJ">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MaL-GY-6VJ" userLabel="Time View">
                                 <rect key="frame" x="140" y="371" width="45" height="108"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="晨起" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfK-uv-xKf">
@@ -3014,13 +3016,38 @@
                                     </mask>
                                 </variation>
                             </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HCS-aG-GBt" userLabel="Industry View">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QjO-0K-tD7">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="o1V-0T-Q9W">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HCS-aG-GBt" firstAttribute="height" secondItem="MaL-GY-6VJ" secondAttribute="height" id="5mM-Jh-Y76"/>
                             <constraint firstItem="MaL-GY-6VJ" firstAttribute="top" secondItem="ycL-1Q-SgQ" secondAttribute="bottom" id="6uH-Ht-XJW"/>
+                            <constraint firstItem="HCS-aG-GBt" firstAttribute="leading" secondItem="MaL-GY-6VJ" secondAttribute="trailing" id="EFi-xw-K0G"/>
                             <constraint firstItem="MaL-GY-6VJ" firstAttribute="width" secondItem="4ga-tK-t0Y" secondAttribute="width" id="Hdo-D6-Cyc"/>
                             <constraint firstItem="ycL-1Q-SgQ" firstAttribute="top" secondItem="GyC-dD-nq8" secondAttribute="bottom" id="I17-4Z-z2B"/>
+                            <constraint firstItem="HCS-aG-GBt" firstAttribute="top" secondItem="ycL-1Q-SgQ" secondAttribute="bottom" id="Oja-NO-5ph"/>
                             <constraint firstItem="MaL-GY-6VJ" firstAttribute="leading" secondItem="0F0-CH-t9C" secondAttribute="leadingMargin" constant="-20" id="QfA-uQ-pss"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HCS-aG-GBt" secondAttribute="trailing" constant="-20" id="R69-24-1H5"/>
                             <constraint firstItem="jV8-rx-IoW" firstAttribute="height" secondItem="0F0-CH-t9C" secondAttribute="height" id="VNm-n9-A5R"/>
                             <constraint firstItem="jV8-rx-IoW" firstAttribute="centerY" secondItem="0F0-CH-t9C" secondAttribute="centerY" id="Wll-SE-fha"/>
                             <constraint firstItem="jV8-rx-IoW" firstAttribute="width" secondItem="0F0-CH-t9C" secondAttribute="width" id="YSw-6G-rYM"/>
@@ -3035,6 +3062,7 @@
                             <mask key="subviews">
                                 <exclude reference="jV8-rx-IoW"/>
                                 <exclude reference="GyC-dD-nq8"/>
+                                <exclude reference="HCS-aG-GBt"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="VNm-n9-A5R"/>
@@ -3044,18 +3072,23 @@
                                 <exclude reference="gVp-Y7-da1"/>
                                 <exclude reference="mz0-w0-6S8"/>
                                 <exclude reference="vDc-Yz-CMx"/>
-                                <exclude reference="6uH-Ht-XJW"/>
-                                <exclude reference="Hdo-D6-Cyc"/>
-                                <exclude reference="QfA-uQ-pss"/>
                                 <exclude reference="I17-4Z-z2B"/>
                                 <exclude reference="ohd-S4-2tH"/>
                                 <exclude reference="tHR-q2-kSi"/>
+                                <exclude reference="6uH-Ht-XJW"/>
+                                <exclude reference="Hdo-D6-Cyc"/>
+                                <exclude reference="QfA-uQ-pss"/>
+                                <exclude reference="5mM-Jh-Y76"/>
+                                <exclude reference="EFi-xw-K0G"/>
+                                <exclude reference="Oja-NO-5ph"/>
+                                <exclude reference="R69-24-1H5"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="jV8-rx-IoW"/>
                                 <include reference="GyC-dD-nq8"/>
+                                <include reference="HCS-aG-GBt"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="VNm-n9-A5R"/>
@@ -3065,18 +3098,29 @@
                                 <include reference="gVp-Y7-da1"/>
                                 <include reference="mz0-w0-6S8"/>
                                 <include reference="vDc-Yz-CMx"/>
-                                <include reference="6uH-Ht-XJW"/>
-                                <include reference="Hdo-D6-Cyc"/>
-                                <include reference="QfA-uQ-pss"/>
                                 <include reference="I17-4Z-z2B"/>
                                 <include reference="ohd-S4-2tH"/>
                                 <include reference="tHR-q2-kSi"/>
+                                <include reference="6uH-Ht-XJW"/>
+                                <include reference="Hdo-D6-Cyc"/>
+                                <include reference="QfA-uQ-pss"/>
+                                <include reference="5mM-Jh-Y76"/>
+                                <include reference="EFi-xw-K0G"/>
+                                <include reference="Oja-NO-5ph"/>
+                                <include reference="R69-24-1H5"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="日历" id="bPT-ok-cPR">
-                        <barButtonItem key="rightBarButtonItem" title="今日" id="dGK-yG-hk1"/>
+                        <barButtonItem key="rightBarButtonItem" title="今日" id="dGK-yG-hk1">
+                            <connections>
+                                <action selector="navigateToday:" destination="vKX-hb-O2p" id="AAa-RJ-GAp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dayTitle" destination="TGp-EV-1tc" id="bSe-YR-5ht"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mh1-NN-EAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

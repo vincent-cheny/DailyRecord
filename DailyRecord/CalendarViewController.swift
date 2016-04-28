@@ -101,7 +101,28 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let index = indexPath.row
+        let firstWeekdayInMonth = Utils.firstWeekdayInMonth(showDate)
+        let totalDaysInMonth = Utils.totalDaysInMonth(showDate)
+        let lastMonth = Utils.lastMonth(showDate)
+        let nextMonth = Utils.nextMonth(showDate)
+        let totalDaysInLastMonth = Utils.totalDaysInMonth(lastMonth)
+        let calendar = NSCalendar.currentCalendar()
+        var showDayComponents: NSDateComponents
+        let dayValue: NSInteger
+        if index < firstWeekdayInMonth {
+            showDayComponents = calendar.components([.Year, .Month], fromDate: lastMonth)
+            dayValue = totalDaysInLastMonth - firstWeekdayInMonth + index + 1
+        } else if index >= firstWeekdayInMonth + totalDaysInMonth {
+            showDayComponents = calendar.components([.Year, .Month], fromDate: nextMonth)
+            dayValue = index - firstWeekdayInMonth - totalDaysInMonth + 1
+        } else {
+            showDayComponents = calendar.components([.Year, .Month], fromDate: showDate)
+            dayValue = index - firstWeekdayInMonth + 1
+        }
+        showDayComponents.day = dayValue
         let calendarDayViewController = storyboard?.instantiateViewControllerWithIdentifier("CalendarDayViewController") as! CalendarDayViewController
+        calendarDayViewController.showDate = NSCalendar.currentCalendar().dateFromComponents(showDayComponents)!
         navigationController?.pushViewController(calendarDayViewController, animated: true)
     }
     
