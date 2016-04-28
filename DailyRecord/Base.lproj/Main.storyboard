@@ -1975,8 +1975,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                    <rect key="frame" x="10" y="339" width="380" height="17.5"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://blog.fo.ifeng.com/article/31746253.html" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ar-Uw-dDj" userLabel="Link4" customClass="TTTAttributedLabel">
@@ -1984,8 +1985,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                    <rect key="frame" x="10" y="366.5" width="380" height="17.5"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -2706,36 +2708,70 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWP-cA-soG">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cN5-6D-N66">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWP-cA-soG">
+                                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="UWP-cA-soG" firstAttribute="centerX" secondItem="cN5-6D-N66" secondAttribute="centerX" id="4ca-Ec-Vfs"/>
+                                                        <constraint firstItem="UWP-cA-soG" firstAttribute="centerY" secondItem="cN5-6D-N66" secondAttribute="centerY" id="Cd3-30-pAN"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="subviews">
+                                                            <exclude reference="UWP-cA-soG"/>
+                                                        </mask>
+                                                        <mask key="constraints">
+                                                            <exclude reference="4ca-Ec-Vfs"/>
+                                                            <exclude reference="Cd3-30-pAN"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="subviews">
+                                                            <include reference="UWP-cA-soG"/>
+                                                        </mask>
+                                                        <mask key="constraints">
+                                                            <include reference="4ca-Ec-Vfs"/>
+                                                            <include reference="Cd3-30-pAN"/>
+                                                        </mask>
+                                                    </variation>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="UWP-cA-soG" firstAttribute="centerY" secondItem="Pm3-hA-yIs" secondAttribute="centerY" id="QVk-M7-Bb0"/>
-                                            <constraint firstItem="UWP-cA-soG" firstAttribute="centerX" secondItem="Pm3-hA-yIs" secondAttribute="centerX" id="rmP-nD-PGA"/>
+                                            <constraint firstItem="cN5-6D-N66" firstAttribute="centerY" secondItem="Pm3-hA-yIs" secondAttribute="centerY" id="02h-Ch-Iuf"/>
+                                            <constraint firstItem="cN5-6D-N66" firstAttribute="width" secondItem="Pm3-hA-yIs" secondAttribute="width" id="XEY-oW-Pja"/>
+                                            <constraint firstItem="cN5-6D-N66" firstAttribute="height" secondItem="Pm3-hA-yIs" secondAttribute="height" id="d9j-KF-kpb"/>
+                                            <constraint firstItem="cN5-6D-N66" firstAttribute="centerX" secondItem="Pm3-hA-yIs" secondAttribute="centerX" id="mot-bc-pKa"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="subviews">
-                                                <exclude reference="UWP-cA-soG"/>
+                                                <exclude reference="cN5-6D-N66"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="QVk-M7-Bb0"/>
-                                                <exclude reference="rmP-nD-PGA"/>
+                                                <exclude reference="02h-Ch-Iuf"/>
+                                                <exclude reference="XEY-oW-Pja"/>
+                                                <exclude reference="d9j-KF-kpb"/>
+                                                <exclude reference="mot-bc-pKa"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="subviews">
-                                                <include reference="UWP-cA-soG"/>
+                                                <include reference="cN5-6D-N66"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="QVk-M7-Bb0"/>
-                                                <include reference="rmP-nD-PGA"/>
+                                                <include reference="02h-Ch-Iuf"/>
+                                                <include reference="XEY-oW-Pja"/>
+                                                <include reference="d9j-KF-kpb"/>
+                                                <include reference="mot-bc-pKa"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -3046,36 +3082,70 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcq-4m-bqJ">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gdw-AC-EMr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcq-4m-bqJ">
+                                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Jcq-4m-bqJ" firstAttribute="centerX" secondItem="Gdw-AC-EMr" secondAttribute="centerX" id="eP1-cg-e9C"/>
+                                                        <constraint firstItem="Jcq-4m-bqJ" firstAttribute="centerY" secondItem="Gdw-AC-EMr" secondAttribute="centerY" id="zYg-zh-2mt"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="subviews">
+                                                            <exclude reference="Jcq-4m-bqJ"/>
+                                                        </mask>
+                                                        <mask key="constraints">
+                                                            <exclude reference="eP1-cg-e9C"/>
+                                                            <exclude reference="zYg-zh-2mt"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="subviews">
+                                                            <include reference="Jcq-4m-bqJ"/>
+                                                        </mask>
+                                                        <mask key="constraints">
+                                                            <include reference="eP1-cg-e9C"/>
+                                                            <include reference="zYg-zh-2mt"/>
+                                                        </mask>
+                                                    </variation>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Jcq-4m-bqJ" firstAttribute="centerX" secondItem="o1V-0T-Q9W" secondAttribute="centerX" id="NOT-3h-u48"/>
-                                            <constraint firstItem="Jcq-4m-bqJ" firstAttribute="centerY" secondItem="o1V-0T-Q9W" secondAttribute="centerY" id="vp2-hH-TKB"/>
+                                            <constraint firstItem="Gdw-AC-EMr" firstAttribute="height" secondItem="o1V-0T-Q9W" secondAttribute="height" id="dxd-rt-inQ"/>
+                                            <constraint firstItem="Gdw-AC-EMr" firstAttribute="centerX" secondItem="o1V-0T-Q9W" secondAttribute="centerX" id="ePE-ud-T2C"/>
+                                            <constraint firstItem="Gdw-AC-EMr" firstAttribute="centerY" secondItem="o1V-0T-Q9W" secondAttribute="centerY" id="ekZ-fX-MZl"/>
+                                            <constraint firstItem="Gdw-AC-EMr" firstAttribute="width" secondItem="o1V-0T-Q9W" secondAttribute="width" id="g5u-Kq-aTe"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="subviews">
-                                                <exclude reference="Jcq-4m-bqJ"/>
+                                                <exclude reference="Gdw-AC-EMr"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="NOT-3h-u48"/>
-                                                <exclude reference="vp2-hH-TKB"/>
+                                                <exclude reference="dxd-rt-inQ"/>
+                                                <exclude reference="ePE-ud-T2C"/>
+                                                <exclude reference="ekZ-fX-MZl"/>
+                                                <exclude reference="g5u-Kq-aTe"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="subviews">
-                                                <include reference="Jcq-4m-bqJ"/>
+                                                <include reference="Gdw-AC-EMr"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="NOT-3h-u48"/>
-                                                <include reference="vp2-hH-TKB"/>
+                                                <include reference="dxd-rt-inQ"/>
+                                                <include reference="ePE-ud-T2C"/>
+                                                <include reference="ekZ-fX-MZl"/>
+                                                <include reference="g5u-Kq-aTe"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -5116,6 +5186,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AdC-XH-pTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="501" y="267"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="FV2-lT-4rf">
+            <objects>
+                <viewController id="BJP-vH-seJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bmd-AE-seJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ko5-cn-Zro"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LLS-7l-XLy">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9K6-Jt-JZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
