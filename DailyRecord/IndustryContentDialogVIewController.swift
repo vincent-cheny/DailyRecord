@@ -20,13 +20,10 @@ class IndustryContentDialogViewController: UIViewController, UITableViewDelegate
     let realm = try! Realm()
     var industryType = ""
     var industries: Results<Industry>!
-    var showDate = NSDate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let dayRange = Utils.getDayRange(showDate)
-        industries = try! Realm().objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", industryType, dayRange[0], dayRange[1]).sorted("id")
         industryContentTitle.text = industryType
         industryContentTableView.delegate = self
         industryContentTableView.dataSource = self

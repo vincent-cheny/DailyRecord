@@ -140,13 +140,30 @@ class CalendarDayViewController: UIViewController, UICollectionViewDataSource, U
         default:
             break
         }
-        let industryCount = getIndustryCount(type, timeIndex: index / 4)
-        if industryCount == "" {
+        let dayRange = Utils.getDayRange(showDate)
+        var industries: Results<Industry>!
+        switch index / 4 {
+        case 0:
+            industries = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 4 * hourDuration, dayRange[0] + 8 * hourDuration - 1).sorted("id")
+        case 1:
+            industries = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 8 * hourDuration, dayRange[0] + 10 * hourDuration - 1).sorted("id")
+        case 2:
+            industries = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 10 * hourDuration, dayRange[0] + 13 * hourDuration - 1).sorted("id")
+        case 3:
+            industries = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 13 * hourDuration, dayRange[0] + 17 * hourDuration - 1).sorted("id")
+        case 4:
+            industries = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 17 * hourDuration, dayRange[0] + 21 * hourDuration - 1).sorted("id")
+        case 5:
+            industries = realm.objects(Industry).filter("type = %@ AND (time BETWEEN {%@, %@} OR time BETWEEN {%@, %@})", type, dayRange[0] + 21 * hourDuration, dayRange[1], dayRange[0], dayRange[0] + 4 * hourDuration - 1).sorted("id")
+        default:
+            break
+        }
+        if industries.count == 0 {
             return
         }
         let industryContentDialogViewController = storyboard?.instantiateViewControllerWithIdentifier("IndustryContentDialogViewController") as! IndustryContentDialogViewController
         industryContentDialogViewController.industryType = type
-        industryContentDialogViewController.showDate = showDate
+        industryContentDialogViewController.industries = industries
         industryContentDialogViewController.initWithClosure(dismissViewClosure)
         presentViewController(industryContentDialogViewController, animated: true, completion: nil)
     }
