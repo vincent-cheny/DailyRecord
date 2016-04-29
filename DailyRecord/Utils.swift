@@ -11,6 +11,8 @@ class Utils {
     static let isInitialized: String = "isInitialized"
     static let needBlackCheck: String = "needBlackCheck"
     static let needWhiteCheck: String = "needWhiteCheck"
+    static let needDailySummary: String = "needDailySummary"
+    static let summaryTime: String = "summaryTime"
     
     static func descriptionFromTime(date: NSDate) -> String {
         let calendar = NSCalendar.currentCalendar()
@@ -126,7 +128,7 @@ class Utils {
         return [startOfYear!.timeIntervalSince1970, endOfYear!.timeIntervalSince1970]
     }
     
-    static func firstWeekdayInMonth(date: NSDate) -> NSInteger {
+    static func firstWeekdayInMonth(date: NSDate) -> Int {
         let calendar = NSCalendar.currentCalendar()
         calendar.firstWeekday = 2
         var startOfMonth : NSDate?
@@ -134,7 +136,7 @@ class Utils {
         return calendar.ordinalityOfUnit(.Weekday, inUnit: .WeekOfMonth, forDate: startOfMonth!)
     }
     
-    static func totalDaysInMonth(date: NSDate) -> NSInteger {
+    static func totalDaysInMonth(date: NSDate) -> Int {
         return NSCalendar.currentCalendar().rangeOfUnit(.Day, inUnit: .Month, forDate: date).length
     }
     
@@ -160,5 +162,11 @@ class Utils {
         let dayComponent = NSDateComponents()
         dayComponent.day = 1;
         return NSCalendar.currentCalendar().dateByAddingComponents(dayComponent, toDate: date, options: NSCalendarOptions())!
+    }
+    
+    static func getHourAndMinute(components: NSDateComponents) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.stringFromDate(NSCalendar.currentCalendar().dateFromComponents(components)!)
     }
 }

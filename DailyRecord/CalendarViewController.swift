@@ -87,7 +87,7 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
         let totalDaysInLastMonth = Utils.totalDaysInMonth(lastMonth)
         let calendar = NSCalendar.currentCalendar()
         var showDayComponents: NSDateComponents
-        let dayValue: NSInteger
+        let dayValue: Int
         if index < firstWeekdayInMonth {
             showDayComponents = calendar.components([.Year, .Month], fromDate: lastMonth)
             dayValue = totalDaysInLastMonth - firstWeekdayInMonth + index + 1
@@ -122,7 +122,7 @@ class CalendarViewController: UIViewController, UICollectionViewDataSource, UICo
         let totalDaysInLastMonth = Utils.totalDaysInMonth(lastMonth)
         let calendar = NSCalendar.currentCalendar()
         var showDayComponents: NSDateComponents
-        let dayValue: NSInteger
+        let dayValue: Int
         if index < firstWeekdayInMonth {
             showDayComponents = calendar.components([.Year, .Month], fromDate: lastMonth)
             dayValue = totalDaysInLastMonth - firstWeekdayInMonth + index + 1

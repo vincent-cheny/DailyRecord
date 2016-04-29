@@ -27,6 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if defaults.objectForKey(Utils.needWhiteCheck) == nil {
             defaults.setBool(false, forKey: Utils.needWhiteCheck)
         }
+        if defaults.objectForKey(Utils.needDailySummary) == nil {
+            defaults.setBool(false, forKey: Utils.needDailySummary)
+        }
+        if defaults.objectForKey(Utils.summaryTime) == nil {
+            defaults.setObject([20, 0], forKey: Utils.summaryTime)
+        }
         return true
     }
 
