@@ -56,6 +56,7 @@
 		9AD94BBE1C6D6460006216BB /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */; };
 		9AE8F6221C7611C500471786 /* AddTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8F6211C7611C500471786 /* AddTemplateViewController.swift */; };
 		9AE9E52F1CD24F9A004A47B5 /* IndustryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9E52E1CD24F9A004A47B5 /* IndustryCollectionViewCell.swift */; };
+		9AE9E5311CD34EA1004A47B5 /* IndustryContentDialogVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9E5301CD34EA1004A47B5 /* IndustryContentDialogVIewController.swift */; };
 		AA18BDFD3772C2DCC52728DD /* Pods_DailyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D520703C05826325E64156 /* Pods_DailyRecord.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +127,7 @@
 		9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
 		9AE8F6211C7611C500471786 /* AddTemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTemplateViewController.swift; sourceTree = "<group>"; };
 		9AE9E52E1CD24F9A004A47B5 /* IndustryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndustryCollectionViewCell.swift; sourceTree = "<group>"; };
+		9AE9E5301CD34EA1004A47B5 /* IndustryContentDialogVIewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndustryContentDialogVIewController.swift; sourceTree = "<group>"; };
 		DBF5CAD9252C59CCEFB9F1A0 /* Pods-DailyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyRecord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyRecord/Pods-DailyRecord.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +217,7 @@
 				9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */,
 				9ACCA6241C6EC2CD00AF7D55 /* AboutViewController.swift */,
 				9AE9E52E1CD24F9A004A47B5 /* IndustryCollectionViewCell.swift */,
+				9AE9E5301CD34EA1004A47B5 /* IndustryContentDialogVIewController.swift */,
 				9A7908181C7BED14008CE40F /* IndustryViewController.swift */,
 				9A25FF271CCD98E600A255F8 /* CheckViewController.swift */,
 				9A79081A1C7BED2A008CE40F /* CheckSummaryViewController.swift */,
@@ -450,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE9E5311CD34EA1004A47B5 /* IndustryContentDialogVIewController.swift in Sources */,
 				9AD94BBC1C6D644D006216BB /* CalendarViewController.swift in Sources */,
 				9A7F8B6C1CCA5681004BC3AC /* CheckDialogViewController.swift in Sources */,
 				9A6E08EA1C7011EC00C0358A /* RecordTemplate.swift in Sources */,

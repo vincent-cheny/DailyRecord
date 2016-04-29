@@ -16,6 +16,7 @@ class CalendarDayViewController: UIViewController, UICollectionViewDataSource, U
     
     var showDate = NSDate()
     let realm = try! Realm()
+    let hourDuration = 60 * 60.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,17 +104,17 @@ class CalendarDayViewController: UIViewController, UICollectionViewDataSource, U
         let dayRange = Utils.getDayRange(showDate)
         switch timeIndex {
         case 0:
-            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0], dayRange[1]).count
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 4 * hourDuration, dayRange[0] + 8 * hourDuration - 1).count
         case 1:
-            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0], dayRange[1]).count
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 8 * hourDuration, dayRange[0] + 10 * hourDuration - 1).count
         case 2:
-            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0], dayRange[1]).count
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 10 * hourDuration, dayRange[0] + 13 * hourDuration - 1).count
         case 3:
-            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0], dayRange[1]).count
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 13 * hourDuration, dayRange[0] + 17 * hourDuration - 1).count
         case 4:
-            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0], dayRange[1]).count
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 17 * hourDuration, dayRange[0] + 21 * hourDuration - 1).count
         case 5:
-            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0], dayRange[1]).count
+            result = realm.objects(Industry).filter("type = %@ AND (time BETWEEN {%@, %@} OR time BETWEEN {%@, %@})", type, dayRange[0] + 21 * hourDuration, dayRange[1], dayRange[0], dayRange[0] + 4 * hourDuration - 1).count
         default:
             break
         }
@@ -125,7 +126,44 @@ class CalendarDayViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        var type = ""
+        let index = indexPath.row
+        switch index % 4 {
+        case 0:
+            type = "黑业"
+        case 1:
+            type = "黑业对治"
+        case 2:
+            type = "白业"
+        case 3:
+            type = "白业对治"
+        default:
+            break
+        }
+        let industryCount = getIndustryCount(type, timeIndex: index / 4)
+        if industryCount == "" {
+            return
+        }
+        let industryContentDialogViewController = storyboard?.instantiateViewControllerWithIdentifier("IndustryContentDialogViewController") as! IndustryContentDialogViewController
+        industryContentDialogViewController.industryType = type
+        industryContentDialogViewController.showDate = showDate
+        industryContentDialogViewController.initWithClosure(dismissViewClosure)
+        presentViewController(industryContentDialogViewController, animated: true, completion: nil)
+    }
+    
+    func dismissViewClosure(industryType: String, id: Int, isConfirm: Bool) {
+        dismissViewControllerAnimated(true, completion: nil)
+        if isConfirm {
+            if (industryType == "黑业" || industryType == "白业") {
+                let industryViewController = storyboard?.instantiateViewControllerWithIdentifier("IndustryViewController") as! IndustryViewController
+                industryViewController.industryId = id
+                navigationController?.pushViewController(industryViewController, animated: true)
+            } else {
+                let checkViewController = storyboard?.instantiateViewControllerWithIdentifier("CheckViewController") as! CheckViewController
+                checkViewController.checkId = id
+                navigationController?.pushViewController(checkViewController, animated: true)
+            }
+        }
     }
     
     func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
