@@ -34,6 +34,7 @@ class SettingViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "确认", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
             RecordTemplate().resetTemplate()
             Industry().resetIndustry()
+            Remind().resetRemind()
         }))
         alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)

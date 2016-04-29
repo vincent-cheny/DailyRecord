@@ -57,6 +57,9 @@
 		9AE8F6221C7611C500471786 /* AddTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8F6211C7611C500471786 /* AddTemplateViewController.swift */; };
 		9AE9E52F1CD24F9A004A47B5 /* IndustryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9E52E1CD24F9A004A47B5 /* IndustryCollectionViewCell.swift */; };
 		9AE9E5311CD34EA1004A47B5 /* IndustryContentDialogVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9E5301CD34EA1004A47B5 /* IndustryContentDialogVIewController.swift */; };
+		9AE9E5331CD3A833004A47B5 /* RemindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9E5321CD3A833004A47B5 /* RemindViewController.swift */; };
+		9AE9E5351CD3A8B3004A47B5 /* AddRemindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9E5341CD3A8B3004A47B5 /* AddRemindViewController.swift */; };
+		9AE9E5371CD3AAA3004A47B5 /* Remind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9E5361CD3AAA3004A47B5 /* Remind.swift */; };
 		AA18BDFD3772C2DCC52728DD /* Pods_DailyRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D520703C05826325E64156 /* Pods_DailyRecord.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +131,9 @@
 		9AE8F6211C7611C500471786 /* AddTemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTemplateViewController.swift; sourceTree = "<group>"; };
 		9AE9E52E1CD24F9A004A47B5 /* IndustryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndustryCollectionViewCell.swift; sourceTree = "<group>"; };
 		9AE9E5301CD34EA1004A47B5 /* IndustryContentDialogVIewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndustryContentDialogVIewController.swift; sourceTree = "<group>"; };
+		9AE9E5321CD3A833004A47B5 /* RemindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindViewController.swift; sourceTree = "<group>"; };
+		9AE9E5341CD3A8B3004A47B5 /* AddRemindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRemindViewController.swift; sourceTree = "<group>"; };
+		9AE9E5361CD3AAA3004A47B5 /* Remind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remind.swift; sourceTree = "<group>"; };
 		DBF5CAD9252C59CCEFB9F1A0 /* Pods-DailyRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyRecord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DailyRecord/Pods-DailyRecord.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +210,7 @@
 			children = (
 				9A1C3F451CB2BA8800F134F0 /* DatePickerDialog.swift */,
 				9A6E08E91C7011EC00C0358A /* RecordTemplate.swift */,
+				9AE9E5361CD3AAA3004A47B5 /* Remind.swift */,
 				9A7F8B691CCA364F004BC3AC /* Industry.swift */,
 				0DFFB27B1B896E80001E1EA4 /* AppDelegate.swift */,
 				0DFFB2801B896E80001E1EA4 /* ViewController.swift */,
@@ -224,6 +231,8 @@
 				9A7F8B6B1CCA5681004BC3AC /* CheckDialogViewController.swift */,
 				9A7F8B671CCA26B2004BC3AC /* CheckAndSumSettingViewController.swift */,
 				9A7F8B751CCC73A1004BC3AC /* RecordViewController.swift */,
+				9AE9E5321CD3A833004A47B5 /* RemindViewController.swift */,
+				9AE9E5341CD3A8B3004A47B5 /* AddRemindViewController.swift */,
 				9A1C3F431CB2B26600F134F0 /* Utils.swift */,
 				0DFFB2821B896E80001E1EA4 /* Main.storyboard */,
 				0DFFB2851B896E81001E1EA4 /* Images.xcassets */,
@@ -455,6 +464,8 @@
 			files = (
 				9AE9E5311CD34EA1004A47B5 /* IndustryContentDialogVIewController.swift in Sources */,
 				9AD94BBC1C6D644D006216BB /* CalendarViewController.swift in Sources */,
+				9AE9E5331CD3A833004A47B5 /* RemindViewController.swift in Sources */,
+				9AE9E5351CD3A8B3004A47B5 /* AddRemindViewController.swift in Sources */,
 				9A7F8B6C1CCA5681004BC3AC /* CheckDialogViewController.swift in Sources */,
 				9A6E08EA1C7011EC00C0358A /* RecordTemplate.swift in Sources */,
 				0DFFB2811B896E80001E1EA4 /* ViewController.swift in Sources */,
@@ -466,6 +477,7 @@
 				9A25FF281CCD98E600A255F8 /* CheckViewController.swift in Sources */,
 				9A7F8B761CCC73A1004BC3AC /* RecordViewController.swift in Sources */,
 				9A7F8B741CCC6232004BC3AC /* CustomPNPieChart.swift in Sources */,
+				9AE9E5371CD3AAA3004A47B5 /* Remind.swift in Sources */,
 				9A1C3F461CB2BA8800F134F0 /* DatePickerDialog.swift in Sources */,
 				9A1C3F441CB2B26600F134F0 /* Utils.swift in Sources */,
 				9A7F8B681CCA26B2004BC3AC /* CheckAndSumSettingViewController.swift in Sources */,
