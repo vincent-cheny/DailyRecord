@@ -122,9 +122,7 @@ class TemplateViewController: UIViewController, UITableViewDelegate, UITableView
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         } else {
-            let addTemplateViewController = storyboard?.instantiateViewControllerWithIdentifier("AddTemplateViewController") as! AddTemplateViewController
-            addTemplateViewController.templateId = recordTemplates[indexPath.row].id
-            navigationController?.pushViewController(addTemplateViewController, animated: true)
+            navigateTemplate(indexPath)
         }
     }
     

@@ -52,4 +52,34 @@ class Remind: Object {
             realm.delete(realm.objects(Remind))
         }
     }
+    
+    func getRepeatDescription() -> String {
+        var description = ""
+        if monday {
+            description += "星期一 "
+        }
+        if tuesday {
+            description += "星期二 "
+        }
+        if wednesday {
+            description += "星期三 "
+        }
+        if thursday {
+            description += "星期四 "
+        }
+        if friday {
+            description += "星期五 "
+        }
+        if saturday {
+            description += "星期六 "
+        }
+        if sunday {
+            description += "星期日 "
+        }
+        if description == "" {
+            return "不重复"
+        } else {
+            return description
+        }
+    }
 }

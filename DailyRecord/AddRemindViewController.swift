@@ -15,6 +15,8 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var repeatLabel: UILabel!
     
+    var remindId = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
