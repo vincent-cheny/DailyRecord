@@ -15,6 +15,7 @@
 		0DFFB2891B896E81001E1EA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DFFB2871B896E81001E1EA4 /* LaunchScreen.xib */; };
 		0DFFB2951B896E81001E1EA4 /* DailyRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFFB2941B896E81001E1EA4 /* DailyRecordTests.swift */; };
 		9A0794CD1CD4682300A6F664 /* RepeatDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0794CC1CD4682300A6F664 /* RepeatDialogViewController.swift */; };
+		9A0794CF1CD4ADCF00A6F664 /* RemindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0794CE1CD4ADCF00A6F664 /* RemindTableViewCell.swift */; };
 		9A1C3F441CB2B26600F134F0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C3F431CB2B26600F134F0 /* Utils.swift */; };
 		9A1C3F461CB2BA8800F134F0 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C3F451CB2BA8800F134F0 /* DatePickerDialog.swift */; };
 		9A25FF281CCD98E600A255F8 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A25FF271CCD98E600A255F8 /* CheckViewController.swift */; };
@@ -89,6 +90,7 @@
 		0DFFB2941B896E81001E1EA4 /* DailyRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordTests.swift; sourceTree = "<group>"; };
 		51D520703C05826325E64156 /* Pods_DailyRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0794CC1CD4682300A6F664 /* RepeatDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatDialogViewController.swift; sourceTree = "<group>"; };
+		9A0794CE1CD4ADCF00A6F664 /* RemindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindTableViewCell.swift; sourceTree = "<group>"; };
 		9A1C3F431CB2B26600F134F0 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9A1C3F451CB2BA8800F134F0 /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
 		9A25FF271CCD98E600A255F8 /* CheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				9A7F8B671CCA26B2004BC3AC /* CheckAndSumSettingViewController.swift */,
 				9A7F8B751CCC73A1004BC3AC /* RecordViewController.swift */,
 				9AE9E5321CD3A833004A47B5 /* RemindViewController.swift */,
+				9A0794CE1CD4ADCF00A6F664 /* RemindTableViewCell.swift */,
 				9A0794CC1CD4682300A6F664 /* RepeatDialogViewController.swift */,
 				9AE9E5341CD3A8B3004A47B5 /* AddRemindViewController.swift */,
 				9A1C3F431CB2B26600F134F0 /* Utils.swift */,
@@ -476,6 +479,7 @@
 				9AD056191CD1F71F000BC07E /* DayCollectionViewCell.swift in Sources */,
 				9AD056231CD2318E000BC07E /* CalendarDayViewController.swift in Sources */,
 				0DFFB27F1B896E80001E1EA4 /* DailyRecord.xcdatamodeld in Sources */,
+				9A0794CF1CD4ADCF00A6F664 /* RemindTableViewCell.swift in Sources */,
 				0DFFB27C1B896E80001E1EA4 /* AppDelegate.swift in Sources */,
 				9AE9E52F1CD24F9A004A47B5 /* IndustryCollectionViewCell.swift in Sources */,
 				9A25FF281CCD98E600A255F8 /* CheckViewController.swift in Sources */,

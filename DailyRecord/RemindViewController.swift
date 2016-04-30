@@ -39,11 +39,12 @@ class RemindViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let remindCell = tableView.dequeueReusableCellWithIdentifier("remindCell", forIndexPath: indexPath)
+        let remindCell = tableView.dequeueReusableCellWithIdentifier("remindCell", forIndexPath: indexPath) as! RemindTableViewCell
         let remind = reminds[indexPath.row]
-        let remindSwitch = remindCell.viewWithTag(1) as! UISwitch
-        let remindTime = remindCell.viewWithTag(2) as! UILabel
-        let remindRepeat = remindCell.viewWithTag(3) as! UILabel
+        remindCell.remind = remind
+        let remindSwitch = remindCell.remindSwitch
+        let remindTime = remindCell.timeLabel
+        let remindRepeat = remindCell.repeatLabel
         let components = NSDateComponents()
         components.hour = remind.hour
         components.minute = remind.minute
@@ -54,12 +55,6 @@ class RemindViewController: UIViewController, UITableViewDelegate, UITableViewDa
         remindCell.layoutMargins = UIEdgeInsetsZero
         remindCell.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(longPressCell(_:))))
         return remindCell
-    }
-    
-    @IBAction func switchRemindEnable(sender: UISwitch) {
-//        let indexPath = remindTableView.indexPathForCell(sender.superview as! UITableViewCellContentView)
-//        let remind = reminds[indexPath!.row]
-//        NSLog(remind.content)
     }
     
     func longPressCell(recognizer: UIGestureRecognizer) {
