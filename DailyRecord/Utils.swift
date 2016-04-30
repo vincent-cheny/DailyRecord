@@ -164,12 +164,6 @@ class Utils {
         return NSCalendar.currentCalendar().dateByAddingComponents(dayComponent, toDate: date, options: NSCalendarOptions())!
     }
     
-    static func getHourAndMinute(date: NSDate) -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        return dateFormatter.stringFromDate(date)
-    }
-    
     static func getHourAndMinute(components: NSDateComponents) -> String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "HH:mm"

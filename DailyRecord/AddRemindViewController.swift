@@ -11,18 +11,33 @@ import RealmSwift
 
 class AddRemindViewController: UIViewController, UITextViewDelegate {
     
+    @IBOutlet weak var enableSwitch: UISwitch!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var repeatLabel: UILabel!
     
     var remindId = 0
+    let realm = try! Realm()
+    var curRemind: Remind!
+    var curComponents = NSDateComponents()
+    var repeats = [false, false, false, false, false, false, false]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         contentTextView.delegate = self
         contentTextView.textContainerInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
-        timeLabel.text = Utils.getHourAndMinute(NSDate())
+        if remindId > 0 {
+            curRemind = realm.objects(Remind).filter("id = %d", remindId).first
+            enableSwitch.on = curRemind.enable
+            contentTextView.text = curRemind.content
+            curComponents.hour = curRemind.hour
+            curComponents.minute = curRemind.minute
+            repeatLabel.text = curRemind.getRepeatDescription()
+        } else {
+            curComponents = NSCalendar.currentCalendar().components([.Hour, .Minute], fromDate: NSDate())
+        }
+        timeLabel.text = Utils.getHourAndMinute(curComponents)
         textViewDidEndEditing(contentTextView)
     }
     
@@ -72,6 +87,26 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func confirm(sender: AnyObject) {
         let contentText = contentTextView.textColor == UIColor.lightGrayColor() ? "" : contentTextView.text
+        if curRemind == nil {
+            try! realm.write {
+                let remind = Remind(value: [Remind().incrementaId(), enableSwitch.on, curComponents.hour, curComponents.minute, repeats[0], repeats[1], repeats[2], repeats[3], repeats[4], repeats[5], repeats[6], contentText])
+                realm.add(remind)
+            }
+        } else {
+            try! realm.write {
+                curRemind.enable = enableSwitch.on
+                curRemind.hour = curComponents.hour
+                curRemind.minute = curComponents.minute
+                curRemind.monday = repeats[0]
+                curRemind.tuesday = repeats[1]
+                curRemind.wednesday = repeats[2]
+                curRemind.thursday = repeats[3]
+                curRemind.friday = repeats[4]
+                curRemind.saturday = repeats[5]
+                curRemind.sunday = repeats[6]
+                curRemind.content = contentTextView.text
+            }
+        }
         navigationController?.popViewControllerAnimated(true)
     }
     
