@@ -2360,7 +2360,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pq7-au-sRb" userLabel="Repeat Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不重复" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pq7-au-sRb" userLabel="Repeat Label">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2440,6 +2440,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="confirm:" destination="ixp-Ms-rCi" eventType="touchUpInside" id="1VG-Tl-NeY"/>
+                                    <action selector="confirm:" destination="U5g-ZL-lLc" eventType="touchUpInside" id="JCd-JD-Onc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reu-89-NXl">
@@ -2461,6 +2462,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="cancel:" destination="ixp-Ms-rCi" eventType="touchUpInside" id="Fga-Ja-ONL"/>
+                                    <action selector="cancel:" destination="U5g-ZL-lLc" eventType="touchUpInside" id="cRH-eq-rdg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2560,6 +2562,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="hJ3-z9-8N4" id="FOq-ug-etF"/>
+                        <outlet property="repeatLabel" destination="pq7-au-sRb" id="CXq-Bh-DMP"/>
+                        <outlet property="timeLabel" destination="Iii-ba-O71" id="8Ou-VG-uIr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0E-RB-CDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

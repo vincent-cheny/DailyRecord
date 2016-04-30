@@ -30,10 +30,10 @@ class AddTemplateViewController: UIViewController, UITextViewDelegate {
         } else {
             templateType.setTitle("黑业", forState: .Normal)
         }
-        templateTitle.delegate = self;
-        templateContent.delegate = self;
-        textViewDidEndEditing(templateTitle);
-        textViewDidEndEditing(templateContent);
+        templateTitle.delegate = self
+        templateContent.delegate = self
+        textViewDidEndEditing(templateTitle)
+        textViewDidEndEditing(templateContent)
     }
     
     override func viewWillAppear(animated: Bool) {
