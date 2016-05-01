@@ -43,8 +43,35 @@ class CheckAndSumSettingViewController: UIViewController {
         defaults.setBool(whiteSwitch.on, forKey: Utils.needWhiteCheck)
     }
     
-    @IBAction func switchDailySummary(sender: AnyObject) {
+    @IBAction func switchDailySummary(sender: UISwitch) {
         defaults.setBool(dailySummarySwitch.on, forKey: Utils.needDailySummary)
+        if sender.on {
+            openNotification()
+        } else {
+            cancelNotification()
+        }
+    }
+    
+    func cancelNotification() {
+        let application = UIApplication.sharedApplication()
+        let notifications = application.scheduledLocalNotifications!
+        for notification in notifications {
+            if notification.category == Utils.dailySummaryCategory {
+                //Cancelling local notification
+                application.cancelLocalNotification(notification)
+                break
+            }
+        }
+    }
+    
+    func openNotification() {
+        let notification = UILocalNotification()
+        notification.alertBody = "每日总结" // text that will be displayed in the notification
+        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
+        notification.category = Utils.dailySummaryCategory
+        notification.repeatInterval = .Day
+        notification.fireDate = Utils.getFireDate(getSummaryComponents())
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
     @IBAction func setSummaryTime(sender: AnyObject) {
@@ -53,6 +80,10 @@ class CheckAndSumSettingViewController: UIViewController {
             let components = NSCalendar.currentCalendar().components([.Hour, .Minute], fromDate: date)
             self.summaryTimeLabel.text = Utils.getHourAndMinute(components)
             self.defaults.setObject([components.hour, components.minute], forKey: Utils.summaryTime)
+            if self.dailySummarySwitch.on {
+                self.cancelNotification()
+                self.openNotification()
+            }
         }
     }
     

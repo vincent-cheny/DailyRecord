@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if defaults.objectForKey(Utils.summaryTime) == nil {
             defaults.setObject([20, 0], forKey: Utils.summaryTime)
         }
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))  // types are UIUserNotificationType members
         return true
     }
 

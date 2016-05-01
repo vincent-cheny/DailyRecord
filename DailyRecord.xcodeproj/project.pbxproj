@@ -77,7 +77,7 @@
 
 /* Begin PBXFileReference section */
 		01533493C53F8944702EA0BC /* Pods-DailyRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyRecord.release.xcconfig"; path = "Pods/Target Support Files/Pods-DailyRecord/Pods-DailyRecord.release.xcconfig"; sourceTree = "<group>"; };
-		0DFFB2761B896E80001E1EA4 /* DailyRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DFFB2761B896E80001E1EA4 /* 功过格.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "功过格.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DFFB27A1B896E80001E1EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DFFB27B1B896E80001E1EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DFFB27E1B896E80001E1EA4 /* DailyRecord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyRecord.xcdatamodel; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 		0DFFB2771B896E80001E1EA4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0DFFB2761B896E80001E1EA4 /* DailyRecord.app */,
+				0DFFB2761B896E80001E1EA4 /* 功过格.app */,
 				0DFFB28E1B896E81001E1EA4 /* DailyRecordTests.xctest */,
 			);
 			name = Products;
@@ -287,9 +287,9 @@
 		9A198E9C1CD62E6E00FE27C9 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				9A7F8B691CCA364F004BC3AC /* Industry.swift */,
 				9A6E08E91C7011EC00C0358A /* RecordTemplate.swift */,
 				9AE9E5361CD3AAA3004A47B5 /* Remind.swift */,
-				9A7F8B691CCA364F004BC3AC /* Industry.swift */,
 			);
 			name = Realm;
 			sourceTree = "<group>";
@@ -353,7 +353,7 @@
 			);
 			name = DailyRecord;
 			productName = DailyRecord;
-			productReference = 0DFFB2761B896E80001E1EA4 /* DailyRecord.app */;
+			productReference = 0DFFB2761B896E80001E1EA4 /* 功过格.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0DFFB28D1B896E81001E1EA4 /* DailyRecordTests */ = {
@@ -672,7 +672,7 @@
 				INFOPLIST_FILE = DailyRecord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lazypanda.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "功过格";
 				SWIFT_OBJC_BRIDGING_HEADER = "DailyRecord/DailyRecord-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -688,7 +688,7 @@
 				INFOPLIST_FILE = DailyRecord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lazypanda.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "功过格";
 				SWIFT_OBJC_BRIDGING_HEADER = "DailyRecord/DailyRecord-Bridging-Header.h";
 			};
 			name = Release;

@@ -13,6 +13,7 @@ class Utils {
     static let needWhiteCheck: String = "needWhiteCheck"
     static let needDailySummary: String = "needDailySummary"
     static let summaryTime: String = "summaryTime"
+    static let dailySummaryCategory: String = "dailySummaryCategory"
     
     static func descriptionFromTime(date: NSDate) -> String {
         let calendar = NSCalendar.currentCalendar()
@@ -174,6 +175,19 @@ class Utils {
         let calendar = NSCalendar.currentCalendar()
         calendar.firstWeekday = 2
         return calendar.ordinalityOfUnit(.Weekday, inUnit: .WeekOfMonth, forDate: date)
+    }
+    
+    static func getFireDate(components: NSDateComponents) -> NSDate {
+        let today = NSDate()
+        let fireDateMinutes = components.hour * 60 + components.minute
+        let calendar = NSCalendar.currentCalendar()
+        let todayComponents = calendar.components([.Hour, .Minute], fromDate: today)
+        let todayMinutes = todayComponents.hour * 60 + todayComponents.minute
+        if fireDateMinutes > todayMinutes {
+            return calendar.dateBySettingHour(components.hour, minute: components.minute, second: 0, ofDate: today, options: NSCalendarOptions())!
+        } else {
+            return calendar.dateBySettingHour(components.hour, minute: components.minute, second: 0, ofDate: nextDay(today), options: NSCalendarOptions())!
+        }
     }
     
     static func getRepeatsDescription(repeats: [Bool]) -> String {
