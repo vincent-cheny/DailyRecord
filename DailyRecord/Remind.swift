@@ -53,7 +53,7 @@ class Remind: Object {
         }
     }
     
-    func getRepeatDescription() -> String {
+    func getRepeatsDescription() -> String {
         var description = ""
         if monday {
             description += "周一 "

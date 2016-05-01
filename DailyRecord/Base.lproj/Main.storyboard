@@ -2609,8 +2609,11 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v75-if-lar">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v75-if-lar">
                                                         <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchMonday:" destination="zmr-VL-OHU" eventType="valueChanged" id="Kuw-rf-jM3"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2626,10 +2629,10 @@
                                                         <exclude reference="v75-if-lar"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <exclude reference="5FW-Ej-Sq5"/>
-                                                        <exclude reference="rHz-6L-7Co"/>
                                                         <exclude reference="SAv-rk-zHx"/>
                                                         <exclude reference="Wpw-NW-zCo"/>
+                                                        <exclude reference="5FW-Ej-Sq5"/>
+                                                        <exclude reference="rHz-6L-7Co"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2638,10 +2641,10 @@
                                                         <include reference="v75-if-lar"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <include reference="5FW-Ej-Sq5"/>
-                                                        <include reference="rHz-6L-7Co"/>
                                                         <include reference="SAv-rk-zHx"/>
                                                         <include reference="Wpw-NW-zCo"/>
+                                                        <include reference="5FW-Ej-Sq5"/>
+                                                        <include reference="rHz-6L-7Co"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -2654,8 +2657,11 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bdv-yV-Jyg">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bdv-yV-Jyg">
                                                         <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchTuesday:" destination="zmr-VL-OHU" eventType="valueChanged" id="TnB-sU-jWM"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2671,10 +2677,10 @@
                                                         <exclude reference="bdv-yV-Jyg"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <exclude reference="1Lq-ib-HMT"/>
-                                                        <exclude reference="u92-yi-K1R"/>
                                                         <exclude reference="FAE-n1-Ibq"/>
                                                         <exclude reference="jmV-ji-ij4"/>
+                                                        <exclude reference="1Lq-ib-HMT"/>
+                                                        <exclude reference="u92-yi-K1R"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2683,10 +2689,10 @@
                                                         <include reference="bdv-yV-Jyg"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <include reference="1Lq-ib-HMT"/>
-                                                        <include reference="u92-yi-K1R"/>
                                                         <include reference="FAE-n1-Ibq"/>
                                                         <include reference="jmV-ji-ij4"/>
+                                                        <include reference="1Lq-ib-HMT"/>
+                                                        <include reference="u92-yi-K1R"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -2699,8 +2705,11 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jRo-r2-Mqa">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jRo-r2-Mqa">
                                                         <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchWednesday:" destination="zmr-VL-OHU" eventType="valueChanged" id="H8d-yk-oVZ"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2716,10 +2725,10 @@
                                                         <exclude reference="jRo-r2-Mqa"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <exclude reference="8wA-ds-Pgy"/>
-                                                        <exclude reference="ZJq-Ta-X82"/>
                                                         <exclude reference="G1a-Gi-hv1"/>
                                                         <exclude reference="OiM-kz-9Zh"/>
+                                                        <exclude reference="8wA-ds-Pgy"/>
+                                                        <exclude reference="ZJq-Ta-X82"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2728,10 +2737,10 @@
                                                         <include reference="jRo-r2-Mqa"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <include reference="8wA-ds-Pgy"/>
-                                                        <include reference="ZJq-Ta-X82"/>
                                                         <include reference="G1a-Gi-hv1"/>
                                                         <include reference="OiM-kz-9Zh"/>
+                                                        <include reference="8wA-ds-Pgy"/>
+                                                        <include reference="ZJq-Ta-X82"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -2744,8 +2753,11 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GrI-uy-YJd">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GrI-uy-YJd">
                                                         <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchThursday:" destination="zmr-VL-OHU" eventType="valueChanged" id="66U-VV-K9q"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2761,10 +2773,10 @@
                                                         <exclude reference="GrI-uy-YJd"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <exclude reference="i4m-UT-rdP"/>
-                                                        <exclude reference="lA9-fU-A2V"/>
                                                         <exclude reference="8pe-f1-QI4"/>
                                                         <exclude reference="EXS-oN-gkK"/>
+                                                        <exclude reference="i4m-UT-rdP"/>
+                                                        <exclude reference="lA9-fU-A2V"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2773,10 +2785,10 @@
                                                         <include reference="GrI-uy-YJd"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <include reference="i4m-UT-rdP"/>
-                                                        <include reference="lA9-fU-A2V"/>
                                                         <include reference="8pe-f1-QI4"/>
                                                         <include reference="EXS-oN-gkK"/>
+                                                        <include reference="i4m-UT-rdP"/>
+                                                        <include reference="lA9-fU-A2V"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -2789,8 +2801,11 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rn4-IU-zNp">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Rn4-IU-zNp">
                                                         <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchFriday:" destination="zmr-VL-OHU" eventType="valueChanged" id="46x-Kk-HzK"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2806,10 +2821,10 @@
                                                         <exclude reference="Rn4-IU-zNp"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <exclude reference="I5V-mu-PIW"/>
-                                                        <exclude reference="dXV-gH-mOM"/>
                                                         <exclude reference="VsW-PC-BV3"/>
                                                         <exclude reference="izC-Re-vMy"/>
+                                                        <exclude reference="I5V-mu-PIW"/>
+                                                        <exclude reference="dXV-gH-mOM"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2818,10 +2833,10 @@
                                                         <include reference="Rn4-IU-zNp"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <include reference="I5V-mu-PIW"/>
-                                                        <include reference="dXV-gH-mOM"/>
                                                         <include reference="VsW-PC-BV3"/>
                                                         <include reference="izC-Re-vMy"/>
+                                                        <include reference="I5V-mu-PIW"/>
+                                                        <include reference="dXV-gH-mOM"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -2834,8 +2849,11 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="idh-cZ-Ch6">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="idh-cZ-Ch6">
                                                         <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchSaturday:" destination="zmr-VL-OHU" eventType="valueChanged" id="jWf-AN-K2d"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2851,10 +2869,10 @@
                                                         <exclude reference="idh-cZ-Ch6"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <exclude reference="KdX-Ob-jSS"/>
-                                                        <exclude reference="MMn-bd-UL9"/>
                                                         <exclude reference="ae2-8x-tDf"/>
                                                         <exclude reference="e17-eR-KY4"/>
+                                                        <exclude reference="KdX-Ob-jSS"/>
+                                                        <exclude reference="MMn-bd-UL9"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2863,10 +2881,10 @@
                                                         <include reference="idh-cZ-Ch6"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <include reference="KdX-Ob-jSS"/>
-                                                        <include reference="MMn-bd-UL9"/>
                                                         <include reference="ae2-8x-tDf"/>
                                                         <include reference="e17-eR-KY4"/>
+                                                        <include reference="KdX-Ob-jSS"/>
+                                                        <include reference="MMn-bd-UL9"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -2879,8 +2897,11 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XOO-yZ-NzA">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XOO-yZ-NzA">
                                                         <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchSunday:" destination="zmr-VL-OHU" eventType="valueChanged" id="Ljm-qM-Loq"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2896,10 +2917,10 @@
                                                         <exclude reference="XOO-yZ-NzA"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <exclude reference="F9a-Kt-dfU"/>
-                                                        <exclude reference="JO0-ag-d3u"/>
                                                         <exclude reference="6qG-3j-Wyh"/>
                                                         <exclude reference="9iQ-ik-2Ni"/>
+                                                        <exclude reference="F9a-Kt-dfU"/>
+                                                        <exclude reference="JO0-ag-d3u"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2908,10 +2929,10 @@
                                                         <include reference="XOO-yZ-NzA"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <include reference="F9a-Kt-dfU"/>
-                                                        <include reference="JO0-ag-d3u"/>
                                                         <include reference="6qG-3j-Wyh"/>
                                                         <include reference="9iQ-ik-2Ni"/>
+                                                        <include reference="F9a-Kt-dfU"/>
+                                                        <include reference="JO0-ag-d3u"/>
                                                     </mask>
                                                 </variation>
                                             </view>
@@ -2936,6 +2957,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
+                                            <action selector="cancel:" destination="zmr-VL-OHU" eventType="touchUpInside" id="0Pd-os-fp2"/>
                                             <action selector="cancel:" destination="2Gj-Ww-P7i" eventType="touchUpInside" id="CJJ-Xu-V0m"/>
                                         </connections>
                                     </button>
@@ -2959,6 +2981,7 @@
                                         </variation>
                                         <connections>
                                             <action selector="confirm:" destination="2Gj-Ww-P7i" eventType="touchUpInside" id="53d-JW-U9V"/>
+                                            <action selector="confirm:" destination="zmr-VL-OHU" eventType="touchUpInside" id="9YU-pl-vMB"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2995,8 +3018,6 @@
                                         <exclude reference="8hm-Ko-D2e"/>
                                         <exclude reference="Ffz-92-unm"/>
                                         <exclude reference="uOl-fh-tji"/>
-                                        <exclude reference="Imi-zB-WaW"/>
-                                        <exclude reference="rFb-Fu-JvK"/>
                                         <exclude reference="5cn-m4-9d8"/>
                                         <exclude reference="Uuq-Ye-Ibd"/>
                                         <exclude reference="w19-ep-Lfm"/>
@@ -3004,6 +3025,8 @@
                                         <exclude reference="jzR-NI-GlV"/>
                                         <exclude reference="uos-1W-i6J"/>
                                         <exclude reference="yca-yF-FsH"/>
+                                        <exclude reference="Imi-zB-WaW"/>
+                                        <exclude reference="rFb-Fu-JvK"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -3017,8 +3040,6 @@
                                         <include reference="8hm-Ko-D2e"/>
                                         <include reference="Ffz-92-unm"/>
                                         <include reference="uOl-fh-tji"/>
-                                        <include reference="Imi-zB-WaW"/>
-                                        <include reference="rFb-Fu-JvK"/>
                                         <include reference="5cn-m4-9d8"/>
                                         <include reference="Uuq-Ye-Ibd"/>
                                         <include reference="w19-ep-Lfm"/>
@@ -3026,6 +3047,8 @@
                                         <include reference="jzR-NI-GlV"/>
                                         <include reference="uos-1W-i6J"/>
                                         <include reference="yca-yF-FsH"/>
+                                        <include reference="Imi-zB-WaW"/>
+                                        <include reference="rFb-Fu-JvK"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -3071,6 +3094,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="fridaySwitch" destination="Rn4-IU-zNp" id="XLn-Ut-1LP"/>
+                        <outlet property="mondaySwitch" destination="v75-if-lar" id="IWN-JQ-IgE"/>
+                        <outlet property="saturdaySwitch" destination="idh-cZ-Ch6" id="eKD-sS-Ty2"/>
+                        <outlet property="sundaySwitch" destination="XOO-yZ-NzA" id="xZ1-Y0-NU1"/>
+                        <outlet property="thursdaySwitch" destination="GrI-uy-YJd" id="uvM-7q-9gG"/>
+                        <outlet property="tuesdaySwitch" destination="bdv-yV-Jyg" id="6os-c5-tq1"/>
+                        <outlet property="wednesdaySwitch" destination="jRo-r2-Mqa" id="XcY-R8-u8a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5b-ID-TsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

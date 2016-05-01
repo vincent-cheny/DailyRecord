@@ -20,7 +20,7 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
     let realm = try! Realm()
     var curRemind: Remind!
     var curComponents = NSDateComponents()
-    var repeats = [false, false, false, false, false, false, false]
+    var curRepeats = [false, false, false, false, false, false, false]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
             contentTextView.text = curRemind.content
             curComponents.hour = curRemind.hour
             curComponents.minute = curRemind.minute
-            repeatLabel.text = curRemind.getRepeatDescription()
+            repeatLabel.text = curRemind.getRepeatsDescription()
         } else {
             curComponents = NSCalendar.currentCalendar().components([.Hour, .Minute], fromDate: NSDate())
         }
@@ -89,7 +89,7 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
         let contentText = contentTextView.textColor == UIColor.lightGrayColor() ? "" : contentTextView.text
         if curRemind == nil {
             try! realm.write {
-                let remind = Remind(value: [Remind().incrementaId(), enableSwitch.on, curComponents.hour, curComponents.minute, repeats[0], repeats[1], repeats[2], repeats[3], repeats[4], repeats[5], repeats[6], contentText])
+                let remind = Remind(value: [Remind().incrementaId(), enableSwitch.on, curComponents.hour, curComponents.minute, curRepeats[0], curRepeats[1], curRepeats[2], curRepeats[3], curRepeats[4], curRepeats[5], curRepeats[6], contentText])
                 realm.add(remind)
             }
         } else {
@@ -97,13 +97,13 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
                 curRemind.enable = enableSwitch.on
                 curRemind.hour = curComponents.hour
                 curRemind.minute = curComponents.minute
-                curRemind.monday = repeats[0]
-                curRemind.tuesday = repeats[1]
-                curRemind.wednesday = repeats[2]
-                curRemind.thursday = repeats[3]
-                curRemind.friday = repeats[4]
-                curRemind.saturday = repeats[5]
-                curRemind.sunday = repeats[6]
+                curRemind.monday = curRepeats[0]
+                curRemind.tuesday = curRepeats[1]
+                curRemind.wednesday = curRepeats[2]
+                curRemind.thursday = curRepeats[3]
+                curRemind.friday = curRepeats[4]
+                curRemind.saturday = curRepeats[5]
+                curRemind.sunday = curRepeats[6]
                 curRemind.content = contentText
             }
         }
@@ -118,13 +118,28 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
         DatePickerDialog().show("请选择时间", doneButtonTitle: "确定", cancelButtonTitle: "取消", defaultDate: NSCalendar.currentCalendar().dateFromComponents(curComponents)!, datePickerMode: .Time) {
             (date) -> Void in
             self.curComponents = NSCalendar.currentCalendar().components([.Hour, .Minute], fromDate: date)
-            self.timeLabel.text  = Utils.getHourAndMinute(self.curComponents)
+            self.timeLabel.text = Utils.getHourAndMinute(self.curComponents)
         }
     }
     
     @IBAction func changeRepeat(sender: AnyObject) {
         let repeatDialogViewController = storyboard?.instantiateViewControllerWithIdentifier("RepeatDialogViewController") as! RepeatDialogViewController
-//        checkDialogViewController.initWithClosure(confirmAndPopViewClosure)
+        repeatDialogViewController.initWithClosure(repeatsViewClosure)
+        repeatDialogViewController.curRepeats = [curRemind.monday, curRemind.tuesday, curRemind.wednesday, curRemind.thursday, curRemind.friday, curRemind.saturday, curRemind.sunday]
         presentViewController(repeatDialogViewController, animated: true, completion: nil)
+    }
+    
+    func repeatsViewClosure(repeats: [Bool], isConfirm: Bool) {
+        dismissViewControllerAnimated(true, completion: nil)
+        if isConfirm {
+            curRepeats[0] = repeats[0]
+            curRepeats[1] = repeats[1]
+            curRepeats[2] = repeats[2]
+            curRepeats[3] = repeats[3]
+            curRepeats[4] = repeats[4]
+            curRepeats[5] = repeats[5]
+            curRepeats[6] = repeats[6]
+            repeatLabel.text = Utils.getRepeatsDescription(curRepeats)
+        }
     }
 }

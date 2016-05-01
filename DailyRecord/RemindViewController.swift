@@ -48,7 +48,7 @@ class RemindViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let components = NSDateComponents()
         components.hour = remind.hour
         components.minute = remind.minute
-        remindRepeat.text = remind.getRepeatDescription()
+        remindRepeat.text = remind.getRepeatsDescription()
         remindTime.text = Utils.getHourAndMinute(components)
         remindSwitch.on = remind.enable
         // 解决左对齐问题

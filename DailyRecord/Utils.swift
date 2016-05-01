@@ -169,4 +169,34 @@ class Utils {
         dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.stringFromDate(NSCalendar.currentCalendar().dateFromComponents(components)!)
     }
+    
+    static func getRepeatsDescription(repeats: [Bool]) -> String {
+        var description = ""
+        if repeats[0] {
+            description += "周一 "
+        }
+        if repeats[1] {
+            description += "周二 "
+        }
+        if repeats[2] {
+            description += "周三 "
+        }
+        if repeats[3] {
+            description += "周四 "
+        }
+        if repeats[4] {
+            description += "周五 "
+        }
+        if repeats[5] {
+            description += "周六 "
+        }
+        if repeats[6] {
+            description += "周日 "
+        }
+        if description == "" {
+            return "不重复"
+        } else {
+            return description
+        }
+    }
 }
