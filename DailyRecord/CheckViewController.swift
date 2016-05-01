@@ -70,7 +70,7 @@ class CheckViewController: UIViewController, UITextViewDelegate {
     func textViewDidBeginEditing(textView: UITextView) {
         // 键盘弹起处理
         let frame: CGRect = textView.frame
-        let offset: CGFloat = frame.origin.y + 100 - (self.view.frame.size.height-330)
+        let offset: CGFloat = frame.origin.y - self.view.frame.size.height + 416
         if offset > 0  {
             self.view.frame = CGRectMake(0.0, -offset, self.view.frame.size.width, self.view.frame.size.height)
         }

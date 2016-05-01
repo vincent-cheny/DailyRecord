@@ -3053,7 +3053,6 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Dhs-YR-PaZ" firstAttribute="width" secondItem="9Xg-1P-zq0" secondAttribute="width" id="14g-w0-nhs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xlv-4K-poB" secondAttribute="trailing" constant="20" id="2zO-gG-hLx"/>
@@ -4618,7 +4617,6 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HHZ-th-NcM" firstAttribute="leading" secondItem="rCu-AL-kgA" secondAttribute="leadingMargin" constant="20" id="50n-b8-Bdc"/>
                             <constraint firstItem="HHZ-th-NcM" firstAttribute="height" secondItem="rCu-AL-kgA" secondAttribute="height" multiplier="1:2" id="Odg-zZ-cSg"/>

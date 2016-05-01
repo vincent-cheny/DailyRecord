@@ -57,6 +57,12 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
+        // 键盘弹起处理
+        let frame: CGRect = textView.frame
+        let offset: CGFloat = frame.origin.y - self.view.frame.size.height + 416
+        if offset > 0  {
+            self.view.frame = CGRectMake(0.0, -offset, self.view.frame.size.width, self.view.frame.size.height)
+        }
         if textView.textColor == UIColor.lightGrayColor() {
             textView.text = ""
             textView.textColor = UIColor.blackColor()
@@ -65,6 +71,8 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidEndEditing(textView: UITextView) {
+        // 键盘收起处理
+        view.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)
         if textView.text == "" {
             textView.text = "标签"
             textView.textColor = UIColor.lightGrayColor()
@@ -125,7 +133,7 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
     @IBAction func changeRepeat(sender: AnyObject) {
         let repeatDialogViewController = storyboard?.instantiateViewControllerWithIdentifier("RepeatDialogViewController") as! RepeatDialogViewController
         repeatDialogViewController.initWithClosure(repeatsViewClosure)
-        repeatDialogViewController.curRepeats = [curRemind.monday, curRemind.tuesday, curRemind.wednesday, curRemind.thursday, curRemind.friday, curRemind.saturday, curRemind.sunday]
+        repeatDialogViewController.curRepeats = curRepeats
         presentViewController(repeatDialogViewController, animated: true, completion: nil)
     }
     
