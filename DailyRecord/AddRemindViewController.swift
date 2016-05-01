@@ -97,9 +97,16 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
     @IBAction func confirm(sender: AnyObject) {
         let contentText = contentTextView.textColor == UIColor.lightGrayColor() ? "" : contentTextView.text
         if curRemind == nil {
+            var remind: Remind!
             try! realm.write {
-                let remind = Remind(value: [Remind().incrementaId(), enableSwitch.on, curComponents.hour, curComponents.minute, curRepeats[0], curRepeats[1], curRepeats[2], curRepeats[3], curRepeats[4], curRepeats[5], curRepeats[6], contentText])
+                remind = Remind(value: [Remind().incrementaId(), enableSwitch.on, curComponents.hour, curComponents.minute, curRepeats[0], curRepeats[1], curRepeats[2], curRepeats[3], curRepeats[4], curRepeats[5], curRepeats[6], contentText])
                 realm.add(remind)
+            }
+            Utils.cancelRemindNotification(remind)
+            if remind.enable {
+                Utils.openRemindNotification(remind)
+            } else {
+                Utils.cancelRemindNotification(remind)
             }
         } else {
             try! realm.write {
@@ -114,6 +121,12 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
                 curRemind.saturday = curRepeats[5]
                 curRemind.sunday = curRepeats[6]
                 curRemind.content = contentText
+            }
+            Utils.cancelRemindNotification(curRemind)
+            if curRemind.enable {
+                Utils.openRemindNotification(curRemind)
+            } else {
+                Utils.cancelRemindNotification(curRemind)
             }
         }
         navigationController?.popViewControllerAnimated(true)

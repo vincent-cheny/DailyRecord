@@ -59,7 +59,6 @@ class CheckAndSumSettingViewController: UIViewController {
             if notification.category == Utils.dailySummaryCategory {
                 //Cancelling local notification
                 application.cancelLocalNotification(notification)
-                break
             }
         }
     }

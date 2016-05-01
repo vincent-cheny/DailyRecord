@@ -22,6 +22,11 @@ class RemindTableViewCell: UITableViewCell {
         try! realm.write {
             remind.enable = sender.on
         }
+        if sender.on {
+            Utils.openRemindNotification(remind)
+        } else {
+            Utils.cancelRemindNotification(remind)
+        }
     }
     
 }

@@ -66,6 +66,7 @@ class RemindViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }))
             alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Default, handler: nil))
             alert.addAction(UIAlertAction(title: "删除", style: UIAlertActionStyle.Destructive, handler: { (UIAlertAction) -> Void in
+                Utils.cancelRemindNotification(self.reminds[indexPath!.row])
                 try! self.realm.write {
                     self.realm.delete(self.reminds[indexPath!.row])
                 }

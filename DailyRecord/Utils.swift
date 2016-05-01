@@ -13,6 +13,7 @@ class Utils {
     static let needWhiteCheck: String = "needWhiteCheck"
     static let needDailySummary: String = "needDailySummary"
     static let summaryTime: String = "summaryTime"
+    static let remindCategory: String = "remindCategory"
     static let dailySummaryCategory: String = "dailySummaryCategory"
     
     static func descriptionFromTime(date: NSDate) -> String {
@@ -39,7 +40,7 @@ class Utils {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy.M.d HH:mm"
         let todayDate = dateFormatter.stringFromDate(date)
-        let todayDescription = Utils.descriptionFromTime(date);
+        let todayDescription = descriptionFromTime(date);
         return todayDate + " " + todayDescription;
     }
     
@@ -219,4 +220,75 @@ class Utils {
             return description
         }
     }
+    
+    static func openRemindNotification(remind: Remind) {
+        if remind.monday || remind.tuesday || remind.wednesday || remind.thursday || remind.friday || remind.saturday || remind.sunday {
+            if remind.monday {
+                openRemindNotification(remind, weekday: 1)
+            }
+            if remind.tuesday {
+                openRemindNotification(remind, weekday: 2)
+            }
+            if remind.wednesday {
+                openRemindNotification(remind, weekday: 3)
+            }
+            if remind.thursday {
+                openRemindNotification(remind, weekday: 4)
+            }
+            if remind.friday {
+                openRemindNotification(remind, weekday: 5)
+            }
+            if remind.saturday {
+                openRemindNotification(remind, weekday: 6)
+            }
+            if remind.sunday {
+                openRemindNotification(remind, weekday: 7)
+            }
+        }
+    }
+    
+    static func openRemindNotification(remind: Remind, weekday: Int) {
+        let calendar = NSCalendar.currentCalendar()
+        let notification = UILocalNotification()
+        notification.alertBody = remind.content
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.category = remindCategory
+        notification.repeatInterval = .Weekday
+        notification.userInfo = ["id": remind.id]
+        let remindComponents = NSDateComponents()
+        remindComponents.hour = remind.hour
+        remindComponents.minute = remind.minute
+        let today = NSDate()
+        let todayWeekday = getWeekday(today)
+        if todayWeekday == weekday {
+            notification.fireDate = getFireDate(remindComponents)
+        } else if todayWeekday < weekday {
+            let diffComponets = NSDateComponents()
+            diffComponets.day = weekday - todayWeekday
+            notification.fireDate = calendar.dateBySettingHour(remindComponents.hour, minute: remindComponents.minute, second: 0, ofDate: calendar.dateByAddingComponents(diffComponets, toDate: today, options: NSCalendarOptions())!, options: NSCalendarOptions())!
+        } else {
+            let diffComponets = NSDateComponents()
+            diffComponets.day = weekday - todayWeekday + 7
+            notification.fireDate = calendar.dateBySettingHour(remindComponents.hour, minute: remindComponents.minute, second: 0, ofDate: calendar.dateByAddingComponents(diffComponets, toDate: today, options: NSCalendarOptions())!, options: NSCalendarOptions())!
+        }
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
+    
+    static func cancelRemindNotification(remind: Remind) {
+        if remind.monday || remind.tuesday || remind.wednesday || remind.thursday || remind.friday || remind.saturday || remind.sunday {
+            let application = UIApplication.sharedApplication()
+            let notifications = application.scheduledLocalNotifications!
+            for notification in notifications {
+                var userInfo = notification.userInfo
+                if userInfo != nil {
+                    let id = userInfo!["id"] as! Int
+                    if remind.id == id {
+                        //Cancelling local notification
+                        application.cancelLocalNotification(notification)
+                    }
+                }
+            }
+        }
+    }
+    
 }

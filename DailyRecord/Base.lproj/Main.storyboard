@@ -12,7 +12,7 @@
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -567,7 +567,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5g-U0-ghO" userLabel="Chart Frame">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2q4-sJ-0vm" customClass="CustomPNPieChart" customModule="DailyRecord" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2q4-sJ-0vm" customClass="CustomPNPieChart" customModule="功过格" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="2q4-sJ-0vm" secondAttribute="height" id="88i-tU-YQR"/>
@@ -1592,7 +1592,7 @@
         <!--设置-->
         <scene sceneID="J6Y-hI-WC0">
             <objects>
-                <viewController title="设置" id="ttt-1h-p5T" customClass="SettingViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="设置" id="ttt-1h-p5T" customClass="SettingViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7JU-wG-6YV"/>
                         <viewControllerLayoutGuide type="bottom" id="GW7-Uz-jk3"/>
@@ -1783,7 +1783,7 @@
         <!--对治与总结设置-->
         <scene sceneID="CEQ-PX-HGS">
             <objects>
-                <viewController title="对治提醒与每日总结设置" id="h7z-CI-Azu" userLabel="对治与总结设置" customClass="CheckAndSumSettingViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="对治提醒与每日总结设置" id="h7z-CI-Azu" userLabel="对治与总结设置" customClass="CheckAndSumSettingViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oYg-aH-cJk"/>
                         <viewControllerLayoutGuide type="bottom" id="uxX-vJ-fYB"/>
@@ -2049,7 +2049,7 @@
         <!--提醒设置-->
         <scene sceneID="oJd-jO-c37">
             <objects>
-                <viewController title="提醒设置" id="aqi-yM-sb5" customClass="RemindViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="提醒设置" id="aqi-yM-sb5" customClass="RemindViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ua2-3B-ATH"/>
                         <viewControllerLayoutGuide type="bottom" id="NhT-Gv-4Rc"/>
@@ -2067,7 +2067,7 @@
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="remindCell" focusStyle="custom" id="CLR-Es-CZa" customClass="RemindTableViewCell" customModule="DailyRecord" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="remindCell" focusStyle="custom" id="CLR-Es-CZa" customClass="RemindTableViewCell" customModule="功过格" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CLR-Es-CZa" id="XSI-ro-Ytg">
@@ -2232,7 +2232,7 @@
         <!--提醒-->
         <scene sceneID="e5F-iT-jfO">
             <objects>
-                <viewController storyboardIdentifier="AddRemindViewController" title="提醒" id="U5g-ZL-lLc" customClass="AddRemindViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddRemindViewController" title="提醒" id="U5g-ZL-lLc" customClass="AddRemindViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lep-07-Ixd"/>
                         <viewControllerLayoutGuide type="bottom" id="uJK-xH-DXI"/>
@@ -2586,7 +2586,7 @@
         <!--重复窗口-->
         <scene sceneID="64E-zy-7vK">
             <objects>
-                <viewController storyboardIdentifier="RepeatDialogViewController" title="重复窗口" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="zmr-VL-OHU" customClass="RepeatDialogViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RepeatDialogViewController" title="重复窗口" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="zmr-VL-OHU" customClass="RepeatDialogViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Vw-ep-F2W"/>
                         <viewControllerLayoutGuide type="bottom" id="d0e-yg-NYs"/>
@@ -3121,7 +3121,7 @@
         <!--关于-->
         <scene sceneID="9RP-sV-08H">
             <objects>
-                <viewController title="关于" id="oha-cZ-fpN" customClass="AboutViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="关于" id="oha-cZ-fpN" customClass="AboutViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7ll-q8-EhT"/>
                         <viewControllerLayoutGuide type="bottom" id="LSn-g3-faz"/>
@@ -3192,8 +3192,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                    <rect key="frame" x="10" y="339" width="380" height="17.5"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://blog.fo.ifeng.com/article/31746253.html" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ar-Uw-dDj" userLabel="Link4" customClass="TTTAttributedLabel">
@@ -3201,8 +3202,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                    <rect key="frame" x="10" y="366.5" width="380" height="17.5"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -3342,7 +3344,7 @@
         <!--模板-->
         <scene sceneID="N6Y-OX-JEJ">
             <objects>
-                <viewController storyboardIdentifier="TemplateViewController" title="模板" id="v05-90-WFN" customClass="TemplateViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TemplateViewController" title="模板" id="v05-90-WFN" customClass="TemplateViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n3X-w7-b4D"/>
                         <viewControllerLayoutGuide type="bottom" id="5NK-Ku-IyN"/>
@@ -3555,7 +3557,7 @@
         <!--模板-->
         <scene sceneID="E0a-Ts-odN">
             <objects>
-                <viewController storyboardIdentifier="AddTemplateViewController" title="模板" id="ixp-Ms-rCi" customClass="AddTemplateViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddTemplateViewController" title="模板" id="ixp-Ms-rCi" customClass="AddTemplateViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PKi-BX-14R"/>
                         <viewControllerLayoutGuide type="bottom" id="c6R-cp-PZZ"/>
@@ -3756,7 +3758,7 @@
         <!--日历-->
         <scene sceneID="gcj-pk-mvP">
             <objects>
-                <viewController title="日历" id="uR2-J2-q0W" customClass="CalendarViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="日历" id="uR2-J2-q0W" customClass="CalendarViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jBg-Ze-Q3v"/>
                         <viewControllerLayoutGuide type="bottom" id="lIF-SI-GxQ"/>
@@ -3916,7 +3918,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dayCalendarCell" id="Pm3-hA-yIs" customClass="DayCollectionViewCell" customModule="DailyRecord" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dayCalendarCell" id="Pm3-hA-yIs" customClass="DayCollectionViewCell" customModule="功过格" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -4095,7 +4097,7 @@
         <!--日历-->
         <scene sceneID="Zhz-2t-g7V">
             <objects>
-                <viewController storyboardIdentifier="CalendarDayViewController" title="日历" id="vKX-hb-O2p" customClass="CalendarDayViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarDayViewController" title="日历" id="vKX-hb-O2p" customClass="CalendarDayViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="82E-sR-AIa"/>
                         <viewControllerLayoutGuide type="bottom" id="OrB-gb-IVI"/>
@@ -4290,7 +4292,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="industryCalendarCell" id="o1V-0T-Q9W" customClass="IndustryCollectionViewCell" customModule="DailyRecord" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="industryCalendarCell" id="o1V-0T-Q9W" customClass="IndustryCollectionViewCell" customModule="功过格" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -4477,7 +4479,7 @@
         <!--日历窗口-->
         <scene sceneID="VEJ-nw-enB">
             <objects>
-                <viewController storyboardIdentifier="IndustryContentDialogViewController" title="日历窗口" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="zTT-td-CMT" customClass="IndustryContentDialogViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IndustryContentDialogViewController" title="日历窗口" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="zTT-td-CMT" customClass="IndustryContentDialogViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fGO-5p-Weh"/>
                         <viewControllerLayoutGuide type="bottom" id="0Ga-y7-tPa"/>
@@ -4681,7 +4683,7 @@
         <!--记录-->
         <scene sceneID="ogL-9v-QuH">
             <objects>
-                <viewController storyboardIdentifier="RecordViewController" title="记录" id="rxP-VG-cSh" customClass="RecordViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecordViewController" title="记录" id="rxP-VG-cSh" customClass="RecordViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EZu-4u-rqQ"/>
                         <viewControllerLayoutGuide type="bottom" id="DG4-mP-zdc"/>
@@ -5021,7 +5023,7 @@
         <!--图表-->
         <scene sceneID="RQy-db-fot">
             <objects>
-                <viewController title="图表" id="82v-Ft-dNW" customClass="ChartViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="图表" id="82v-Ft-dNW" customClass="ChartViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0JI-h2-Wmd"/>
                         <viewControllerLayoutGuide type="bottom" id="sgR-k0-JL3"/>
@@ -5033,7 +5035,7 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="main_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OZ9-eC-Bxi">
                                 <rect key="frame" x="0.0" y="-960" width="640" height="960"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTK-nc-qLI" customClass="CustomPNPieChart" customModule="DailyRecord" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTK-nc-qLI" customClass="CustomPNPieChart" customModule="功过格" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -5319,7 +5321,7 @@
         <!--对治窗口-->
         <scene sceneID="oE3-Pa-1zQ">
             <objects>
-                <viewController storyboardIdentifier="CheckDialogViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="2Gj-Ww-P7i" userLabel="对治窗口" customClass="CheckDialogViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckDialogViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="2Gj-Ww-P7i" userLabel="对治窗口" customClass="CheckDialogViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AVI-fr-VA6"/>
                         <viewControllerLayoutGuide type="bottom" id="LuV-qn-tip"/>
@@ -5640,7 +5642,7 @@
         <!--业习-->
         <scene sceneID="9lc-D9-Xdu">
             <objects>
-                <viewController storyboardIdentifier="IndustryViewController" title="业习" id="Sqm-2i-oAK" customClass="IndustryViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IndustryViewController" title="业习" id="Sqm-2i-oAK" customClass="IndustryViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wwE-q8-uAH"/>
                         <viewControllerLayoutGuide type="bottom" id="XiW-hs-tJt"/>
@@ -5858,7 +5860,7 @@
         <!--对治-->
         <scene sceneID="lqD-2s-XEf">
             <objects>
-                <viewController storyboardIdentifier="CheckSummaryViewController" title="对治" id="x1z-sD-H0h" customClass="CheckSummaryViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckSummaryViewController" title="对治" id="x1z-sD-H0h" customClass="CheckSummaryViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0iL-EZ-HY4"/>
                         <viewControllerLayoutGuide type="bottom" id="x5V-T1-Zfn"/>
@@ -6346,7 +6348,7 @@
         <!--对治-->
         <scene sceneID="QyJ-1L-VRY">
             <objects>
-                <viewController storyboardIdentifier="CheckViewController" title="对治" id="L1a-7k-zmk" customClass="CheckViewController" customModule="DailyRecord" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckViewController" title="对治" id="L1a-7k-zmk" customClass="CheckViewController" customModule="功过格" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AL6-Xh-OEp"/>
                         <viewControllerLayoutGuide type="bottom" id="XtF-g7-TQM"/>
