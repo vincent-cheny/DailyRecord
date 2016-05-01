@@ -34,6 +34,7 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
             curComponents.hour = curRemind.hour
             curComponents.minute = curRemind.minute
             repeatLabel.text = curRemind.getRepeatsDescription()
+            curRepeats = [curRemind.monday, curRemind.tuesday, curRemind.wednesday, curRemind.thursday, curRemind.friday, curRemind.saturday, curRemind.sunday]
         } else {
             curComponents = NSCalendar.currentCalendar().components([.Hour, .Minute], fromDate: NSDate())
         }

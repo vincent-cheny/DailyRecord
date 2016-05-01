@@ -633,6 +633,7 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="y02-QF-a0h" firstAttribute="centerX" secondItem="KgC-8h-LoD" secondAttribute="centerX" id="30h-Rx-FOd"/>
                                             <constraint firstItem="uFg-NW-ZGt" firstAttribute="centerY" secondItem="KgC-8h-LoD" secondAttribute="centerY" constant="15" id="RpW-6d-82g"/>
@@ -663,6 +664,9 @@
                                                 <include reference="UJ7-gr-2MA"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="0NG-zD-gLr" appends="YES" id="IAt-Fh-lut"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -1547,6 +1551,8 @@
                         <outlet property="monthWhite" destination="5Dq-3E-274" id="ULH-ey-PIT"/>
                         <outlet property="monthWhiteCheck" destination="QOB-2R-P55" id="ued-zn-iua"/>
                         <outlet property="pieChart" destination="2q4-sJ-0vm" id="tCR-ZP-0e5"/>
+                        <outlet property="remindContent" destination="uFg-NW-ZGt" id="5ej-LR-SvN"/>
+                        <outlet property="remindTitle" destination="y02-QF-a0h" id="xUn-gK-5Sy"/>
                         <outlet property="todayTime" destination="BUs-tf-CnM" id="PQf-b3-cbu"/>
                         <outlet property="totalBlackCheckLabel" destination="3DA-BH-xSl" id="nYF-zc-4cR"/>
                         <outlet property="totalBlackLabel" destination="bRA-zy-4S4" id="VlF-Lx-2zd"/>
@@ -1573,6 +1579,11 @@
                 <tapGestureRecognizer id="pOO-L8-Otg">
                     <connections>
                         <action selector="searchMonth:" destination="BYZ-38-t0r" id="Aef-am-4Uz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="0NG-zD-gLr">
+                    <connections>
+                        <action selector="navigateRemind:" destination="BYZ-38-t0r" id="UUz-4Z-sSt"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

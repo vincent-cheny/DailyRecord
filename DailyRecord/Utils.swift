@@ -170,6 +170,12 @@ class Utils {
         return dateFormatter.stringFromDate(NSCalendar.currentCalendar().dateFromComponents(components)!)
     }
     
+    static func getWeekday(date: NSDate) -> Int {
+        let calendar = NSCalendar.currentCalendar()
+        calendar.firstWeekday = 2
+        return calendar.ordinalityOfUnit(.Weekday, inUnit: .WeekOfMonth, forDate: date)
+    }
+    
     static func getRepeatsDescription(repeats: [Bool]) -> String {
         var description = ""
         if repeats[0] {

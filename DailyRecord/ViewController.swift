@@ -39,6 +39,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var pieChart: CustomPNPieChart!
     
+    @IBOutlet weak var remindTitle: UILabel!
+    @IBOutlet weak var remindContent: UILabel!
+    
     let realm = try! Realm()
     
     override func viewDidLoad() {
@@ -102,6 +105,147 @@ class ViewController: UIViewController {
         monthBlackCheck.text = String(realm.objects(Industry).filter("type = '黑业对治' AND time BETWEEN {%@, %@}", monthRange[0], monthRange[1]).count)
         monthWhite.text = String(realm.objects(Industry).filter("type = '白业' AND time BETWEEN {%@, %@}", monthRange[0], monthRange[1]).count)
         monthWhiteCheck.text = String(realm.objects(Industry).filter("type = '白业对治' AND time BETWEEN {%@, %@}", monthRange[0], monthRange[1]).count)
+        
+        //提醒逻辑
+        let weekday = Utils.getWeekday(today)
+        let components = NSCalendar.currentCalendar().components([.Hour, .Minute], fromDate: today)
+        let todayMinutes = 24 * 60 * weekday + components.hour * 60 + components.minute
+        
+        let totalReminds = realm.objects(Remind)
+        let enableReminds = realm.objects(Remind).filter("enable = true AND (monday = true || tuesday = true || wednesday = true || thursday = true || friday = true || saturday = true || sunday = true)")
+        let sortedReminds = enableReminds.sort { (remind1, remind2) -> Bool in
+            let remind1MinMinutes = getRemindMinMinutes(remind1, todayMinutes: todayMinutes)
+            let remind2MinMinutes = getRemindMinMinutes(remind2, todayMinutes: todayMinutes)
+            if remind1MinMinutes != remind2MinMinutes {
+                return remind1MinMinutes < remind2MinMinutes
+            } else {
+                return remind1.id > remind2.id
+            }
+        }
+        if totalReminds.count == 0 {
+            remindTitle.text = "提醒"
+            remindContent.text = "标签"
+        } else if enableReminds.count == 0 {
+            remindTitle.text = "没有提醒"
+            remindContent.text = ""
+        } else {
+            let components = NSDateComponents()
+            components.hour = sortedReminds[0].hour
+            components.minute = sortedReminds[0].minute
+            remindTitle.text = getRemindMinWeekday(sortedReminds[0], todayMinutes: todayMinutes) + " " + Utils.getHourAndMinute(components)
+            remindContent.text = sortedReminds[0].content
+        }
+    }
+    
+    func getRemindMinMinutes(remind: Remind, todayMinutes: Int) -> Int {
+        var minMinutes = 0
+        if remind.monday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 1, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+            }
+        }
+        if remind.tuesday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 2, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+            }
+        }
+        if remind.wednesday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 3, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+            }
+        }
+        if remind.thursday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 4, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+            }
+        }
+        if remind.friday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 5, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+            }
+        }
+        if remind.saturday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 6, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+            }
+        }
+        if remind.sunday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 7, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+            }
+        }
+        return minMinutes
+    }
+    
+    func getDiffMinutes(remind: Remind, weekday: Int, todayMinutes: Int) -> Int {
+        let remindMinutes = 24 * 60 * weekday + remind.hour * 60 + remind.minute
+        if remindMinutes > todayMinutes {
+            return remindMinutes - todayMinutes
+        } else {
+            return remindMinutes - todayMinutes + 24 * 60 * 7
+        }
+    }
+    
+    func getRemindMinWeekday(remind: Remind, todayMinutes: Int) -> String {
+        var minMinutes = 0
+        var minWeekday = ""
+        if remind.monday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 1, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+                minWeekday = "周一"
+            }
+        }
+        if remind.tuesday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 2, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+                minWeekday = "周二"
+            }
+        }
+        if remind.wednesday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 3, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+                minWeekday = "周三"
+            }
+        }
+        if remind.thursday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 4, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+                minWeekday = "周四"
+            }
+        }
+        if remind.friday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 5, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+                minWeekday = "周五"
+            }
+        }
+        if remind.saturday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 6, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+                minWeekday = "周六"
+            }
+        }
+        if remind.sunday {
+            let diffMinutes = getDiffMinutes(remind, weekday: 7, todayMinutes: todayMinutes)
+            if minMinutes == 0 || diffMinutes < minMinutes {
+                minMinutes = diffMinutes
+                minWeekday = "周日"
+            }
+        }
+        return minWeekday
     }
     
     @IBAction func navigateBlack(sender: AnyObject) {
@@ -146,5 +290,8 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(recordViewController, animated: true)
     }
     
+    @IBAction func navigateRemind(sender: AnyObject) {
+        
+    }
 }
 
