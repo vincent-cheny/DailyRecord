@@ -104,7 +104,7 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
                 curRemind.friday = repeats[4]
                 curRemind.saturday = repeats[5]
                 curRemind.sunday = repeats[6]
-                curRemind.content = contentTextView.text
+                curRemind.content = contentText
             }
         }
         navigationController?.popViewControllerAnimated(true)
@@ -114,4 +114,17 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
         navigationController?.popViewControllerAnimated(true)
     }
     
+    @IBAction func changeTime(sender: AnyObject) {
+        DatePickerDialog().show("请选择时间", doneButtonTitle: "确定", cancelButtonTitle: "取消", defaultDate: NSCalendar.currentCalendar().dateFromComponents(curComponents)!, datePickerMode: .Time) {
+            (date) -> Void in
+            self.curComponents = NSCalendar.currentCalendar().components([.Hour, .Minute], fromDate: date)
+            self.timeLabel.text  = Utils.getHourAndMinute(self.curComponents)
+        }
+    }
+    
+    @IBAction func changeRepeat(sender: AnyObject) {
+        let repeatDialogViewController = storyboard?.instantiateViewControllerWithIdentifier("RepeatDialogViewController") as! RepeatDialogViewController
+//        checkDialogViewController.initWithClosure(confirmAndPopViewClosure)
+        presentViewController(repeatDialogViewController, animated: true, completion: nil)
+    }
 }

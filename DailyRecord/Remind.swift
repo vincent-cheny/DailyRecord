@@ -56,25 +56,25 @@ class Remind: Object {
     func getRepeatDescription() -> String {
         var description = ""
         if monday {
-            description += "星期一 "
+            description += "周一 "
         }
         if tuesday {
-            description += "星期二 "
+            description += "周二 "
         }
         if wednesday {
-            description += "星期三 "
+            description += "周三 "
         }
         if thursday {
-            description += "星期四 "
+            description += "周四 "
         }
         if friday {
-            description += "星期五 "
+            description += "周五 "
         }
         if saturday {
-            description += "星期六 "
+            description += "周六 "
         }
         if sunday {
-            description += "星期日 "
+            description += "周日 "
         }
         if description == "" {
             return "不重复"
