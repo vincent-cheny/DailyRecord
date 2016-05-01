@@ -212,34 +212,13 @@
 		0DFFB2781B896E80001E1EA4 /* DailyRecord */ = {
 			isa = PBXGroup;
 			children = (
-				9A1C3F451CB2BA8800F134F0 /* DatePickerDialog.swift */,
-				9A6E08E91C7011EC00C0358A /* RecordTemplate.swift */,
-				9AE9E5361CD3AAA3004A47B5 /* Remind.swift */,
-				9A7F8B691CCA364F004BC3AC /* Industry.swift */,
+				9A198E9F1CD62EBD00FE27C9 /* Dialog */,
+				9A198E9E1CD62E9600FE27C9 /* ViewCell */,
+				9A198E9D1CD62E7A00FE27C9 /* Utils */,
+				9A198E9C1CD62E6E00FE27C9 /* Realm */,
+				9A198E9B1CD62E5400FE27C9 /* ViewController */,
 				0DFFB27B1B896E80001E1EA4 /* AppDelegate.swift */,
 				0DFFB2801B896E80001E1EA4 /* ViewController.swift */,
-				9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */,
-				9AE8F6211C7611C500471786 /* AddTemplateViewController.swift */,
-				9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */,
-				9AD056221CD2318E000BC07E /* CalendarDayViewController.swift */,
-				9AD94BB91C6D6426006216BB /* ChartViewController.swift */,
-				9A7F8B731CCC6232004BC3AC /* CustomPNPieChart.swift */,
-				9AD056181CD1F71F000BC07E /* DayCollectionViewCell.swift */,
-				9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */,
-				9ACCA6241C6EC2CD00AF7D55 /* AboutViewController.swift */,
-				9AE9E52E1CD24F9A004A47B5 /* IndustryCollectionViewCell.swift */,
-				9AE9E5301CD34EA1004A47B5 /* IndustryContentDialogVIewController.swift */,
-				9A7908181C7BED14008CE40F /* IndustryViewController.swift */,
-				9A25FF271CCD98E600A255F8 /* CheckViewController.swift */,
-				9A79081A1C7BED2A008CE40F /* CheckSummaryViewController.swift */,
-				9A7F8B6B1CCA5681004BC3AC /* CheckDialogViewController.swift */,
-				9A7F8B671CCA26B2004BC3AC /* CheckAndSumSettingViewController.swift */,
-				9A7F8B751CCC73A1004BC3AC /* RecordViewController.swift */,
-				9AE9E5321CD3A833004A47B5 /* RemindViewController.swift */,
-				9A0794CE1CD4ADCF00A6F664 /* RemindTableViewCell.swift */,
-				9AE9E5341CD3A8B3004A47B5 /* AddRemindViewController.swift */,
-				9A0794CC1CD4682300A6F664 /* RepeatDialogViewController.swift */,
-				9A1C3F431CB2B26600F134F0 /* Utils.swift */,
 				0DFFB2821B896E80001E1EA4 /* Main.storyboard */,
 				0DFFB2851B896E81001E1EA4 /* Images.xcassets */,
 				0DFFB2871B896E81001E1EA4 /* LaunchScreen.xib */,
@@ -282,6 +261,67 @@
 				51D520703C05826325E64156 /* Pods_DailyRecord.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A198E9B1CD62E5400FE27C9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9ACCA6241C6EC2CD00AF7D55 /* AboutViewController.swift */,
+				9AE9E5341CD3A8B3004A47B5 /* AddRemindViewController.swift */,
+				9AE8F6211C7611C500471786 /* AddTemplateViewController.swift */,
+				9AD056221CD2318E000BC07E /* CalendarDayViewController.swift */,
+				9AD94BBB1C6D644D006216BB /* CalendarViewController.swift */,
+				9AD94BB91C6D6426006216BB /* ChartViewController.swift */,
+				9A7F8B671CCA26B2004BC3AC /* CheckAndSumSettingViewController.swift */,
+				9A79081A1C7BED2A008CE40F /* CheckSummaryViewController.swift */,
+				9A25FF271CCD98E600A255F8 /* CheckViewController.swift */,
+				9A7908181C7BED14008CE40F /* IndustryViewController.swift */,
+				9A7F8B751CCC73A1004BC3AC /* RecordViewController.swift */,
+				9AE9E5321CD3A833004A47B5 /* RemindViewController.swift */,
+				9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */,
+				9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		9A198E9C1CD62E6E00FE27C9 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				9A6E08E91C7011EC00C0358A /* RecordTemplate.swift */,
+				9AE9E5361CD3AAA3004A47B5 /* Remind.swift */,
+				9A7F8B691CCA364F004BC3AC /* Industry.swift */,
+			);
+			name = Realm;
+			sourceTree = "<group>";
+		};
+		9A198E9D1CD62E7A00FE27C9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9A7F8B731CCC6232004BC3AC /* CustomPNPieChart.swift */,
+				9A1C3F451CB2BA8800F134F0 /* DatePickerDialog.swift */,
+				9A1C3F431CB2B26600F134F0 /* Utils.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		9A198E9E1CD62E9600FE27C9 /* ViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9AD056181CD1F71F000BC07E /* DayCollectionViewCell.swift */,
+				9AE9E52E1CD24F9A004A47B5 /* IndustryCollectionViewCell.swift */,
+				9A0794CE1CD4ADCF00A6F664 /* RemindTableViewCell.swift */,
+			);
+			name = ViewCell;
+			sourceTree = "<group>";
+		};
+		9A198E9F1CD62EBD00FE27C9 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				9A7F8B6B1CCA5681004BC3AC /* CheckDialogViewController.swift */,
+				9AE9E5301CD34EA1004A47B5 /* IndustryContentDialogVIewController.swift */,
+				9A0794CC1CD4682300A6F664 /* RepeatDialogViewController.swift */,
+			);
+			name = Dialog;
 			sourceTree = "<group>";
 		};
 		E82184C540907CCF08AD24B4 /* Pods */ = {
