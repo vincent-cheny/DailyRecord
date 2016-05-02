@@ -43,6 +43,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var remindContent: UILabel!
     
     let realm = try! Realm()
+    var sortedReminds: [Remind]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,7 +114,7 @@ class ViewController: UIViewController {
         
         let totalReminds = realm.objects(Remind)
         let enableReminds = realm.objects(Remind).filter("enable = true AND (monday = true || tuesday = true || wednesday = true || thursday = true || friday = true || saturday = true || sunday = true)")
-        let sortedReminds = enableReminds.sort { (remind1, remind2) -> Bool in
+        sortedReminds = enableReminds.sort { (remind1, remind2) -> Bool in
             let remind1MinMinutes = getRemindMinMinutes(remind1, todayMinutes: todayMinutes)
             let remind2MinMinutes = getRemindMinMinutes(remind2, todayMinutes: todayMinutes)
             if remind1MinMinutes != remind2MinMinutes {
@@ -291,7 +292,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func navigateRemind(sender: AnyObject) {
-        
+        let addRemindViewController = storyboard?.instantiateViewControllerWithIdentifier("AddRemindViewController") as! AddRemindViewController
+        if sortedReminds.count != 0 {
+            addRemindViewController.remindId = sortedReminds[0].id
+        }
+        navigationController?.pushViewController(addRemindViewController, animated: true)
     }
 }
 

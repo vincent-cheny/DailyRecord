@@ -50,6 +50,7 @@ class AddRemindViewController: UIViewController, UITextViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         contentTextView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.New, context: nil)
+        self.navigationController?.navigationBarHidden = false;
     }
     
     override func viewWillDisappear(animated: Bool) {
