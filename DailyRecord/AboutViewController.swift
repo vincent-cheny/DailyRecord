@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TTTAttributedLabel
 
 class AboutViewController: UIViewController, TTTAttributedLabelDelegate {
     

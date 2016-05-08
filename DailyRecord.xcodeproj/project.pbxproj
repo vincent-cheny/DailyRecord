@@ -387,6 +387,7 @@
 				TargetAttributes = {
 					0DFFB2751B896E80001E1EA4 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = SFNJ2XD99K;
 					};
 					0DFFB28D1B896E81001E1EA4 = {
 						CreatedOnToolsVersion = 6.4;
@@ -669,10 +670,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DailyRecord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lazypanda.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "功过格";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DailyRecord/DailyRecord-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -686,10 +690,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DailyRecord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lazypanda.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "功过格";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DailyRecord/DailyRecord-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

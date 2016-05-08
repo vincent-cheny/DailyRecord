@@ -3,4 +3,4 @@
 //
 
 #include "PNChart/PNChart.h"
-#include "TTTAttributedLabel.h"
+#include "TTTAttributedLabel/TTTAttributedLabel.h"
