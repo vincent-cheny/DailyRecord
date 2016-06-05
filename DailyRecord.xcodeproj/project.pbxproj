@@ -38,6 +38,7 @@
 		9A7F8B6C1CCA5681004BC3AC /* CheckDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F8B6B1CCA5681004BC3AC /* CheckDialogViewController.swift */; };
 		9A7F8B741CCC6232004BC3AC /* CustomPNPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F8B731CCC6232004BC3AC /* CustomPNPieChart.swift */; };
 		9A7F8B761CCC73A1004BC3AC /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7F8B751CCC73A1004BC3AC /* RecordViewController.swift */; };
+		9A9C57191CFA7CF3003DFE5D /* ModifyTimeDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C57181CFA7CF3003DFE5D /* ModifyTimeDescriptionViewController.swift */; };
 		9AC8B1981C6D931C0064B5CC /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1901C6D931C0064B5CC /* calendar.png */; };
 		9AC8B1991C6D931C0064B5CC /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1911C6D931C0064B5CC /* chart.png */; };
 		9AC8B19A1C6D931C0064B5CC /* ic_launcher@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC8B1921C6D931C0064B5CC /* ic_launcher@2x.png */; };
@@ -114,6 +115,7 @@
 		9A7F8B6F1CCC5747004BC3AC /* DailyRecord-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DailyRecord-Bridging-Header.h"; sourceTree = "<group>"; };
 		9A7F8B731CCC6232004BC3AC /* CustomPNPieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPNPieChart.swift; sourceTree = "<group>"; };
 		9A7F8B751CCC73A1004BC3AC /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		9A9C57181CFA7CF3003DFE5D /* ModifyTimeDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyTimeDescriptionViewController.swift; sourceTree = "<group>"; };
 		9AC8B1901C6D931C0064B5CC /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = Resources/calendar.png; sourceTree = "<group>"; };
 		9AC8B1911C6D931C0064B5CC /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chart.png; path = Resources/chart.png; sourceTree = "<group>"; };
 		9AC8B1921C6D931C0064B5CC /* ic_launcher@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_launcher@2x.png"; path = "Resources/ic_launcher@2x.png"; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				9AE9E5321CD3A833004A47B5 /* RemindViewController.swift */,
 				9A5F605A1C6C9A3F0097F6F6 /* SettingViewController.swift */,
 				9AD94BBD1C6D6460006216BB /* TemplateViewController.swift */,
+				9A9C57181CFA7CF3003DFE5D /* ModifyTimeDescriptionViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -387,7 +390,7 @@
 				TargetAttributes = {
 					0DFFB2751B896E80001E1EA4 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = SFNJ2XD99K;
+						DevelopmentTeam = Z33CZ2PAPM;
 					};
 					0DFFB28D1B896E81001E1EA4 = {
 						CreatedOnToolsVersion = 6.4;
@@ -523,6 +526,7 @@
 				9A0794CF1CD4ADCF00A6F664 /* RemindTableViewCell.swift in Sources */,
 				0DFFB27C1B896E80001E1EA4 /* AppDelegate.swift in Sources */,
 				9AE9E52F1CD24F9A004A47B5 /* IndustryCollectionViewCell.swift in Sources */,
+				9A9C57191CFA7CF3003DFE5D /* ModifyTimeDescriptionViewController.swift in Sources */,
 				9A25FF281CCD98E600A255F8 /* CheckViewController.swift in Sources */,
 				9A7F8B761CCC73A1004BC3AC /* RecordViewController.swift in Sources */,
 				9A7F8B741CCC6232004BC3AC /* CustomPNPieChart.swift in Sources */,
@@ -674,7 +678,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DailyRecord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lazypanda.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lazypanda.dailyrecord;
 				PRODUCT_NAME = "功过格";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DailyRecord/DailyRecord-Bridging-Header.h";
@@ -694,7 +698,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DailyRecord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lazypanda.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lazypanda.dailyrecord;
 				PRODUCT_NAME = "功过格";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DailyRecord/DailyRecord-Bridging-Header.h";
