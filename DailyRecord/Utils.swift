@@ -15,21 +15,28 @@ class Utils {
     static let summaryTime: String = "summaryTime"
     static let remindCategory: String = "remindCategory"
     static let dailySummaryCategory: String = "dailySummaryCategory"
+    static let timeSetting1: String = "timeSetting1"
+    static let timeSetting2: String = "timeSetting2"
+    static let timeSetting3: String = "timeSetting3"
+    static let timeSetting4: String = "timeSetting4"
+    static let timeSetting5: String = "timeSetting5"
+    static let timeSetting6: String = "timeSetting6"
     
     static func descriptionFromTime(date: NSDate) -> String {
+        let defaults = NSUserDefaults.standardUserDefaults()
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components(.Hour, fromDate: date)
         let hour = components.hour
         switch hour {
-        case 4...7:
+        case defaults.integerForKey(timeSetting1)...defaults.integerForKey(timeSetting2) - 1:
             return "晨起"
-        case 8...9:
+        case defaults.integerForKey(timeSetting2)...defaults.integerForKey(timeSetting3) - 1:
             return "早饭后"
-        case 10...12:
+        case defaults.integerForKey(timeSetting3)...defaults.integerForKey(timeSetting4) - 1:
             return "午饭前"
-        case 13...16:
+        case defaults.integerForKey(timeSetting4)...defaults.integerForKey(timeSetting5) - 1:
             return "下午"
-        case 17...20:
+        case defaults.integerForKey(timeSetting5)...defaults.integerForKey(timeSetting6) - 1:
             return "晚殿"
         default:
             return "睡前"

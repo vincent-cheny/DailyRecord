@@ -33,6 +33,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if defaults.objectForKey(Utils.summaryTime) == nil {
             defaults.setObject([20, 0], forKey: Utils.summaryTime)
         }
+        if defaults.objectForKey(Utils.timeSetting1) == nil {
+            defaults.setInteger(4, forKey: Utils.timeSetting1)
+        }
+        if defaults.objectForKey(Utils.timeSetting2) == nil {
+            defaults.setInteger(8, forKey: Utils.timeSetting2)
+        }
+        if defaults.objectForKey(Utils.timeSetting3) == nil {
+            defaults.setInteger(10, forKey: Utils.timeSetting3)
+        }
+        if defaults.objectForKey(Utils.timeSetting4) == nil {
+            defaults.setInteger(13, forKey: Utils.timeSetting4)
+        }
+        if defaults.objectForKey(Utils.timeSetting5) == nil {
+            defaults.setInteger(17, forKey: Utils.timeSetting5)
+        }
+        if defaults.objectForKey(Utils.timeSetting6) == nil {
+            defaults.setInteger(21, forKey: Utils.timeSetting6)
+        }
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))  // types are UIUserNotificationType members
         return true
     }

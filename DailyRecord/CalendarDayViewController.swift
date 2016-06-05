@@ -17,6 +17,7 @@ class CalendarDayViewController: UIViewController, UICollectionViewDataSource, U
     var showDate = NSDate()
     let realm = try! Realm()
     let hourDuration = 60 * 60.0
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,19 +103,25 @@ class CalendarDayViewController: UIViewController, UICollectionViewDataSource, U
     func getIndustryCount(type: String, timeIndex: Int) -> String {
         var result = 0
         let dayRange = Utils.getDayRange(showDate)
+        let timeSetting1 = Double(defaults.integerForKey(Utils.timeSetting1))
+        let timeSetting2 = Double(defaults.integerForKey(Utils.timeSetting2))
+        let timeSetting3 = Double(defaults.integerForKey(Utils.timeSetting3))
+        let timeSetting4 = Double(defaults.integerForKey(Utils.timeSetting4))
+        let timeSetting5 = Double(defaults.integerForKey(Utils.timeSetting5))
+        let timeSetting6 = Double(defaults.integerForKey(Utils.timeSetting6))
         switch timeIndex {
         case 0:
-            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 4 * hourDuration, dayRange[0] + 8 * hourDuration - 1).count
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + timeSetting1 * hourDuration, dayRange[0] + timeSetting2 * hourDuration - 1).count
         case 1:
-            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 8 * hourDuration, dayRange[0] + 10 * hourDuration - 1).count
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + timeSetting2 * hourDuration, dayRange[0] + timeSetting3 * hourDuration - 1).count
         case 2:
-            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 10 * hourDuration, dayRange[0] + 13 * hourDuration - 1).count
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + timeSetting3 * hourDuration, dayRange[0] + timeSetting4 * hourDuration - 1).count
         case 3:
-            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 13 * hourDuration, dayRange[0] + 17 * hourDuration - 1).count
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + timeSetting4 * hourDuration, dayRange[0] + timeSetting5 * hourDuration - 1).count
         case 4:
-            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + 17 * hourDuration, dayRange[0] + 21 * hourDuration - 1).count
+            result = realm.objects(Industry).filter("type = %@ AND time BETWEEN {%@, %@}", type, dayRange[0] + timeSetting5 * hourDuration, dayRange[0] + timeSetting6 * hourDuration - 1).count
         case 5:
-            result = realm.objects(Industry).filter("type = %@ AND (time BETWEEN {%@, %@} OR time BETWEEN {%@, %@})", type, dayRange[0] + 21 * hourDuration, dayRange[1], dayRange[0], dayRange[0] + 4 * hourDuration - 1).count
+            result = realm.objects(Industry).filter("type = %@ AND (time BETWEEN {%@, %@} OR time BETWEEN {%@, %@})", type, dayRange[0] + timeSetting6 * hourDuration, dayRange[1], dayRange[0], dayRange[0] + timeSetting1 * hourDuration - 1).count
         default:
             break
         }
